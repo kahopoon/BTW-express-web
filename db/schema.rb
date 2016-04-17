@@ -1,0 +1,84 @@
+# encoding: UTF-8
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema.define(version: 20160417150229) do
+
+  create_table "addressees", force: :cascade do |t|
+    t.string   "mobile"
+    t.string   "name"
+    t.integer  "detail_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "addressees", ["detail_id"], name: "index_addressees_on_detail_id"
+
+  create_table "deliveries", force: :cascade do |t|
+    t.datetime "time"
+    t.text     "address"
+    t.string   "lat"
+    t.string   "lng"
+    t.integer  "detail_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "deliveries", ["detail_id"], name: "index_deliveries_on_detail_id"
+
+  create_table "details", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "weight"
+    t.string   "photo"
+    t.text     "discription"
+    t.integer  "prepay"
+    t.integer  "fee"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "details", ["order_id"], name: "index_details_on_order_id"
+
+  create_table "grades", force: :cascade do |t|
+    t.integer  "owner"
+    t.integer  "courier"
+    t.integer  "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "grades", ["order_id"], name: "index_grades_on_order_id"
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "owner_id"
+    t.integer  "courier_id"
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "orders", ["courier_id"], name: "index_orders_on_courier_id"
+  add_index "orders", ["owner_id"], name: "index_orders_on_owner_id"
+
+  create_table "pickups", force: :cascade do |t|
+    t.datetime "time"
+    t.text     "address"
+    t.string   "lat"
+    t.string   "lng"
+    t.integer  "detail_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "pickups", ["detail_id"], name: "index_pickups_on_detail_id"
+
+end
