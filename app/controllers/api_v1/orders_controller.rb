@@ -1,5 +1,5 @@
-class ApiV1::OrdersController < ApplicationController
+class ApiV1::OrdersController < ApiController
   def index
-    @order = Order.page(params[:page])
+    @orders = Order.page(params[:page])
   end
 end
