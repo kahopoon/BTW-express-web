@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = Orders.page(params[:page])
+    @orders = Order.page(params[:page])
   end
 
   def create
