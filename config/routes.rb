@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 # orders, details api updated by hugo
 scope :path => '/api/v1', :module => 'api_v1', :as => 'v1', :defaults => {:format => :json} do
@@ -8,7 +9,7 @@ end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+root :to => "orders#index"
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

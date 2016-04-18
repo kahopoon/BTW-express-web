@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BtwExpressWeb</title>
+  <title>順路送-BTWexpress</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class ="container">
+  <div class = "row">
+    <div class="col-md-12">
+    <p></p>
 <%= yield %>
 
+<% if current_user %>
+        <%= link_to('登出 Facebook', destroy_user_session_path, :class => "btn btn-primary", :method => :delete) %>
+
+     <% else %>
+     <%= link_to "登入 Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary" %>
+
+     <% end %>
+
+     <p style="color: yellow"><%= flash[:notice] %></p>
+     <p style="color: yellow"><%= flash[:alert] %></p>
+  </div>
+</div>
 </body>
 </html>
