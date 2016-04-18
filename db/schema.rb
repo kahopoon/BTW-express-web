@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417150229) do
+ActiveRecord::Schema.define(version: 20160418013943) do
 
   create_table "addressees", force: :cascade do |t|
     t.string   "mobile"
