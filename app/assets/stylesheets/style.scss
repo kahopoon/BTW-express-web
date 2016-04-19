@@ -1,7 +1,71 @@
+/*************************
+ＨＯＭＥ ＰＡＧＥ ＨＥＡＤＥＲ
+*************************/
+#header {
+
+  margin: 0;
+  padding: 0;
+  background-image: image-url("bike.png");
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: 100vw;
+  height: 660px;
+  vertical-align: middle;
+  h1 {
+    margin: 0;
+  }
+
+  .top {
+
+  }
+
+}
+
+nav {
+
+}
+
+
+/******************
+ＢＯＤＹ
+******************/
 h1{
-  color: #F6C90E;
+  color:yellow;
 }
 
 body {
   background-color: #3A4750;
+}
+
+/*************************
+          ＲＷＤ
+*************************/
+@media (min-width: 400px) {
+  #header {
+    .top {
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+    body{
+        font-size: 2rem;
+    }
+    .container {
+        width: 750px;
+    }
+
+    .feature {
+        float: left;
+        width: 30%;
+        margin-right: 2%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        width: 1000px;
+    }
 }
