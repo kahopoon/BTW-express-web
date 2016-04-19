@@ -7,13 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 
- <!--  <% if current_user %>
+  <% if current_user %>
     <%= link_to('登出 Facebook', destroy_user_session_path, :class => "btn btn-primary", :method => :delete) %>
-  <% else %>
-    <%= link_to "登入 Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary" %>
   <% end %>
 
-  <p style="color: yellow"><%= flash[:notice] %></p>
+  <!-- <p style="color: yellow"><%= flash[:notice] %></p>
   <p style="color: yellow"><%= flash[:alert] %></p> -->
 
         <%= yield %>
