@@ -6,8 +6,26 @@
         <div class="top center-block text-center">
           <h1 class=" page-header ">順路送貨 賺取額外收入</h1>
           <h4>自由接訂單 每個月多3000元收入</h4>
-          <% if !current_user %>
+          <% if current_user %>
             <%= link_to "登入 Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-lg" %>
+          <% else %>
+            <%= paginate @orders %>
+            <% @orders.each do |o| %>            
+              <%=link_to order_path(o) do %>                          
+            <table>
+              <tr>
+
+                <td>No.<%= o.id%></td>
+                <td>   <%= o.name%></td>
+                <td>from: <%= o.pickup_addr%></td>
+                <td>to: <%= o.deliver_addr%></td>
+                <td>reward: <%= o.detail.fee%></td>
+
+              </tr>
+            </table>
+              <%end%>            
+            <%end%>
+
           <% end %>
         </div>
 

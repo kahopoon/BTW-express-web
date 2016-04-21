@@ -6,7 +6,7 @@ set :application, 'btw_express'
 set :repo_url, 'git@github.com:ching-fu/BTW-express-web.git'
 set :deploy_to, '/home/deploy/btw_express'
 set :keep_releases, 5
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', 'config/facebook.yml')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 set :passenger_restart_with_touch, true
 # Default branch is :master
