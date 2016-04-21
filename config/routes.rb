@@ -9,6 +9,7 @@ scope :path => '/api/v1', :module => 'api_v1', :as => 'v1', :defaults => {:forma
   post "/logout" => "auth#logout"
 
   resources :orders, :except => [:new, :edit]
+  resources :details, :except => [:new, :edit]
 end
 
 resources :orders
