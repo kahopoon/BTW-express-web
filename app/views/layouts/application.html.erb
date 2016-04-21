@@ -6,16 +6,41 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width; initial-scale=1"/>
+
 </head>
 
   <% if current_user %>
-    <%= link_to('登出 Facebook', destroy_user_session_path, :class => "btn btn-primary", :method => :delete) %>
+    <%= link_to('登出 Facebook', destroy_user_session_path, :class => "btn btn-primary flow-left", :method => :delete) %>
   <% end %>
 
-  <!-- <p style="color: yellow"><%= flash[:notice] %></p>
-  <p style="color: yellow"><%= flash[:alert] %></p> -->
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
+
+
+  <div class ="ham-head">
+    <h1>順路送-BTWexpress</h1>
+    <button class="hamburger">&#9776;</button>
+    <button class="cross">&#735;</button>
+  </div>
+
+  <div class="menu">
+    <ul>
+      <a href="#"><li><i class="fa fa-user" aria-hidden="true">我的帳號</i></li></a>
+      <a href="#"><li>LINK TWO</li></a>
+      <a href="#"><li>LINK THREE</li></a>
+      <a href="#"><li>LINK FOUR</li></a>
+      <a href="#"><li>LINK FIVE</li></a>
+    </ul>
+
+  </div>
+  <div id="out">
+  </div>
 
   <%= yield %>
 
 </body>
 </html>
+
+
+
+
