@@ -55,4 +55,7 @@ class User < ActiveRecord::Base
       user.save!
       return user
     end
+    def user_approve(id,token)
+      #if id & token match, return user
+    end
 end
