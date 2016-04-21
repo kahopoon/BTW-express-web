@@ -9,11 +9,23 @@
           <% if current_user %>
             <%= link_to "登入 Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-lg" %>
           <% else %>
-            <ul>
-            <% @orders.each do |o| %>
-              <li><%= o.name%></li>
+            <%= paginate @orders %>
+            <% @orders.each do |o| %>            
+              <%=link_to order_path(o) do %>                          
+            <table>
+              <tr>
+
+                <td>No.<%= o.id%></td>
+                <td>   <%= o.name%></td>
+                <td>from: <%= o.pickup_addr%></td>
+                <td>to: <%= o.deliver_addr%></td>
+                <td>reward: <%= o.detail.fee%></td>
+
+              </tr>
+            </table>
+              <%end%>            
             <%end%>
-            </ul>
+
           <% end %>
         </div>
 
