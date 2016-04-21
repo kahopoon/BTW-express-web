@@ -4,6 +4,7 @@ json.meta do
   json.per_page @orders.limit_value
   json.next_url (@orders.last_page?)? nil : v1_orders_url( :page => @orders.next_page )
   json.previous_url (@orders.first_page?)? nil : v1_orders_url( :page => @orders.prev_page )
+  json.owner_id @orders.owner_id
 end
 
 json.results do
