@@ -11,29 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421070023) do
-
-  create_table "addressees", force: :cascade do |t|
-    t.string   "mobile"
-    t.string   "name"
-    t.integer  "detail_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "addressees", ["detail_id"], name: "index_addressees_on_detail_id"
-
-  create_table "deliveries", force: :cascade do |t|
-    t.datetime "time"
-    t.text     "address"
-    t.string   "lat"
-    t.string   "lng"
-    t.integer  "detail_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "deliveries", ["detail_id"], name: "index_deliveries_on_detail_id"
+ActiveRecord::Schema.define(version: 20160421155233) do
 
   create_table "details", force: :cascade do |t|
     t.integer  "order_id"
@@ -49,16 +27,6 @@ ActiveRecord::Schema.define(version: 20160421070023) do
 
   add_index "details", ["order_id"], name: "index_details_on_order_id"
 
-  create_table "grades", force: :cascade do |t|
-    t.integer  "owner"
-    t.integer  "courier"
-    t.integer  "order_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "grades", ["order_id"], name: "index_grades_on_order_id"
-
   create_table "orders", force: :cascade do |t|
     t.integer  "owner_id"
     t.integer  "courier_id"
@@ -71,26 +39,16 @@ ActiveRecord::Schema.define(version: 20160421070023) do
     t.text     "deliver_addr"
     t.string   "pickup_latlng"
     t.string   "deliver_latlng"
-    t.string   "name"
+    t.string   "category"
     t.string   "photo"
     t.integer  "rate_owner"
     t.integer  "rate_courier"
+    t.string   "fake_user_name"
+    t.string   "fake_phone"
   end
 
   add_index "orders", ["courier_id"], name: "index_orders_on_courier_id"
   add_index "orders", ["owner_id"], name: "index_orders_on_owner_id"
-
-  create_table "pickups", force: :cascade do |t|
-    t.datetime "time"
-    t.text     "address"
-    t.string   "lat"
-    t.string   "lng"
-    t.integer  "detail_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "pickups", ["detail_id"], name: "index_pickups_on_detail_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -108,6 +66,8 @@ ActiveRecord::Schema.define(version: 20160421070023) do
     t.string   "fb_uid"
     t.string   "fb_token"
     t.string   "authentication_token"
+    t.integer  "phone"
+    t.string   "fake_name"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true
