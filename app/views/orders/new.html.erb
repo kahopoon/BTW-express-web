@@ -1,0 +1,54 @@
+<div class = "order_form" >
+<%= form_for @order do |o| %>
+
+  <div class="form-group">
+    <%= o.label :pickup_time, "取件時間" %>
+    <%= o.text_area :pickup_time, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= o.label :deliver_time, "希望送達時間" %>
+    <%= o.text_area :pickup_time, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= o.label :pickup_addr, "取件地址" %>
+    <%= o.text_area :pickup_addr, :class => "form-control" %>
+  </div>
+
+
+  <div class="form-group">
+    <%= o.label :deliver_addr, "目的地地址" %>
+    <%= o.text_area :deliver_addr, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= o.label :category, "貨品種類" %>
+    <%= o.select :category, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= o.label :photo, "上傳貨物照片" %>
+    <%= o.file_field :photo, :class => "form-control" %>
+
+    <% if @order.photo.exists? %>
+      <%= check_box_tag "destory_photo", "1" %> 刪除照片
+    <% end %>
+  </div>
+  <%= o.fields_for :detail do |detail_form| %>
+  <div class="form-group">
+    <%= detail_form.label :weight, "貨物重量" %>
+    <%= detail_form.text_area :weight, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= detail_form.label :fee, "需要墊支金額" %>
+    <%= detail_form.text_area :fee, :class => "form-control" %>
+  </div>
+  <% end %>
+
+
+  <div class="form-group">
+    <%= o.submit %>
+  </div>
+<% end %>

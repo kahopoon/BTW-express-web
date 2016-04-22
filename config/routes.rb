@@ -12,7 +12,9 @@ scope :path => '/api/v1', :module => 'api_v1', :as => 'v1', :defaults => {:forma
   resources :details, :except => [:new, :edit]
 end
 
-resources :orders
+resources :orders do
+  resource :detail
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

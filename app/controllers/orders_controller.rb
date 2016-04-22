@@ -7,21 +7,47 @@ class OrdersController < ApplicationController
 
   end
   def show
-      @order=Order.find(params[:id])
+      @order= Order.find(params[:id])
+  end
+
+  def new
+    @order = Order.new
   end
 
   def create
-    @order = Order.new(order_params)
-    @order.build_detail
-    @order.detail.build_pickup
-    @order.detail.build_delivery
+    @order = Order.create!(order_params)
+    @detail= @order.build_detail(detail_params)
+    @detail.save
+
+    if @order.save
+      redirect_to order_url(@order)
+    else
+      render 'new'
+    end
   end
+
+  # def update
+  #   if params[:destory_photo]
+  #   @order.photo = nil
+  # end
+
+  #   if @order.update( order_params )
+  #     redirect_to order_url(@order)
+  #   else
+  #     render "edit"
+  #   end
+  # end
 
 private
 
   def order_params
-    params.require(:order).permit( :owner_id, :owner_id, :courier_id, :status )
+    params.require(:order).permit( :owner_id, :courier_id, :status, :photo )
   end
+
+  def detail_params
+    params.require(:order).require(:detail).permit( :weight, :fee )
+  end
+
 
 end
 
