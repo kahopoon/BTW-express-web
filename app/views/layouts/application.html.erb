@@ -9,29 +9,18 @@
 
 </head>
 
+<nav>
+  <h1>順路送-BTWexpress</h1>
+</nav>
+
 <body>
   <div id="head-nav">
-    <div class ="ham-head">
-      <h1>順路送-BTWexpress</h1>
-      <button class="hamburger">&#9776;</button>
-      <button class="cross">&#735;</button>
-    </div>
+
 
     <% if current_user %>
       <%= link_to('登出 Facebook', destroy_user_session_path, :class => "btn btn-primary fb-btn", :method => :delete) %>
     <% end %>
 
-    <div class="menu">
-      <ul>
-        <a href="#"><li><i class="fa fa-user" aria-hidden="true">我的帳號</i></li></a>
-        <a href="#"><li>LINK TWO</li></a>
-        <a href="#"><li>LINK THREE</li></a>
-        <a href="#"><li>LINK FOUR</li></a>
-        <a href="#"><li>LINK FIVE</li></a>
-      </ul>
-
-    </div>
-    <div id="out"></div>
   </div>
   <%= yield %>
 </body>

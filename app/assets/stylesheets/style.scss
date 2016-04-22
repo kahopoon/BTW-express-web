@@ -1,4 +1,14 @@
 /******************
+ＮＡＶ
+******************/
+nav {
+  h1{
+    color: #FEFEFE;
+  }
+}
+
+
+/******************
 ＢＯＤＹ
 ******************/
 h1{
@@ -10,114 +20,6 @@ body {
   margin:0;
 }
 
-/*************************
-ＭＥＮＵ ＨＡＭＢＵＲＧＥＲ
-*************************/
-#head-nav{
-  position: fixed;
-  width: 100vw;
-  z-index:10000000000;
-}
-
-.menu {
-  li{
-    font-size: 1.6em;
-  }
-}
-
-.spanout {
-  width: 100vw;
-  height:100vh;
-  position:fixed;
-}
-
-.ham-head{
-  width:100%;
-  background:#1d1f20;
-  height:50px;
-  line-height:50px;
-  font-size: 2.5em;
-
-
-  h1 {
-    color: #FEFEFE;
-    margin: 0;
-    padding: 0;
-    background:none;
-    position:absolute;
-    top:0;
-    left:0;
-    line-height:45px;
-    padding:0px 15px 0px 15px;
-    border:0;
-    font-weight:bold;
-    cursor:pointer;
-    outline:none;
-    z-index:10000000000000;
-  }
-
-  .hamburger{
-    background:none;
-    position:absolute;
-    top:0;
-    right:0;
-    line-height:45px;
-    padding:0px 15px 0px 15px;
-    color:#fff;
-    border:0;
-    font-size:1.4em;
-    font-weight:bold;
-    cursor:pointer;
-    outline:none;
-    z-index:10000000000000;
-  }
-
-  .cross{
-    background:none;
-    position:absolute;
-    top:0px;
-    right:0;
-    padding:0px 15px 0px 15px;
-    color:#fff;
-    border:0;
-    font-size:3em;
-    line-height:65px;
-    font-weight:bold;
-    cursor:pointer;
-    outline:none;
-    z-index:10000000000000;
-  }
-}
-
-
-.menu{z-index:1000000; font-weight:bold; font-size:0.8em; width:100%;
-  background:linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.9)
-    ); position:absolute; text-align:center;}
-.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
-.menu li {display: block;   padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
-.menu li:hover{display: block;  background:
-      rgba(0, 0, 0, 0.7)
-    ; padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
-.menu ul li a { text-decoration:none;  margin: 0px; color:#fff;}
-.menu ul li a:hover {  color: #fff; text-decoration:none;}
-.menu a{text-decoration:none; color:white;}
-.menu a:hover{text-decoration:none; color:white;}
-
-.glyphicon-home{
-  color:white;
-  font-size:1.5em;
-  margin-top:5px;
-  margin:0 auto;
-}
-
-.fb-btn {
-  padding: 0;
-  margin: 0;
-  float: left;
-
-}
 
 /*************************
 ＨＯＭＥ ＰＡＧＥ ＨＥＡＤＥＲ
@@ -133,7 +35,7 @@ $margin-top: 184px;
       rgba(0, 0, 0, 0)
     ),
 
-    url(bike.png);
+    url(1.png);
 
   width: 100vw;
   height: 667px;
@@ -164,6 +66,24 @@ $margin-top: 184px;
 #order-list {
   width: 100%;
   height: 700px;
+
+  img {
+    width: 155px;
+  }
+
+  .list-right {
+    width: 50%;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .btn-detail {
+    background-color: #F6C90E;
+    border-color: #F6C90E;
+    color: #3A4750;
+    font-size: 1em;
+
+  }
 }
 
 
@@ -182,13 +102,6 @@ $margin-top: 184px;
       h1 {
         font-size: 2em;
       }
-    }
-  }
-
-  .ham-head {
-    h1{
-      font-size: 0.6em;
-      margin-left: 0;
     }
   }
 
@@ -213,13 +126,6 @@ $margin-top: 184px;
     }
   }
 
-  .ham-head {
-    h1{
-      font-size: 0.9em;
-      margin-left: 2%;
-    }
-  }
-
   .fb-btn {
     margin-left: 29px;
   }
@@ -236,13 +142,6 @@ $margin-top: 184px;
       h1 {
         font-size: 3em;
       }
-    }
-  }
-
-  .ham-head {
-    h1{
-      font-size: 1.2em;
-      margin-left: 1%;
     }
   }
 
