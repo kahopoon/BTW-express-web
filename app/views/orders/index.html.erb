@@ -2,12 +2,15 @@
   <div class="container">
     <div class="row-fluid">
       <div class="col-xs-12">
-        <div class="top center-block text-center">
-          <h1 class=" page-header ">順路送貨 賺取額外收入</h1>
-          <h4>自由接訂單 每個月多3000元收入</h4>
-          <% if !current_user %>
-            <%= link_to "登入 Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-lg" %>
-          <% end %>
+        <div class="top center-block text-align-left">
+          <h1>委託收寄件<br/>輕鬆下單，請附近朋友幫忙吧！</h1>
+
+          <div class="write-wrap">
+            <%= link_to "下單", :class=> "write btn-default btn btn-xs" do %>
+              <h1><i class="fa fa-pencil-square-o" aria-hidden="true"></i>刊登委託單</h1>
+            <% end %>
+          </div>
+
         </div>
       </div>
     </div>
@@ -17,31 +20,31 @@
 <div class="containder">
   <div class="row-fluid">
     <div class="col-xs-12">
-      <section id="order-list" class="col-xs-6">
+      <section id="order-list" class="col-xs-12">
         <h1 class="text-center">順路送貨</h1>
         <%= paginate @orders %>
         <% @orders.each do |o| %>
-          <div id="single-order">
-            <tr>
-
-              <td class="col-xs-6 pic">
-                <img src="http://s1.dmcdn.net/NIoqB/280x157-5Q4.jpg" alt="">
-                <p><%= o.detail.fee%></p>
-                <p><%= o.category%>類</p>
-
-              </td>
-
-              <td class="col-xs-6">
-                <div class="list-right">
-
-                  <h3>test</h3>
-                  <p>from: <%= o.pickup_addr%></p>
-                  <p>to: <%= o.deliver_addr%></p>
-                  <%= button_to '點看詳情', order_path(o), :class => "btn btn-primary btn-xs btn-detail", :method => :post %>
+          <div class="one-order col-xs-12 col-md-6">
+              <div class="col-xs-6 pic">
+                <img src="http://www.claridges.co.uk/uploadedImages/Claridges/Restaurants_and_bars/Afternoon_tea/Afternoon%20Tea.jpg" alt="img-upload" class="item img-rounded">
+                <div class="feecat">
+                  <p class="fee">$<%= o.detail.fee%></p>
+                  <p class="category"><%= o.category%>類</p>
                 </div>
-              </td>
+              </div>
 
-            </tr>
+              <div class="col-xs-6 list-right">
+
+                <h3><%= o.id %></h3>
+
+                <p class="addr-from"><i class="fa fa-circle" aria-hidden="true"></i> <%= o.pickup_addr%></p>
+
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+
+                <p class="addr-to"><i class="fa fa-circle-thin" aria-hidden="true"></i> <%= o.deliver_addr%></p>
+
+                <%= button_to '點看詳情', order_path(o), :class => "btn btn-primary btn-xs detail center-block", :method => :post %>
+              </div>
           </div>
               <!-- <td>No.<%= o.id%></td>
               <td>   <%= o.category%></td>
@@ -52,7 +55,6 @@
         <%end%>
       </section>
       <section id="map" class="col-xs-6">
-      <p>yoooo</p>
       </section>
     </div>
   </div>
