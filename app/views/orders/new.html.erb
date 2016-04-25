@@ -1,55 +1,66 @@
 <div class = "order_form" >
+<div class="container">
+<div class="form-group">
+
 <%= form_for @order do |o| %>
 
-  <div class="form-group">
-    <%= o.label :pickup_time, "取件時間" %>
-    <%= o.text_area :pickup_time, :class => "form-control" %>
-  </div>
+      <%= o.label :pickup_addr, "指定代買地址（由代買人決定請打「無」）" %>
+    <%= o.text_field :pickup_addr, :class => "form-control" %>
 
-  <div class="form-group">
-    <%= o.label :deliver_time, "希望送達時間" %>
-    <%= o.text_area :pickup_time, :class => "form-control" %>
-  </div>
+    <p></p>
 
-  <div class="form-group">
-    <%= o.label :pickup_addr, "取件地址" %>
-    <%= o.text_area :pickup_addr, :class => "form-control" %>
-  </div>
+    <%= o.label :deliver_addr, "代買物送達地址" %>
+    <%= o.text_field :deliver_addr, :class => "form-control" %>
+
+    <p></p>
+
+    <%= o.label :deliver_time, "要求送達時間" %>
+    <%= o.time_select :deliver_time, :class => "form-control" %>
+    <p></p>
 
 
-  <div class="form-group">
-    <%= o.label :deliver_addr, "目的地地址" %>
-    <%= o.text_area :deliver_addr, :class => "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= o.label :category, "貨品種類" %>
+    <%= o.label :category, "代買物品種類" %>
     <%= o.select :category, :class => "form-control" %>
-  </div>
+    <p></p>
 
-  <div class="form-group">
-    <%= o.label :photo, "上傳貨物照片" %>
+    <%= o.label :photo, "代買物品範例照片" %>
     <%= o.file_field :photo, :class => "form-control" %>
 
     <% if @order.photo.exists? %>
       <%= check_box_tag "destory_photo", "1" %> 刪除照片
     <% end %>
-  </div>
+    <p></p>
+
 
   <%= o.fields_for :detail do |detail_form| %>
-  <div class="form-group">
-    <%= detail_form.label :weight, "貨物重量" %>
-    <%= detail_form.text_area :weight, :class => "form-control" %>
-  </div>
+    <%= detail_form.label :description, "代買物品描述" %>
+    <%= detail_form.text_field :description, :class => "form-control" %>
 
-  <div class="form-group">
-    <%= detail_form.label :fee, "需要墊支金額" %>
-    <%= detail_form.text_area :fee, :class => "form-control" %>
-  </div>
+    <p></p>
+
+    <%= detail_form.label :fee, "願意支付跑腿金額" %>
+    <%= detail_form.text_field :fee, :class => "form-control" %>
+    <p></p>
+
+
+    <%= detail_form.label :prepay, "需要墊支金額範圍" %>
+    <%= detail_form.text_field :prepay, :class => "form-control" %>
+    <p></p>
+
+    <%= detail_form.label :addressees_name, "取件人姓名" %>
+    <%= detail_form.text_field :addressees_name, :class => "form-control" %>
+    <p></p>
+
+
+    <%= detail_form.label :addressees_mobile, "取件者電話" %>
+    <%= detail_form.text_field :addressees_mobile, :class => "form-control" %>
+
+
   <% end %>
-
+</div>
 
   <div class="form-group">
     <%= o.submit %>
   </div>
 <% end %>
+</div>
