@@ -5,9 +5,9 @@
         <div class="top center-block text-align-left">
           <h1>委託收寄件<br/>輕鬆下單，請附近朋友幫忙吧！</h1>
           <div class="write-wrap">
-            <%= link_to "下單", :class=> "write btn-default btn btn-xs" do %>
-              <h1><i class="fa fa-pencil-square-o" aria-hidden="true"></i>刊登委託單</h1>
-            <% end %>
+
+          <a href="/orders/new" class="write btn-default btn btn-xs"><h1><i class="fa fa-pencil-square-o" aria-hidden="true"></i>刊登委託單</h1></a>
+
           </div>
         </div>
       </div>
@@ -44,12 +44,6 @@
                 <%= button_to '點看詳情', order_path(o), :class => "btn btn-primary btn-xs detail center-block", :method => :get %>
               </div>
           </div>
-              <!-- <td>No.<%= o.id%></td>
-              <td>   <%= o.category%></td>
-              <td>from: <%= o.pickup_addr%></td>
-              <td>to: <%= o.deliver_addr%></td>
-              <td>reward: <%= o.detail.fee%></td> -->
-
         <%end%>
       </section>
       <section id="map" class="col-xs-6">
