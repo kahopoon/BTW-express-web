@@ -1,0 +1,143 @@
+/******************
+ＧＥＮＥＲＡＬ
+******************/
+h1{
+  color: #F6C90E ;
+}
+body {
+  background-color: #3A4750;
+  margin:0 auto;
+}
+ul{
+  margin: 0;
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.container {
+  height: 768px;
+}
+
+/******************
+ＮＡＶ
+******************/
+.navbar {
+  margin: 0;
+  height: 60px;
+  h1{
+    margin: 0;
+    color: #FEFEFE;
+  }
+  .container-fluid {
+    background-color: #3A4750;
+    height: 60px;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    border-bottom-color: #F6C90E;
+  }
+  .fb-btn{
+    position: fixed;
+    top: 15px;
+    right: 10px;
+    margin-right: 5px;
+  }
+  #rule{
+    position: fixed;
+    top: 26px;
+    right: 50px;
+    color: #F6C90E;
+    font-size: 1.3em;
+  }
+  .profile {
+    position: fixed;
+    top: 64px;
+    right: 16px;
+    font-size: 1.26em;
+    background: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+    .fa {
+      color: #F6C90E;
+    }
+    span{
+      margin: 0;
+      color: #F6C90E;
+    }
+  }
+  .profile:hover{
+      background: rgba(0,0,0,0.6);
+      }
+}
+
+/*************************
+          ＲＷＤ
+*************************/
+@media (max-width: 480px) {
+  .navbar{
+    .navbar-brand{
+      width: 270px;
+      h1 {
+        font-size: 1.5em;
+        width: 250px;
+      }
+    }
+    #rule {
+      top: 110px;
+      right: 16px;
+    }
+
+    .profile {
+      background: rgba(0,0,0,0);
+      border-color: rgba(0,0,0,0);
+    }
+  }
+}
+
+
+@media (max-width: 1024px) and (min-width: 480px) {
+
+  .navbar {
+    .navbar-brand{
+      width: 450px;
+      padding-top: 10px;
+      padding-right: 0;
+      h1 {
+        font-size: 2em;
+        width: 330px;
+      }
+    }
+    #rule {
+      top: 110px;
+      right: 16px;
+    }
+    .profile {
+      background: rgba(0,0,0,0);
+      border-color: rgba(0,0,0,0);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .container {
+    width: 1024px;
+  }
+  .navbar {
+    .navbar-brand{
+      width: 450px;
+      padding-top: 10px;
+      padding-right: 0;
+
+      h1 {
+        font-size: 2em;
+      }
+    }
+    #rule {
+      width: 100px;
+      margin: 0;
+      right: 60px;
+    }
+  }
+}
+
