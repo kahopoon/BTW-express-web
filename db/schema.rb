@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421070023) do
+ActiveRecord::Schema.define(version: 20160422015249) do
 
   create_table "details", force: :cascade do |t|
     t.integer  "order_id"
@@ -31,18 +31,24 @@ ActiveRecord::Schema.define(version: 20160421070023) do
     t.integer  "owner_id"
     t.integer  "courier_id"
     t.string   "status"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.datetime "pickup_time"
     t.datetime "deliver_time"
     t.text     "pickup_addr"
     t.text     "deliver_addr"
     t.string   "pickup_latlng"
     t.string   "deliver_latlng"
-    t.string   "name"
+    t.string   "category"
     t.string   "photo"
     t.integer  "rate_owner"
     t.integer  "rate_courier"
+    t.string   "fake_user_name"
+    t.string   "fake_phone"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "orders", ["courier_id"], name: "index_orders_on_courier_id"
@@ -64,6 +70,8 @@ ActiveRecord::Schema.define(version: 20160421070023) do
     t.string   "fb_uid"
     t.string   "fb_token"
     t.string   "authentication_token"
+    t.integer  "phone"
+    t.string   "fake_name"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true

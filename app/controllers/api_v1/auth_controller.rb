@@ -9,7 +9,9 @@ class ApiV1::AuthController < ApiController
       user = User.find_by_email( params[:email] )
       success = user && user.valid_password?( params[:password] )
     elsif params[:access_token]
+      puts "got it"
       fb_data = User.get_fb_data( params[:access_token] )
+
       if fb_data
         auth_hash = OmniAuth::AuthHash.new({
           uid: fb_data["id"],

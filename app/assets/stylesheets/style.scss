@@ -1,6 +1,24 @@
+/******************
+ＢＯＤＹ
+******************/
+h1{
+  color: #F6C90E ;
+}
+
+body {
+  background-color: #3A4750;
+  margin:0;
+}
+
 /*************************
 ＭＥＮＵ ＨＡＭＢＵＲＧＥＲ
 *************************/
+#head-nav{
+  position: fixed;
+  width: 100vw;
+  z-index:10000000000;
+}
+
 .menu {
   li{
     font-size: 1.6em;
@@ -19,6 +37,7 @@
   height:50px;
   line-height:50px;
   font-size: 2.5em;
+
 
   h1 {
     color: #FEFEFE;
@@ -93,6 +112,12 @@
   margin:0 auto;
 }
 
+.fb-btn {
+  padding: 0;
+  margin: 0;
+  float: left;
+
+}
 
 /*************************
 ＨＯＭＥ ＰＡＧＥ ＨＥＡＤＥＲ
@@ -104,7 +129,7 @@ $margin-top: 184px;
   background:
 
     linear-gradient(
-      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0)
     ),
 
@@ -132,19 +157,21 @@ $margin-top: 184px;
 
 }
 
+/*************************
+    ＯＲＤＥＲ ＬＩＳＴ
+*************************/
 
-
-
-/******************
-ＢＯＤＹ
-******************/
-h1{
-  color: #F6C90E ;
+#order-list {
+  width: 100%;
+  height: 700px;
 }
 
-body {
-  background-color: #3A4750;
-  margin:0;
+.order_form {
+  padding-top: 100px;
+}
+
+.form-group {
+  color: white;
 }
 
 /*************************
@@ -168,6 +195,11 @@ body {
       font-size: 0.6em;
       margin-left: 0;
     }
+  }
+
+  .fb-btn {
+
+    margin-left: 3.5%;
   }
 
 }
@@ -194,6 +226,10 @@ body {
     }
   }
 
+  .fb-btn {
+    margin-left: 29px;
+  }
+
 }
 
 @media (min-width: 1024px) {
@@ -214,6 +250,10 @@ body {
       font-size: 1.2em;
       margin-left: 1%;
     }
+  }
+
+  .fb-btn {
+    margin-left: 29px;
   }
 
 }

@@ -9,9 +9,12 @@ scope :path => '/api/v1', :module => 'api_v1', :as => 'v1', :defaults => {:forma
   post "/logout" => "auth#logout"
 
   resources :orders, :except => [:new, :edit]
+  resources :details, :except => [:new, :edit]
 end
 
-resources :orders
+resources :orders do
+  resource :detail
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

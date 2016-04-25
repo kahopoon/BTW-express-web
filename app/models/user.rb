@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
-
+  has_many :orders
 
   before_create :generate_authentication_token
 
@@ -54,5 +54,8 @@ class User < ActiveRecord::Base
       #user.fb_raw_data = auth
       user.save!
       return user
+    end
+    def user_approve(id,token)
+      #if id & token match, return user
     end
 end
