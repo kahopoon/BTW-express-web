@@ -26,7 +26,6 @@
               <div class="col-xs-6 pic">
                 <img src="http://www.claridges.co.uk/uploadedImages/Claridges/Restaurants_and_bars/Afternoon_tea/Afternoon%20Tea.jpg" alt="img-upload" class="item img-rounded">
                 <div class="feecat">
-                  <p class="fee">$<%= o.detail.fee%></p>
                   <p class="category"><%= o.category%>類</p>
                 </div>
               </div>
@@ -44,11 +43,7 @@
                 <%= button_to '點看詳情', order_path(o), :class => "btn btn-primary btn-xs detail center-block", :method => :get %>
               </div>
           </div>
-              <!-- <td>No.<%= o.id%></td>
-              <td>   <%= o.category%></td>
-              <td>from: <%= o.pickup_addr%></td>
-              <td>to: <%= o.deliver_addr%></td>
-              <td>reward: <%= o.detail.fee%></td> -->
+
 
         <%end%>
       </section>
