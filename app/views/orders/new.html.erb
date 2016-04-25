@@ -35,6 +35,7 @@
       <%= check_box_tag "destory_photo", "1" %> 刪除照片
     <% end %>
   </div>
+
   <%= o.fields_for :detail do |detail_form| %>
   <div class="form-group">
     <%= detail_form.label :weight, "貨物重量" %>
