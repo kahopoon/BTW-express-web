@@ -13,8 +13,8 @@ json.deliver_addr order.deliver_addr
 json.deliver_latlng order.deliver_latlng
 json.deliver_time order.deliver_time
 
-json.senderName order.fake_user_name
-json.senderPhone order.fake_phone
+json.senderName User.find(order.courier_id).fullname
+json.senderPhone User.find(order.courier_id).phone
 
 json.receiverName order.detail.addressees_name
 json.receiverPhone order.detail.addressees_mobile
