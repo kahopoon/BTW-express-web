@@ -3,29 +3,18 @@
 ******************/
 $margin-top: 300px;
 
-h1{
-  color: #F6C90E ;
-}
-
-body {
-  background-color: #3A4750;
-  margin:0 auto;
-}
-
-ul{
-  margin: 0;
-  list-style-type: none;
-
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-.container {
+.h768{
   height: 768px;
 }
+.contain-order{
+  height: 768px;
+  background-color: #EEE;
+}
+
+.dark{
+  background-color: #303841;
+}
+
 /*************************
 ＨＯＭＥ ＰＡＧＥ ＨＥＡＤＥＲ
 *************************/
@@ -44,6 +33,7 @@ a {
   background-repeat: no-repeat;
   margin: 0 auto;
   padding: 0;
+
 
   h4 {
     color: #FEFEFE;
@@ -72,37 +62,59 @@ a {
     ＯＲＤＥＲ ＬＩＳＴ
 **************************************************/
 #order-list {
-  width: 100%;
-  height: 700px;
-  padding: 0;
 
   .order-title{
     color: #F6C90E;
   }
+}
 
-  .list-right {
-    padding: 0;
+.pagination{
+  width: 100%;
+  color: #000;
+  a {
+    color: #EEE;
   }
+}
 
-  .detail {
-    background-color: #F6C90E;
-    border-color: #F6C90E;
-    color: #3A4750;
-    font-size: 1em;
-    font-weight: bold;
-    width: 95%;
-  }
+.one-order{ /*one order one order one order one order */
 
-  .addr-from{
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+  border-width: 1px;
+  border-color: #F6C90E;
+  color: #EEE;
+  padding: 0 0 20px 0;
+
+  .fee{
+    display: inline-block;
+    color: #F6C90E;
     margin: 0;
+    margin-left: 89px;
+    padding-left: 12px;
+    font-size: 1.5em;
+    width: 95px;
   }
 
-  .addr-to{
-    margin-bottom: 5px;
+  h3{
+    color: #F6C90E;
+    margin: 0;
+    margin-top: 12px;
+    font-size: 1.7em;
+  }
+
+  p{
+    color: #fff;
+    font-size: 0.8em;
+    white-space: nowrap;
+    overflow: auto;
   }
 
   .fa-circle{
     color: #F6C90E;
+  }
+  .addr-from{
+    margin: 0;
   }
 
   .fa-ellipsis-v{
@@ -114,74 +126,23 @@ a {
   .fa-circle-thin{
     color: #F6C90E;
   }
-}
 
-.one-order{
-  padding: 0 0 20px 0;
-
-  .pic{
-    position: relative;
+  .addr-to{
+    margin-bottom: 5px;
   }
 
-  .feecat{
-    width: 100%;
-    height: 30px;
-    bottom: 0px;
-    position: absolute;
-    background: rgba(0,0,0,0.5);
-    padding-top: 5px;
-    border-bottom-right-radius: 6px;
-    border-bottom-left-radius: 6px;
-
-    .fee{
-      display: inline-block;
-      color: #fff;
-      margin: 0;
-      margin-left: 8px;
-      font-size: 1.1em;
-    }
-    .category{
-      color: #F6C90E;
-      text-align: right;
-      font-size: 1.1em;
-      display: inline-block;
-      margin-left: 20px;
-      width: 50%;
-    }
-
+  .wrap-detail{
+    padding-left: 25px;
   }
-
-  p{
-    color: #fff;
-    font-size: 0.8em;
-    white-space: nowrap;
-    overflow: auto;
-  }
-
-  h3{
-    color: #F6C90E;
-    margin: 0;
-    margin-top: 12px;
-    font-size: 1.7em;
-  }
-
-  .item {
-    margin-top: 15px;
-    padding: 0;
-    border-style: solid;
+  .detail {
+    background-color: #F6C90E;
     border-color: #F6C90E;
-    border-width: 2px;
-    background-color: #3A4750;
+    color: #3A4750;
+    font-size: 1em;
+    font-weight: bold;
+    width: 90px;
   }
-
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #F6C90E;
 }
-
-
-
-
 /*************************
           ＲＷＤ
 *************************/
@@ -196,26 +157,6 @@ a {
       h1{
         font-size: 1.734999em;
       }
-    }
-  }
-  .one-order{
-    .pic{
-      padding: 0;
-    }
-
-    .item {
-      width: 100%;
-      height: 108px;
-    }
-
-    .category{
-      width: 70%;
-      margin: 0;
-    }
-
-    .list-right{
-      margin-left: 8px;
-      width: 170px;
     }
   }
 }

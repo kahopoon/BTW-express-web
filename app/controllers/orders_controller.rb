@@ -12,12 +12,11 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @order.build_detail
   end
 
   def create
-    @order = Order.create!(order_params)
-    @detail= @order.build_detail(detail_params)
-    @detail.save
+    @order = Order.create(order_params)
 
     if @order.save
       redirect_to order_url(@order)
@@ -41,11 +40,7 @@ class OrdersController < ApplicationController
 private
 
   def order_params
-    params.require(:order).permit( :owner_id, :courier_id, :status, :photo )
-  end
-
-  def detail_params
-    params.require(:order).require(:detail).permit( :weight, :fee )
+    params.require(:order).permit( :pickup_time, :deliver_time, :pickup_addr, :deliver_addr, :category, :owner_id, :courier_id, :status, :photo, detail_attributes:[:prepay, :fee, :addressees_mobile, :addressees_name, :description] )
   end
 
 

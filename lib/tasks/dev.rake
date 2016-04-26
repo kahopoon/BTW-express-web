@@ -14,7 +14,7 @@ namespace :dev do
                         :pickup_addr => "台北市大安區忠孝東路四段1號", :pickup_latlng => "25.041707, 121.544119",
                         :deliver_addr => "台北市松山區敦化北路340-9號", :deliver_latlng => "25.063503, 121.552114",
                         :fake_user_name => Faker::StarWars.character, :fake_phone => Faker::PhoneNumber.phone_number,
-                        :category => Faker::StarWars.specie, :photo => "http://pic.pimg.tw/kalaok/1411718869-1924547221.gif")
+                        :category => Faker::StarWars.specie)
 
       # Detail.create( :fee => (rand(99) + 1) * 10,:order => p)
       p.build_detail( :addressees_name => Faker::Name.name, :addressees_mobile=>Faker::PhoneNumber.cell_phone )

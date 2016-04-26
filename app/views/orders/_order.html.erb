@@ -1,0 +1,14 @@
+<div class="one-order col-xs-12 col-sm-6">
+  <span calss="order-id">訂單編號： <%= o.id %></span>
+  <span class="fee">NTD <%= o.detail.fee%></span>
+  <p class="addr-from"><i class="fa fa-circle" aria-hidden="true"></i> <%= o.pickup_addr%></p>
+  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+  <p class="addr-to"><i class="fa fa-circle-thin" aria-hidden="true"></i> <%= o.deliver_addr%></p>
+
+    <div class="col-xs-7">
+    <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= o.created_at.strftime('%F')%> <%= o.created_at.strftime('%R')%></span></div>
+    <div class="col-xs-5 wrap-detail">
+    <%= button_to "點看詳情", order_path(o), :class => "btn btn-primary btn-xs detail", :method => :get %>
+    </div>
+
+</div>

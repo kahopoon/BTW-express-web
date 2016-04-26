@@ -15,6 +15,20 @@
   </div>
 </div>
 
+<<<<<<< HEAD
+<div class="contain-order">
+  <div class="container-fluid dark">
+    <div class="row">
+      <div class="col-xs-12">
+        <section id="order-list" class="col-xs-10 col-xs-offset-1 h768">
+          <h3 class="text-center order-title">順路送貨</h3>
+          <%= paginate @orders %>
+          <% @orders.each do |o| %>
+            <%= render :partial => "order", :locals => {:o => o} %>
+          <%end%>
+        </section>
+      </div>
+=======
 <div class="containder">
   <div class="row-fluid">
     <div class="col-xs-12">
@@ -47,6 +61,7 @@
       </section>
       <section id="map" class="col-xs-6">
       </section>
+>>>>>>> 1fdd18502e7618acad2fde98e04b0b3ef1069d04
     </div>
   </div>
 </div>
