@@ -12,22 +12,22 @@
   <div class="container-fluid">
     <div class="navbar-header">
 
-      <a class="navbar-brand" href="/orders">
+      <%= link_to root_path, :class=>"navbar-brand" do %>
         <h1>順手送BTWexpress</h1>
-      </a>
-
+      <%end%>
       <a href="#" id="rule" class="navbar-link hidden-xs">服務規章</a>
       <% if current_user %>
         <%= link_to('登出', destroy_user_session_path, :class => "btn btn-default btn-mi fb-btn", :method => :delete) %>
 
         <div class="profile">
-          <%= link_to "個人資料", :class=> "profile btn-default btn btn-xs" do %>
+          <%= link_to userprofile_path(:role => "owner"), :class=> "profile btn-default btn btn-xs" do %>
             <span class="hidden-xs">個人資料</span><i class="fa fa-user" aria-hidden="true"></i>
           <% end %>
         </div>
 
       <% else %>
         <%= link_to "登入 Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-mi fb-btn" %>
+        <%= link_to '登入', new_session_path(:user) , :class => "btn btn-primary btn-mi fb-btn"%>        
       <% end %>
     </div>
   </div>

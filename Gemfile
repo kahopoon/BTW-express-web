@@ -39,6 +39,8 @@ gem "ransack"
 gem 'capistrano-rails', :group => :development
 gem 'capistrano-passenger', :group => :development
 gem "mysql2"
+#rack-mini-profiler can only work in development by this way
+gem 'rack-mini-profiler'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

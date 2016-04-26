@@ -1,0 +1,56 @@
+<div class="order_form">
+<div>
+<h1>name: <%=@user.fullname%>, email: <%=@user.email%> </br>phone: <%=@user.phone%>, role: <%= @role%></h1>
+</div>
+<% if @role=="courier"%>
+	<%= link_to "as owner", userprofile_path(:role=>"owner"), :class => "btn btn-primary"%>
+<% else %>	
+	<%= link_to "as courier", userprofile_path(:role=>"courier"), :class => "btn btn-primary"%>
+<% end %>
+<div>
+	<h2>here is rating record</h2>
+</div>
+<% if @post_order %>
+<div>
+	<h2>post order </h2>
+	<ul>
+	<%@post_order.each do |o|%>
+		<li>content:<%=o.pickup_addr%>,<%=o.deliver_addr%></li>
+	<%end%>
+	</ul>
+</div>
+<%end%>
+<% if @go_order %>
+<div>
+	<h2>go order </h2>
+	<ul>
+	<%@go_order.each do |o|%>
+		<%if @role=="owner"%>
+			<li>send by:<%=User.find(o.courier_id).fullname%>,<%=o.pickup_addr%>,<%=o.deliver_addr%>
+			</li>
+		<%else%>	
+			<li>placed by:<%=User.find(o.owner_id).fullname%>,<%=o.pickup_addr%>,<%=o.deliver_addr%></li>
+		<%end%>
+	<%end%>
+	</ul>
+</div>
+<%end%>
+<% if @old_order %>
+<div>
+	<h2>old order</h2>
+	<ul>	
+	<%@old_order.each do |o|%>
+		<%if @role=="owner"%>
+			<li>send by:<%=User.find(o.courier_id).fullname%>,<%=o.pickup_addr%>,<%=o.deliver_addr%>
+				rate by courier:<%=o.rate_owner%> 
+			</li>
+		<%else%>	
+			<li>placed by:<%=User.find(o.owner_id).fullname%>,<%=o.pickup_addr%>,<%=o.deliver_addr%>
+				rate by owner:<%=o.rate_courier%>
+			</li>
+		<%end%>	
+	<%end%>
+	</ul>
+</div>
+<%end%>
+</div>
