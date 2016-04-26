@@ -45,4 +45,12 @@ class ApiV1::AuthController < ApiController
     render :json => { :message => "ok" }
   end
 
+  def write_profile 
+    puts params
+    render :json => { :message => "ok" }
+  end
+  def read_profile
+    render :json => { :message => "ok" }    
+  end
+
 end
