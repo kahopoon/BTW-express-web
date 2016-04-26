@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422015249) do
+ActiveRecord::Schema.define(version: 20160425121536) do
 
   create_table "details", force: :cascade do |t|
     t.integer  "order_id"
@@ -43,8 +43,6 @@ ActiveRecord::Schema.define(version: 20160422015249) do
     t.string   "photo"
     t.integer  "rate_owner"
     t.integer  "rate_courier"
-    t.string   "fake_user_name"
-    t.string   "fake_phone"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
@@ -70,8 +68,8 @@ ActiveRecord::Schema.define(version: 20160422015249) do
     t.string   "fb_uid"
     t.string   "fb_token"
     t.string   "authentication_token"
-    t.integer  "phone"
-    t.string   "fake_name"
+    t.string   "phone"
+    t.string   "fullname"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true
