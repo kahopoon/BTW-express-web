@@ -15,53 +15,18 @@
   </div>
 </div>
 
-<<<<<<< HEAD
 <div class="contain-order">
   <div class="container-fluid dark">
     <div class="row">
       <div class="col-xs-12">
-        <section id="order-list" class="col-xs-10 col-xs-offset-1 h768">
-          <h3 class="text-center order-title">順路送貨</h3>
+        <section id="order-list">
+          <h3 class="text-center order-title ">順路送貨</h3>
           <%= paginate @orders %>
           <% @orders.each do |o| %>
             <%= render :partial => "order", :locals => {:o => o} %>
           <%end%>
         </section>
       </div>
-=======
-<div class="containder">
-  <div class="row-fluid">
-    <div class="col-xs-12">
-      <section id="order-list" class="col-xs-12">
-        <h3 class="text-center order-title">順路送貨</h3>
-        <%= paginate @orders %>
-        <% @orders.each do |o| %>
-          <div class="one-order col-xs-12 col-md-6">
-              <div class="col-xs-6 pic">
-                <img src="http://www.claridges.co.uk/uploadedImages/Claridges/Restaurants_and_bars/Afternoon_tea/Afternoon%20Tea.jpg" alt="img-upload" class="item img-rounded">
-                <div class="feecat">
-                  <p class="category"><%= o.category%>類</p>
-                </div>
-              </div>
-
-              <div class="col-xs-6 list-right">
-
-                <h3><%= o.id %></h3>
-
-                <p class="addr-from"><i class="fa fa-circle" aria-hidden="true"></i> <%= o.pickup_addr%></p>
-
-                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-
-                <p class="addr-to"><i class="fa fa-circle-thin" aria-hidden="true"></i> <%= o.deliver_addr%></p>
-
-                <%= button_to '點看詳情', order_path(o), :class => "btn btn-primary btn-xs detail center-block", :method => :get %>
-              </div>
-          </div>
-        <%end%>
-      </section>
-      <section id="map" class="col-xs-6">
-      </section>
->>>>>>> 1fdd18502e7618acad2fde98e04b0b3ef1069d04
     </div>
   </div>
 </div>

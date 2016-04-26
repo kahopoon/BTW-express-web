@@ -63,6 +63,9 @@ $margin-top: 300px;
 **************************************************/
 #order-list {
 
+  margin: 0 auto;
+  padding: 0 auto;
+
   .order-title{
     color: #F6C90E;
   }
@@ -84,16 +87,39 @@ $margin-top: 300px;
   border-width: 1px;
   border-color: #F6C90E;
   color: #EEE;
-  padding: 0 0 20px 0;
+  padding: 0 0 34px 0;
+  width: 308.33px;
+  margin: 0 auto;
+
+  .order-id{
+    width: 100px;
+    color: red;
+  }
 
   .fee{
-    display: inline-block;
+    display: block;
     color: #F6C90E;
     margin: 0;
-    margin-left: 89px;
-    padding-left: 12px;
-    font-size: 1.5em;
-    width: 95px;
+    margin-left: 105.7px;
+    padding-right: 0;
+    font-size: 1.77em;
+    right: 0px;
+    width: 200px;
+    text-align: right;
+    line-height: 1;
+    margin-top: -19px;
+    /*margin-right: -px;*/
+
+  }
+
+  .detail {
+    background-color: #F6C90E;
+    border-color: #F6C90E;
+    color: #3A4750;
+    font-size: 1em;
+    font-weight: bold;
+    width: 97px;
+    margin-left: 6px;
   }
 
   h3{
@@ -109,22 +135,17 @@ $margin-top: 300px;
     white-space: nowrap;
     overflow: auto;
   }
-
-  .fa-circle{
+  .fa{
     color: #F6C90E;
   }
+
   .addr-from{
     margin: 0;
   }
 
   .fa-ellipsis-v{
-    color: #F6C90E;
     margin-left: 3.366px;
     font-size: 1.3em;
-  }
-
-  .fa-circle-thin{
-    color: #F6C90E;
   }
 
   .addr-to{
@@ -134,13 +155,11 @@ $margin-top: 300px;
   .wrap-detail{
     padding-left: 25px;
   }
-  .detail {
-    background-color: #F6C90E;
-    border-color: #F6C90E;
-    color: #3A4750;
-    font-size: 1em;
-    font-weight: bold;
-    width: 90px;
+
+  .detail:hover{
+
+    background-color: #EEE;
+    border-color: #EEE;
   }
 }
 /*************************
@@ -159,9 +178,10 @@ $margin-top: 300px;
       }
     }
   }
+
 }
 /*中中中中中中中中中中中中中中中中中*/
-@media (max-width: 1024px) and (min-width: 480px) {
+@media (max-width: 992px) and (min-width: 768px) {
   #header {
     width: 100vw;
     .top {
@@ -170,9 +190,12 @@ $margin-top: 300px;
       margin-top: $margin-top;
     }
   }
+
+  #order-list{
+  }
 }
 /*大大大大大大大大大大大大大大大大大*/
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
 
   .container {
     width: 1024px;
