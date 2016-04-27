@@ -1,5 +1,5 @@
 <div class="container">
-
+<div class= "show">
 <p><% if @order.photo.exists? %>
   <%= link_to @order.photo.url, :target => "_blank" do %>
   <%= image_tag(@order.photo.url(:thumb)) %>
@@ -7,16 +7,22 @@
   <% end %>
 </p>
 
-<p>代買物送達地址: <%= @order.deliver_addr %></p>
-<p>要求送達時間: <%= @order.deliver_time %></p>
-<p>代買物品種類: <%= @order.category %></p>
-<p>指定代買地址: <%= @order.pickup_addr %></p>
-<p>代買物品描述: <%= @order.detail.description %></p>
-<p>願意支付跑腿金額: <%= @order.detail.fee %></p>
-<p>需要墊支金額範圍: <%= @order.detail.prepay %></p>
-<p>取件人姓名: <%= @order.detail.addressees_name %></p>
-<p>取件者電話: <%= @order.detail.addressees_mobile %></p>
+<h3> 1.訂單基本要求 </h3>
+<p>點餐項目及需求數量: <%= @order.detail.description %></p>
+<p>指定購餐地點: <%= @order.pickup_addr %></p>
+<p>總餐點預算: <%= @order.detail.prepay %></p>
+<p>送餐地點: <%= @order.deliver_addr %></p>
 
-<%= link_to 'back to list', orders_path%>
+<h3> 2.時間及運費設定 </h3>
+<p>期望餐點送達時間: <%= @order.deliver_time %></p>
+<p>願付運費: <%= @order.detail.fee %></p>
+
+<h3> 3.收件人資料填寫 </h3>
+
+<p>收件人真實姓名: <%= @order.detail.addressees_name %></p>
+<p>收件者電話: <%= @order.detail.addressees_mobile %></p>
+</div>
+<%= link_to '回到訂單主選單', orders_path, :class => "btn btn-primary" %>
 
 </div>
+

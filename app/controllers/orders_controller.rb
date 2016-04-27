@@ -40,7 +40,9 @@ class OrdersController < ApplicationController
 private
 
   def order_params
-    params.require(:order).permit( :pickup_time, :deliver_time, :pickup_addr, :deliver_addr, :category, :owner_id, :courier_id, :status, :photo, detail_attributes:[:prepay, :fee, :addressees_mobile, :addressees_name, :description] )
+    params.require(:order).permit( :pickup_time, :deliver_time, :pickup_addr,
+      :deliver_addr, :category, :owner_id, :courier_id, :status, :photo,
+      detail_attributes:[:prepay, :fee, :addressees_mobile, :addressees_name, :description] )
   end
 
 

@@ -12,7 +12,7 @@ class DetailsController < ApplicationController
 private
 
   def detail_params
-    params.require(:detail).permit( :order_id, :fee )
+    params.require(:detail).permit( :order_id, :fee, :prepay)
   end
 
 

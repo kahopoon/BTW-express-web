@@ -1,7 +1,7 @@
 <div class = "order_form" >
     <div class="container">
      <h1>我要訂外賣</h1>
-        <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde perspiciatis, enim doloremque in voluptatibus doloribus aliquid commodi facilis accusantium quos, deleniti quae minus, dolore porro vel laudantium, eligendi ea blanditiis.</h5>
+
     <div class="form-group">
 
         <%= form_for @order do |o| %>
@@ -10,22 +10,20 @@
 
         <%= o.fields_for :detail do |detail_form| %>
           <%= detail_form.label :description, "請詳列出點餐項目及需求數量" %>
-          <%= detail_form.text_field :description, :class => "form-control" %>
+          <%= detail_form.text_field :description, :placeholder=>"例如：大腸包小腸十份，豬血糕三份～", :class => "form-control" %>
         <p></p>
         <% end %>
 
-        <%= o.label :pickup_addr, "輸入指定購餐地點（讓代買者決定要在哪裡買請輸入「NA」）" %>
-        <%= o.text_field :pickup_addr, :class => "form-control" %>
+        <%= o.label :pickup_addr, "輸入指定購餐地點" %>
+        <%= o.text_field :pickup_addr, :placeholder=>"若要讓代買者自行決定要在哪裡買，留空白即可", :class => "form-control" %>
         <p></p>
 
         <%= o.fields_for :detail do |detail_form| %>
 
-        <h3>總餐點預算</h3>
-        <%= detail_form.label :prepay, "選擇價格範圍" %>
-        <%= detail_form.select :prepay, :class => "form-control" %>
-        <p></p>
+        <%= detail_form.label :prepay, "總餐點預算" %>
+        <%= detail_form.select :prepay, options_for_select([['NTD 1~100', '100'],['NTD 101~200', '200'],['NTD 201~300', '300'],['NTD 301~400', '400'],  ['NTD 401~500', '500']],:selected => detail_form.object.prepay), { :prompt => "選擇價格範圍"}, {:class => "form-control"}%>
         <% end %>
-
+        <p></p>
         <%= o.label :deliver_addr, "輸入送餐地點" %>
         <%= o.text_field :deliver_addr, :class => "form-control" %>
 
@@ -42,7 +40,7 @@
 
         <%= o.fields_for :detail do |detail_form| %>
             <%= detail_form.label :fee, "願付運費" %>
-            <%= detail_form.text_field :fee, :class => "form-control" %>
+            <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control" %>
         <p></p>
         <% end %>
 
@@ -66,7 +64,7 @@
         <p></p>
 
           <div class="form-group">
-            <%= o.submit %>
+            <%= o.submit "送出訂單", :class => "submit-button"%>
           </div>
          <% end %>
         </div>
