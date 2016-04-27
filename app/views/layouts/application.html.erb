@@ -27,7 +27,6 @@
 
       <% else %>
         <%= link_to "登入 Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-mi fb-btn" %>
-        <%= link_to '登入', new_session_path(:user) , :class => "btn btn-primary btn-mi fb-btn"%>        
       <% end %>
     </div>
   </div>
@@ -35,10 +34,10 @@
 
 <body>
 
-  <div id="head-nav"></div>
   <div class="hugo-not-handsome">
   <%= yield %>
   </div>
+
 </body>
 
 <footer>
