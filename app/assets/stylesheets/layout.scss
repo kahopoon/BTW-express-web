@@ -27,67 +27,135 @@ a {
   margin-top: 100px;
 }
 
-/******************
-ＮＡＶ
-******************/
-
-.hugo-not-handsome{
-  margin-top: 60px;
+/*************************
+ＭＥＮＵ ＨＡＭＢＵＲＧＥＲ
+*************************/
+#head-nav{
+  position: fixed;
+  width: 100vw;
+  z-index:10000000000;
 }
 
-.navbar {
-  margin: 0;
-  height: 60px;
-  h1{
-    margin: 0;
+.menu {
+  li{
+    font-size: 1.6em;
+  }
+}
+
+.spanout {
+  width: 100vw;
+  height:100vh;
+  position:fixed;
+}
+
+.ham-head{
+  width:100%;
+  background:#1d1f20;
+  height:70px;
+  line-height:50px;
+
+
+  h1 {
     color: #FEFEFE;
+    margin: 0;
+    padding: 0;
+    background:none;
+    position:absolute;
+    top:0;
+    left:0;
+    line-height:45px;
+    padding:0px 15px 0px 15px;
+    border:0;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:10000000000000;
   }
-  .container-fluid {
-    background-color: #3A4750;
-    height: 60px;
-    border-bottom-style: solid;
-    border-bottom-width: 4px;
-    border-bottom-color: #F6C90E;
-  }
+
   .fb-btn{
-    position: fixed;
-    top: 15px;
-    right: 10px;
-    margin-right: 5px;
+
+    position:absolute;
+    top:0;
+    right:200px;
+    line-height:45px;
+    padding:0px 15px 0px 15px;
+    color:#fff;
+    border:0;
+    font-size:1em;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:10000000000000;
   }
-  #rule{
-    position: fixed;
-    top: 26px;
-    right: 50px;
-    color: #F6C90E;
-    font-size: 1.3em;
+
+  .hamburger{
+    background:none;
+    position:absolute;
+    top:0;
+    right:0;
+    line-height:45px;
+    padding:0px 15px 0px 15px;
+    color:#fff;
+    border:0;
+    font-size:1.4em;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:10000000000000;
   }
-  .profile {
-    position: fixed;
-    top: 64px;
-    right: 16px;
-    font-size: 1.26em;
-    background: rgba(0,0,0,0);
-    border-color: rgba(0,0,0,0);
-    .fa {
-      color: #F6C90E;
-    }
-    span{
-      margin: 0;
-      color: #F6C90E;
-    }
+
+  .cross{
+    background:none;
+    position:absolute;
+    top:0px;
+    right:0;
+    padding:0px 15px 0px 15px;
+    color:#fff;
+    border:0;
+    font-size:3em;
+    line-height:65px;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:10000000000000;
   }
-  .profile:hover{
-      background: rgba(0,0,0,0.6);
-      }
 }
 
+
+.menu{z-index:1000000; font-weight:bold; font-size:0.8em; width:100%;
+  background:linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.9)
+    ); position:absolute; text-align:center;}
+.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
+.menu li {display: block;   padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
+.menu li:hover{display: block;  background:
+      rgba(0, 0, 0, 0.7)
+    ; padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
+.menu ul li a { text-decoration:none;  margin: 0px; color:#fff;}
+.menu ul li a:hover {  color: #fff; text-decoration:none;}
+.menu a{text-decoration:none; color:white;}
+.menu a:hover{text-decoration:none; color:white;}
+
+.glyphicon-home{
+  color:white;
+  font-size:1.5em;
+  margin-top:5px;
+  margin:0 auto;
+}
+
+.fb-btn {
+  padding: 0;
+  margin: 0;
+  float: left;
+
+}
 /*************************
           ＲＷＤ
 *************************/
 @media (max-width: 480px) {
-  .navbar{
-    .navbar-brand{
+  #head-nav{
+    .brand{
       width: 270px;
       h1 {
         font-size: 1.5em;
@@ -109,8 +177,8 @@ a {
 
 @media (max-width: 1024px) and (min-width: 480px) {
 
-  .navbar {
-    .navbar-brand{
+  #head-nav {
+    .brand{
       width: 450px;
       padding-top: 10px;
       padding-right: 0;
@@ -135,14 +203,14 @@ a {
   .container {
     width: 1024px;
   }
-  .navbar {
-    .navbar-brand{
+  #head-nav {
+    .brand{
       width: 450px;
       padding-top: 10px;
       padding-right: 0;
 
       h1 {
-        font-size: 2em;
+        font-size: 1em;
       }
     }
     #rule {

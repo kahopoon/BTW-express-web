@@ -18,7 +18,6 @@
 
 
 $(document).on("page:change", function(){
-  $(document).on("page:change", function(){
   $( ".cross" ).hide();
   $( ".menu" ).hide();
   $( ".hamburger" ).click(function(e) {

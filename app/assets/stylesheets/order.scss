@@ -54,15 +54,13 @@ $margin-top: 300px;
       color: #fff;
     }
 
-    .write-wrap{
-      display: inline-block;
+    .insert{
+      min-width: 300px;
+      width: 100%;
+      max-width: 600px;
       outline-style:solid;
       outline-color:rgba(0,0,0,0.3);
       outline-width:4px;
-    }
-
-    .insert{
-      width: 600px;
     }
 
     .find{
