@@ -33,14 +33,28 @@ $margin-top: 300px;
   background-repeat: no-repeat;
   margin: 0 auto;
   padding: 0;
+  width: 100vw;
 
+  .top {
+    width: 100%;
+    margin-left: 0;
+    margin-top: $margin-top;
+    h1{
+      font-size: 1.734999em;
+    }
+  }
+
+  #insert{
+    color: red;
+  }
 
   h4 {
     color: #FEFEFE;
   }
   .top {
+
     padding: 0;
-    margin: 0;
+
     .write{
       background: rgba(0,0,0,0.3);
       border-color: #F6C90E;
@@ -48,19 +62,18 @@ $margin-top: 300px;
         margin-top: 15px;
         margin-bottom: 15px;
       }
-
     }
 
     .write:hover{
       background: rgba(0,0,0,0.6);
-
-      }
+    }
   }
 }
 
 /**************************************************
     ＯＲＤＥＲ ＬＩＳＴ
 **************************************************/
+
 #order-list {
 
   margin: 0 auto;
@@ -70,7 +83,6 @@ $margin-top: 300px;
     color: #F6C90E;
   }
 }
-
 
 .pagination{
   width: 100%;
@@ -91,10 +103,10 @@ $margin-top: 300px;
   padding: 0 0 34px 0;
   width: 308.33px;
   margin: 0 auto;
+;
 
   .order-id{
     width: 100px;
-    color: red;
   }
 
   .fee{
@@ -168,21 +180,11 @@ $margin-top: 300px;
 *************************/
 /*小小小小小小小小小小小小小小小小小*/
 @media (max-width: 480px) {
-  #header {
-    width: 100vw;
-    .top {
-      width: 100%;
-      margin-left: 0;
-      margin-top: $margin-top;
-      h1{
-        font-size: 1.734999em;
-      }
-    }
-  }
+
 
 }
 /*中中中中中中中中中中中中中中中中中*/
-@media (max-width: 992px) and (min-width: 768px) {
+@media (max-width: 992px) and (min-width: 480px) {
   #header {
     width: 100vw;
     .top {
@@ -192,8 +194,10 @@ $margin-top: 300px;
     }
   }
 
-  #order-list{
+  .one-order{
+    margin-right: 90px;
   }
+
 }
 /*大大大大大大大大大大大大大大大大大*/
 @media (min-width: 992px) {

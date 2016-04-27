@@ -3,6 +3,10 @@
     <div class="row-fluid">
       <div class="col-xs-12">
         <div class="top center-block text-align-left">
+        <%= form_tag( new_order_path, :method => :post ) do %>
+          <%= text_field_tag(:insert) %>
+          <%= submit_tag("快找代言人" ,:class => "haha") %>
+        <% end %>
           <h1>委託收寄件<br/>輕鬆下單，請附近朋友幫忙吧！</h1>
           <div class="write-wrap">
 
