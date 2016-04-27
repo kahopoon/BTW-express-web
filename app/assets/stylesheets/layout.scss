@@ -52,52 +52,60 @@ a {
   width:100%;
   background:#1d1f20;
   height:70px;
-  line-height:50px;
-
+  position: relative;
 
   h1 {
     color: #FEFEFE;
-    margin: 0;
-    padding: 0;
     background:none;
-    position:absolute;
-    top:0;
-    left:0;
-    line-height:45px;
-    padding:0px 15px 0px 15px;
+    margin-left: 10px;
     border:0;
     font-weight:bold;
     cursor:pointer;
     outline:none;
     z-index:10000000000000;
+    display: inline;
+    line-height: 70px;
   }
 
   .fb-btn{
 
-    position:absolute;
-    top:0;
-    right:200px;
-    line-height:45px;
-    padding:0px 15px 0px 15px;
+    background-color: #45619d;
+    right:50px;
+    width: 126px;
     color:#fff;
-    border:0;
-    font-size:1em;
-    font-weight:bold;
     cursor:pointer;
     outline:none;
     z-index:10000000000000;
+    border-radius: 0;
+    border-style: solid;
+    border-color: #EFEFEF;
+    border-width: 1px;
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    padding: 4px 0;
+
+    .fa-facebook
+    {
+      font-size: 0.9em;
+      font-weight: bold;
+      padding-right: 5px;
+      text-align: center;
+    }
+
   }
 
   .hamburger{
     background:none;
     position:absolute;
+    top:50%;
+    transform:translateY(-50%);
     top:0;
     right:0;
-    line-height:45px;
     padding:0px 15px 0px 15px;
     color:#fff;
     border:0;
-    font-size:1.4em;
+    font-size:3rem;
     font-weight:bold;
     cursor:pointer;
     outline:none;
@@ -142,13 +150,6 @@ a {
   font-size:1.5em;
   margin-top:5px;
   margin:0 auto;
-}
-
-.fb-btn {
-  padding: 0;
-  margin: 0;
-  float: left;
-
 }
 /*************************
           ＲＷＤ
@@ -210,7 +211,7 @@ a {
       padding-right: 0;
 
       h1 {
-        font-size: 1em;
+        font-size: 3em;
       }
     }
     #rule {
