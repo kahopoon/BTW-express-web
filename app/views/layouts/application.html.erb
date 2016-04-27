@@ -9,53 +9,37 @@
 
 </head>
 
-<!-- <div id="head-nav">
-    <div class ="ham-head">
+<div id="head-nav">
+  <div class ="ham-head">
+    <%= link_to root_path, :class=>"brand" do %>
       <h1>順路送BTWexpress</h1>
-      <button class="hamburger">&#9776;</button>
-      <button class="cross">&#735;</button>
-    </div>
+    <%end%>
 
-      <% if current_user %>
-        <%= link_to('登出 Facebook', destroy_user_session_path, :class => "btn btn-primary fb-btn", :method => :delete) %>
-      <% end %>
+    <% if current_user %>
+      <%= link_to('登出 Facebook', destroy_user_session_path, :class => "btn btn-primary fb-btn", :method => :delete) %>
+    <% else %>
+      <%= link_to "登入 Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-mi fb-btn" do%>
+        <i class="fa fa-facebook" aria-hidden="true"></i><p>facebook登入</p>
+        <% end %>
+    <% end %>
 
-    <div class="menu">
-      <ul>
-        <a href="#"><li><i class="fa fa-user" aria-hidden="true">我的帳號</i></li></a>
-        <a href="#"><li>LINK TWO</li></a>
-        <a href="#"><li>LINK THREE</li></a>
-        <a href="#"><li>LINK FOUR</li></a>
-        <a href="#"><li>LINK FIVE</li></a>
-      </ul>
-
-    </div>
-    <div id="out"></div>
-</div> -->
-
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-
-      <%= link_to root_path, :class=>"navbar-brand" do %>
-        <h1>順手送BTWexpress</h1>
-      <%end%>
-
-      <% if current_user %>
-        <%= link_to('登出', destroy_user_session_path, :class => "btn btn-default btn-mi fb-btn", :method => :delete) %>
-
-        <div class="profile">
-          <%= link_to userprofile_path(:role => "owner"), :class=> "profile btn-default btn btn-xs" do %>
-            <span class="hidden-xs">個人資料</span><i class="fa fa-user" aria-hidden="true"></i>
-          <% end %>
-        </div>
-
-      <% else %>
-        <%= link_to "登入 Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-mi fb-btn" %>
-      <% end %>
-    </div>
+    <button class="hamburger">&#9776;</button>
+    <button class="cross">&#735;</button>
   </div>
-</nav>
+
+  <div class="menu">
+    <ul>
+      <a href="#"><li><i class="fa fa-user" aria-hidden="true">我的帳號</i></li></a>
+      <a href="#"><li>LINK TWO</li></a>
+      <a href="#"><li>LINK THREE</li></a>
+      <a href="#"><li>LINK FOUR</li></a>
+      <a href="#"><li>LINK FIVE</li></a>
+    </ul>
+  </div>
+
+  <div id="out"></div>
+
+</div>
 
 <body>
 
