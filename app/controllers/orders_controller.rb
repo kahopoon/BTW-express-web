@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    @order.build_detail
+    @order.build_detail( description: params[:description] )
   end
 
   def create

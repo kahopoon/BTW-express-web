@@ -3,16 +3,16 @@
     <div class="row-fluid">
       <div class="col-xs-12">
         <div class="top center-block text-align-left">
-        <%= form_tag( new_order_path, :method => :post ) do %>
-          <%= text_field_tag(:insert) %>
-          <%= submit_tag("快找代言人" ,:class => "haha") %>
-        <% end %>
-          <h1>委託收寄件<br/>輕鬆下單，請附近朋友幫忙吧！</h1>
+
+          <h1>寶寶想吃東西</h1><br/>
+          <h2>可是寶寶不說可是寶寶不說可是寶寶不說</h2>
           <div class="write-wrap">
-
-          <a href="/orders/new" class="write btn-default btn btn-xs"><h1><i class="fa fa-pencil-square-o" aria-hidden="true"></i>刊登委託單</h1></a>
-
+            <%= form_tag( new_order_path, :method => :get, :class =>"form-inline" ) do %>
+              <%= text_field_tag :description,"" ,class: "insert form-control",:placeholder => "想吃什麼？例：一份雞排，一杯可樂", :description => :value %>
+              <%= submit_tag("快找代言人" ,:class => "find btn") %>
+            <% end %>
           </div>
+
         </div>
       </div>
     </div>
