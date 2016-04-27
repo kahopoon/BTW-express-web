@@ -12,9 +12,9 @@ json.pickup_time order.pickup_time
 json.deliver_addr order.deliver_addr
 json.deliver_latlng order.deliver_latlng
 json.deliver_time order.deliver_time
-
-json.senderName User.find(order.courier_id).fullname
-json.senderPhone User.find(order.courier_id).phone
-
+if order.courier_id
+	json.senderName User.find(order.courier_id).fullname
+	json.senderPhone User.find(order.courier_id).phone
+end
 json.receiverName order.detail.addressees_name
 json.receiverPhone order.detail.addressees_mobile
