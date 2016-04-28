@@ -16,7 +16,7 @@
     <%end%>
 
     <% if current_user %>
-      <%= link_to('登出 Facebook', destroy_user_session_path, :class => "btn btn-primary fb-btn", :method => :delete) %>
+      <%= link_to('Facebook登出', destroy_user_session_path, :class => "btn btn-primary fb-btn", :method => :delete) %>
     <% else %>
       <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-md fb-btn" do%>
         <i class="fa fa-facebook" aria-hidden="true">  &nbsp;Facebook登入</i>
@@ -42,10 +42,8 @@
 </div>
 
 <body>
-
-  <div class="hugo-not-handsome">
-  <%= yield %>
-  </div>
+  <div class="hugo-so-hot"></div>
+    <%= yield %>
 
 </body>
 

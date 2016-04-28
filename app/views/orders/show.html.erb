@@ -1,28 +1,31 @@
-<div class="container order_form">
-<div class= "show">
-<p><% if @order.photo.exists? %>
-  <%= link_to @order.photo.url, :target => "_blank" do %>
-  <%= image_tag(@order.photo.url(:thumb)) %>
-  <% end %>
-  <% end %>
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+    <div class= "show">
+      <p><% if @order.photo.exists? %>
+        <%= link_to @order.photo.url, :target => "_blank" do %>
+        <%= image_tag(@order.photo.url(:thumb)) %>
+        <% end %>
+        <% end %>
+      </p>
 
-<h3> 1.訂單基本要求 </h3>
-<p>點餐項目及需求數量: <%= @order.detail.description %></p>
-<p>指定購餐地點: <%= @order.pickup_addr %></p>
-<p>總餐點預算: <%= @order.detail.prepay %></p>
-<p>送餐地點: <%= @order.deliver_addr %></p>
+      <h3> 1.訂單基本要求 </h3>
+      <p>點餐項目及需求數量: <%= @order.detail.description %></p>
+      <p>指定購餐地點: <%= @order.pickup_addr %></p>
+      <p>總餐點預算: <%= @order.detail.prepay %></p>
+      <p>送餐地點: <%= @order.deliver_addr %></p>
 
-<h3> 2.時間及運費設定 </h3>
-<p>期望餐點送達時間: <%= @order.deliver_time %></p>
-<p>願付運費: <%= @order.detail.fee %></p>
+      <h3> 2.時間及運費設定 </h3>
+      <p>期望餐點送達時間: <%= @order.deliver_time %></p>
+      <p>願付運費: <%= @order.detail.fee %></p>
 
-<h3> 3.收件人資料填寫 </h3>
+      <h3> 3.收件人資料填寫 </h3>
 
-<p>收件人真實姓名: <%= @order.detail.addressees_name %></p>
-<p>收件者電話: <%= @order.detail.addressees_mobile %></p>
+      <p>收件人真實姓名: <%= @order.detail.addressees_name %></p>
+      <p>收件者電話: <%= @order.detail.addressees_mobile %></p>
+      </div>
+      <%= link_to '回到訂單主選單', orders_path, :class => "btn btn-primary" %>
+
+    </div>
+  </div>
 </div>
-<%= link_to '回到訂單主選單', orders_path, :class => "btn btn-primary" %>
-
-</div>
-

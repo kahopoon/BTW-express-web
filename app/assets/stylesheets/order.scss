@@ -53,20 +53,43 @@ $margin-top: 300px;
       margin-top: 0;
       color: #fff;
     }
+    .wrap{
+      height:100%;
+      margin-top: 30px;
+    }
+
+    .wrap-write::before{
+       content:'';
+       width:0;
+       height:100%;
+       display:inline-block;
+       position:relative;
+       vertical-align:middle;
+       background:#f00;
+     }
 
     .insert{
-      min-width: 300px;
-      width: 100%;
-      max-width: 600px;
-      outline-style:solid;
-      outline-color:rgba(0,0,0,0.3);
-      outline-width:4px;
+      display: inline-block;
+      height: 40px;
+      width: 66%;
+      vertical-align: middle;
+      padding: 0;
+      background-clip: padding-box;
     }
 
     .find{
       background-color: #F6C90E;
+      height: 40px;
+      width: 100px;
+      // float: right;
+      font-weight: bold;
+      color:  rgba(0,0,0,0.5);
+      display: inline-block;
+      vertical-align: middle;
+      // margin: 0 auto;
+      margin-right: 5px;
+      background-clip: padding-box;
     }
-
   }
 
   h4 {

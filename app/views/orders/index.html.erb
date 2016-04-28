@@ -6,13 +6,13 @@
 
           <h1>寶寶想吃東西</h1><br/>
           <h2>可是寶寶不說可是寶寶不說可是寶寶不說</h2>
-          <div class="write-wrap">
-            <%= form_tag( new_order_path, :method => :get, :class =>"form-inline" ) do %>
+
+          <div class="wrap">
+            <%= form_tag( new_order_path, :method => :get , :class => "wrap-write") do %>
               <%= text_field_tag :description,"" ,class: "insert form-control",:placeholder => "想吃什麼？例：一份雞排，一杯可樂", :description => :value %>
               <%= submit_tag("快找代言人" ,:class => "find btn") %>
             <% end %>
           </div>
-
         </div>
       </div>
     </div>
