@@ -1,15 +1,17 @@
 /******************
 ＧＥＮＥＲＡＬ
 ******************/
-.order_form{
-  margin-top: 100px;
-}
+
 h1{
   color: #F6C90E ;
 }
+
+.hugo-so-hot{
+  margin-top: 70px;
+}
+
 body {
   background-color: #3A4750;
-  margin:0 auto;
 }
 ul{
   margin: 0;
@@ -32,6 +34,7 @@ a {
 *************************/
 #head-nav{
   position: fixed;
+  top:0;
   width: 100vw;
   z-index:10000000000;
 }
@@ -50,9 +53,10 @@ a {
 
 .ham-head{
   width:100%;
-  background:#1d1f20;
+  // background:#1d1f20;
   height:70px;
   position: relative;
+  background-color: rgba(0, 0, 0, 0.6);
 
   h1 {
     color: #FEFEFE;
@@ -65,10 +69,10 @@ a {
     z-index:10000000000000;
     display: inline;
     line-height: 70px;
+    font-size: 1.5em;
   }
 
   .fb-btn{
-
     background-color: #45619d;
     right:50px;
     width: 126px;
@@ -100,12 +104,11 @@ a {
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    top:0;
     right:0;
     padding:0px 15px 0px 15px;
     color:#fff;
     border:0;
-    font-size:3rem;
+    font-size:2em;
     font-weight:bold;
     cursor:pointer;
     outline:none;
@@ -115,13 +118,13 @@ a {
   .cross{
     background:none;
     position:absolute;
-    top:0px;
+    top:50%;
+    transform:translateY(-50%);
     right:0;
     padding:0px 15px 0px 15px;
     color:#fff;
     border:0;
-    font-size:3em;
-    line-height:65px;
+    font-size: 4em;
     font-weight:bold;
     cursor:pointer;
     outline:none;
@@ -154,70 +157,52 @@ a {
 /*************************
           ＲＷＤ
 *************************/
-@media (max-width: 480px) {
-  #head-nav{
-    .brand{
-      width: 270px;
-      h1 {
-        font-size: 1.5em;
-        width: 250px;
-      }
-    }
-    #rule {
-      top: 110px;
-      right: 16px;
-    }
-
-    .profile {
-      background: rgba(0,0,0,0);
-      border-color: rgba(0,0,0,0);
-    }
-  }
-}
-
-
-@media (max-width: 1024px) and (min-width: 480px) {
+@media (max-width: 992px) and (min-width: 768px) {
 
   #head-nav {
     .brand{
-      width: 450px;
-      padding-top: 10px;
-      padding-right: 0;
       h1 {
-        font-size: 2em;
+        font-size: 2.5em;
         width: 330px;
       }
     }
-    #rule {
-      top: 110px;
-      right: 16px;
+
+    .fb-btn{
+      margin-right: 40px;
+      line-height: 30px;
+      width: 150px;
+      font-size: 1.2em;
     }
-    .profile {
-      background: rgba(0,0,0,0);
-      border-color: rgba(0,0,0,0);
+
+    .hamburger{
+      font-size: 3em;
+      top: 46%;
     }
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
 
   .container {
     width: 1024px;
   }
   #head-nav {
     .brand{
-      width: 450px;
-      padding-top: 10px;
-      padding-right: 0;
-
       h1 {
         font-size: 3em;
       }
     }
-    #rule {
-      width: 100px;
-      margin: 0;
-      right: 60px;
+
+    .fb-btn{
+      margin-right: 40px;
+      line-height: 30px;
+      width: 150px;
+      font-size: 1.2em;
+    }
+
+    .hamburger{
+      font-size: 3em;
+      top: 46%;
     }
   }
 }
