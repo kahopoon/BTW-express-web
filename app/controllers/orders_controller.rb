@@ -3,8 +3,8 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, :except => [:index,:show]
 
   def index
-      @orders = Order.page(params[:page]).per(3)
-
+      # @orders = Order.page(params[:page]).per(3)
+      @orders = Order.all
   end
   def show
       @order= Order.find(params[:id])

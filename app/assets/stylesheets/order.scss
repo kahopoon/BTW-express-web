@@ -31,7 +31,7 @@ $margin-top: 300px;
   -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   width: 100vw;
 
@@ -103,53 +103,55 @@ $margin-top: 300px;
 
 #order-list {
 
-  margin: 0 auto;
-  padding: 0 auto;
+  // margin: 0 auto;
+  padding: 0 20px;
+  // position: relative;
 
   .order-title{
     color: #F6C90E;
   }
-}
 
-.pagination{
-  width: 100%;
-  color: #000;
-  a {
-    color: #EEE;
+  .arrow{
+    color: #F6C90E;
+    position: absolute;
+    top: 70px;
+    display: block;
+  }
+
+  .fa-angle-left{
+
+  }
+
+  .fa-angle-right{
+    right: 0;
   }
 }
 
 .one-order{ /*one order one order one order one order */
-
-  border-style: solid;
-  border-left: none;
-  border-right: none;
-  border-width: 1px;
-  border-color: #F6C90E;
+  border-style: none;
   color: #EEE;
-  padding: 0 0 34px 0;
-  width: 308.33px;
+  width: 358px;
+  height: 127px;
   margin: 0 auto;
-;
 
   .order-id{
     width: 100px;
   }
 
   .fee{
-    display: block;
     color: #F6C90E;
-    margin: 0;
-    margin-left: 105.7px;
-    padding-right: 0;
     font-size: 1.77em;
-    right: 0px;
-    width: 200px;
-    text-align: right;
+    // width: 100%;
+    text-align: left;
     line-height: 1;
-    margin-top: -19px;
-    /*margin-right: -px;*/
 
+  }
+
+  .wrap-time{
+    padding: 0,0,0,20px;
+  }
+
+  .wrap-detail{
   }
 
   .detail {
@@ -158,8 +160,8 @@ $margin-top: 300px;
     color: #3A4750;
     font-size: 1em;
     font-weight: bold;
-    width: 97px;
-    margin-left: 6px;
+    // width: 97px;
+    margin-left: 12px;
   }
 
   h3{
@@ -192,10 +194,6 @@ $margin-top: 300px;
     margin-bottom: 5px;
   }
 
-  .wrap-detail{
-    padding-left: 25px;
-  }
-
   .detail:hover{
 
     background-color: #EEE;
@@ -207,11 +205,13 @@ $margin-top: 300px;
 *************************/
 /*小小小小小小小小小小小小小小小小小*/
 @media (max-width: 480px) {
-
-
+  .one-order{
+    border-style: none;
+    // padding: 0 20px 34px 30px;
+  }
 }
 /*中中中中中中中中中中中中中中中中中*/
-@media (max-width: 992px) and (min-width: 480px) {
+@media (max-width: 992px) and (min-width: 768px) {
   #header {
     width: 100vw;
     .top {
@@ -222,9 +222,9 @@ $margin-top: 300px;
   }
 
   .one-order{
-    margin-right: 90px;
+    // padding: 0 20px 31px 60px;
+    border-style: none;
   }
-
 }
 /*大大大大大大大大大大大大大大大大大*/
 @media (min-width: 992px) {
@@ -237,32 +237,15 @@ $margin-top: 300px;
       margin-left: 0;
       margin-right: 0;
       margin-top: $margin-top;
-      // h1{
-      //   width: 100%;
-      //   font-size: 4em;
-      // }
     }
   }
-}
 
-
-/**************************************************
-    C R E A T E    O R D E R
-**************************************************/
-
-.form-group {
-  color: #EEEEEE;
-}
-
-.submit-button {
-  color: #3A4750;
-}
-
-
-/**************************************************
-    S H O W    O R D E R
-**************************************************/
-
-.show {
-  color: #EEEEEE;
+  .one-order{
+    border-style: none;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+    border-color: #F6C90E;
+    padding: 0 20px 31px 60px;
+  }
 }
