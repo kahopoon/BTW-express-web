@@ -1,6 +1,6 @@
 <div id="header">
   <div class="container">
-    <div class="row-fluid">
+    <div class="row">
       <div class="col-xs-12">
         <div class="top center-block text-align-left">
 
@@ -24,13 +24,58 @@
     <div class="row">
       <div class="col-xs-12">
         <section id="order-list">
-          <h3 class="text-center order-title ">順路送貨</h3>
-          <%= paginate @orders %>
-          <% @orders.each do |o| %>
-            <%= render :partial => "order", :locals => {:o => o} %>
-          <%end%>
+
+          <h3 class="text-center order-title">順路送貨</h3>
+          <div class="haha">
+            <% @orders.each do |o| %>
+              <div>
+                <%= render :partial => "order", :locals => {:o => o} %>
+              </div>
+            <%end%>
+          </div>
+
         </section>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+    $('.haha').slick({
+      // centerMode: true,
+      // centerPadding: '60px',
+      speed: 300,
+      slidesToShow: 3,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            arrows: true,
+            // centerMode: true,
+            // centerPadding: '40px',
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: true,
+            // centerMode: true,
+            // centerPadding: '40px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: true,
+            // centerMode: true,
+            // centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
+  });
+</script>

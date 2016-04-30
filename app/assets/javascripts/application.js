@@ -12,9 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require slick
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
 
 
 $(document).on("page:change", function(){

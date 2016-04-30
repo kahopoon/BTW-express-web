@@ -32,6 +32,7 @@ gem 'kaminari'
 gem 'faker'
 
 gem 'font-awesome-sass'
+gem 'fontello-rails', '~> 0.2.0'
 gem "paperclip", "~> 4.3"
 
 gem "ransack"
