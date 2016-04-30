@@ -5,11 +5,11 @@
   <i class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></i>
   <p class="addr-to"><i class="fa fa-circle-thin" aria-hidden="true"></i> <%= o.deliver_addr%></p>
 
-    <div class="wrap-time col-xs-7">
-      <span><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i> <%= o.created_at.strftime('%F')%> <%= o.created_at.strftime('%R')%></span>
-    </div>
-    <div class="col-xs-5 wrap-detail">
-      <%= button_to "點看詳情", order_path(o), :class => "btn btn-primary btn-xs detail", :method => :get %>
-    </div>
+  <div class="wrap-time col-xs-7">
+    <span><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i> <%= o.created_at.strftime('%F')%> <%= o.created_at.strftime('%R')%></span>
+  </div>
+  <div class="col-xs-5 wrap-detail">
+    <%= button_to "點看詳情", order_path(o), :class => "btn btn-primary btn-xs detail", :method => :get %>
+  </div>
 
 </div>
