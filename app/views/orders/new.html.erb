@@ -1,14 +1,15 @@
 
 <div class = "order_form" >
   <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
     <h1>我要訂外賣</h1>
 
     <div class="form-group">
 
       <%= form_for @order do |o| %>
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12">
+          <!-- <div class="container"> -->
+
                 <h3> 1.訂單基本要求 </h3>
 
                 <%= o.fields_for :detail do |detail_form| %>

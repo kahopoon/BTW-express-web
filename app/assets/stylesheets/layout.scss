@@ -24,7 +24,7 @@ a {
   color: black;
 }
 .container {
-  width: 768px;
+  height: 768px;
 }
 
 .order_form{
@@ -102,6 +102,7 @@ a {
   }
 
   .hamburger{
+    display: none;
     background:none;
     position:absolute;
     top:50%;

@@ -1,5 +1,10 @@
 namespace :dev do
 
+  task :delete_order => :environment do
+    Order.delete_all
+    Detail.delete_all
+  end
+
   task :fake => :environment do
     User.delete_all
     Order.delete_all
@@ -17,11 +22,11 @@ namespace :dev do
     status=["posted","go","done"]
     100.times do |i|
       user=user_idarr.sample(2)
-      p = Order.create( :owner_id => user[0], :status => status.sample(1)[0], :pickup_time => Time.now, 
+      p = Order.create( :owner_id => user[0], :status => status.sample(1)[0], :pickup_time => Time.now,
                         :deliver_time => Faker::Time.forward(5),
                         :pickup_addr => "台北市大安區忠孝東路四段1號", :pickup_latlng => "25.041707, 121.544119",
                         :deliver_addr => "台北市松山區敦化北路340-9號", :deliver_latlng => "25.063503, 121.552114",
-                        :category => Faker::StarWars.specie, 
+                        :category => Faker::StarWars.specie,
                         #:photo => img_2,
                       )
       puts p.status
@@ -30,7 +35,7 @@ namespace :dev do
       end
       if p.status=="done"
         p.rate_owner= (rand(5) + 1)
-        p.rate_courier= (rand(5) + 1)        
+        p.rate_courier= (rand(5) + 1)
       end
       # Detail.create( :fee => (rand(99) + 1) * 10,:order => p)
       p.build_detail( :addressees_name => Faker::Name.name, :addressees_mobile=>Faker::PhoneNumber.cell_phone )
