@@ -10,7 +10,7 @@ scope :path => '/api/v1', :module => 'api_v1', :as => 'v1', :defaults => {:forma
   post "/login" => "auth#login"
   post "/logout" => "auth#logout"
   post "/writeprofile" => "auth#write_profile"
-  get "/readprofile" => "auth#read_profile"  
+  get "/readprofile" => "auth#read_profile"
   resources :orders, :except => [:new, :edit]
   resources :details, :except => [:new, :edit]
 end
