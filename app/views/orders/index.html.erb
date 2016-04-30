@@ -1,17 +1,19 @@
 <div id="header">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="top center-block text-align-left">
+  <div class="container-fluid header-container">
+    <div class="container-fluid w1024">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="top center-block text-align-left">
 
-          <h1>寶寶想吃東西</h1><br/>
-          <h2>可是寶寶不說可是寶寶不說可是寶寶不說</h2>
+            <h1>寶寶想吃東西</h1><br/>
+            <h2>可是寶寶不說可是寶寶不說可是寶寶不說</h2>
 
-          <div class="wrap">
-            <%= form_tag( new_order_path, :method => :get , :class => "wrap-write") do %>
-              <%= text_field_tag :description,"" ,class: "insert form-control",:placeholder => "想吃什麼？例：一份雞排，一杯可樂", :description => :value %>
-              <%= submit_tag("快找代言人" ,:class => "find btn") %>
-            <% end %>
+            <div class="wrap">
+              <%= form_tag( new_order_path, :method => :get , :class => "wrap-write") do %>
+                <%= text_field_tag :description,"" ,class: "insert form-control",:placeholder => "想吃什麼？例：一份雞排，一杯可樂", :description => :value %>
+                <%= submit_tag("快找代言人" ,:class => "find btn") %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
@@ -19,14 +21,15 @@
   </div>
 </div>
 
-<div class="contain-order">
-  <div class="container-fluid dark">
+
+<div class="container-fluid contain-order dark">
+  <div class="container-fluid w1024">
     <div class="row">
       <div class="col-xs-12">
         <section id="order-list">
 
           <h3 class="text-center order-title">順路送貨</h3>
-          <div class="haha">
+          <div class="for-slick">
             <% @orders.each do |o| %>
               <div>
                 <%= render :partial => "order", :locals => {:o => o} %>
@@ -43,9 +46,35 @@
   </div>
 </div>
 
+<div class="container-fluid contain-life">
+  <div class="container-fluid w1024">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="life lifeup">
+          <h2 class="h2md">簡單開源 生活更有品質</h2>
+          <h2 class="col-md-3 h2lg">簡單開源<br/>生活更有品質</h2>
+          <%= image_tag("test.jpeg", class: "life-img") %>
+          <%= image_tag("test.jpeg", class: "life-img") %>
+          <%= image_tag("test.jpeg", class: "life-img") %>
+        </div>
+        <div class="life lifedown">
+          <h2 class="h2md" >短程傳遞 生活更有溫度</h2>
+          <h2 class="col-md-3 h2lg">短程傳遞<br/>生活更有溫度</h2>
+          <%= image_tag("test.jpeg", class: "life-img") %>
+          <%= image_tag("test.jpeg", class: "life-img") %>
+          <%= image_tag("test.jpeg", class: "life-img") %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <script>
   $(document).ready(function(){
-    $('.haha').slick({
+    $('.for-slick').slick({
       // centerMode: true,
       // centerPadding: '60px',
       speed: 300,

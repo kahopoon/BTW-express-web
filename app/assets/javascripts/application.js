@@ -20,32 +20,32 @@
 
 
 $(document).on("page:change", function(){
-  $( ".cross" ).hide();
-  $( ".menu" ).hide();
-  $( ".hamburger" ).click(function(e) {
-    $("#out").toggleClass("spanout");
-    $( ".menu" ).stop().slideToggle( "fast", function(e) {
-      $( ".hamburger" ).hide();
-      $( ".cross" ).show();
+  // $( ".cross" ).hide();
+  // $( ".menu" ).hide();
+  // $( ".hamburger" ).click(function(e) {
+  //   $("#out").toggleClass("spanout");
+  //   $( ".menu" ).stop().slideToggle( "fast", function(e) {
+  //     $( ".hamburger" ).hide();
+  //     $( ".cross" ).show();
 
-    });
+  //   });
 
-  });
+  // });
 
-  $( ".cross" ).click(function(e) {
-    $('#out').toggleClass("spanout");
-    $( ".menu" ).stop().slideToggle( "fast", function(e) {
-      $( ".cross" ).hide();
-      $( ".hamburger" ).show();
-    });
-  });
+  // $( ".cross" ).click(function(e) {
+  //   $('#out').toggleClass("spanout");
+  //   $( ".menu" ).stop().slideToggle( "fast", function(e) {
+  //     $( ".cross" ).hide();
+  //     $( ".hamburger" ).show();
+  //   });
+  // });
 
-  $("#out").click(function(e) {
-    $(this).toggleClass("spanout");
-    $( ".menu" ).stop().slideToggle( "fast", function(e) {
-      $( ".cross" ).hide();
-      $( ".hamburger" ).show();
-    });
-  });
+  // $("#out").click(function(e) {
+  //   $(this).toggleClass("spanout");
+  //   $( ".menu" ).stop().slideToggle( "fast", function(e) {
+  //     $( ".cross" ).hide();
+  //     $( ".hamburger" ).show();
+  //   });
+  // });
 
 });

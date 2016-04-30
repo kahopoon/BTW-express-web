@@ -6,13 +6,14 @@ $margin-top: 300px;
 .h768{
   height: 768px;
 }
-.contain-order{
-  height: 768px;
-  background-color: #EEE;
-}
 
 .dark{
   background-color: #303841;
+
+}
+
+.contain-order{
+  height: 613px;
 }
 
 /*************************
@@ -81,12 +82,10 @@ $margin-top: 300px;
       background-color: #F6C90E;
       height: 40px;
       width: 100px;
-      // float: right;
       font-weight: bold;
       color:  rgba(0,0,0,0.5);
       display: inline-block;
       vertical-align: middle;
-      // margin: 0 auto;
       margin-right: 5px;
       background-clip: padding-box;
     }
@@ -132,6 +131,7 @@ $margin-top: 300px;
   color: #EEE;
   width: 358px;
   height: 127px;
+  float: none;
   margin: 0 auto;
 
   .order-id{
@@ -141,10 +141,8 @@ $margin-top: 300px;
   .fee{
     color: #F6C90E;
     font-size: 1.77em;
-    // width: 100%;
     text-align: left;
     line-height: 1;
-
   }
 
   .wrap-time{
@@ -160,7 +158,6 @@ $margin-top: 300px;
     color: #3A4750;
     font-size: 1em;
     font-weight: bold;
-    // width: 97px;
     margin-left: 12px;
   }
 
@@ -200,6 +197,20 @@ $margin-top: 300px;
     border-color: #EEE;
   }
 }
+/*************************
+          LIFE
+*************************/
+.contain-life{
+  background-color: #EEE;
+  display: none;
+}
+
+.life-img{
+  width: 170px;
+  max-height: 100px;
+  border-radius: 8px;
+  margin-right: 15px;
+}
 
 /*************************
           ＲＷＤ
@@ -223,16 +234,34 @@ $margin-top: 300px;
   }
 
   .one-order{
-    // padding: 0 20px 31px 60px;
     border-style: none;
+  }
+
+  .contain-life{
+    display: block;
+    height: 399px;
+    background-color: #EEE;
+  }
+
+  .life{
+    width: 550px;
+    height: 160px;
+    margin: 0 auto;
+    :nth-child(5) {
+      margin-right: 0;
+    }
+
+    .h2lg{
+      display: none;
+    }
   }
 }
 /*大大大大大大大大大大大大大大大大大*/
 @media (min-width: 992px) {
 
-  .container {
-    width: 1024px;
-  }
+  // .container {
+  //   max-width: 1024px;
+  // }
   #header {
     .top {
       margin-left: 0;
@@ -243,5 +272,43 @@ $margin-top: 300px;
 
   .one-order{
     margin: 0 auto;
+  }
+
+  .contain-life{
+    height: 320px;
+    display: block;
+  }
+
+  .life{
+    width: 992px;
+    height: 100px;
+    margin: 0 auto;
+    :nth-child(5) {
+      margin-right: 0;
+    }
+
+    .h2md{
+      display: none;
+    }
+
+    .h2lg{
+      width: 215px;
+      text-align: center;
+    }
+
+    .life-img{
+      width: 222px;
+      max-height: 100px;
+      border-radius: 8px;
+      margin-right: 34px;
+    }
+  }
+
+  .lifeup{
+    margin-top: 43px;
+  }
+
+  .lifedown{
+    margin-top: 34px;
   }
 }
