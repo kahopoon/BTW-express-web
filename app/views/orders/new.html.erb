@@ -13,7 +13,7 @@
 
             <%= o.fields_for :detail do |detail_form| %>
                 <%= detail_form.label :description, "請詳列出點餐項目及需求數量" %>
-                <%= detail_form.text_field :description, :placeholder=>"例如：大腸包小腸十份，豬血糕三份～", :class => "form-control" %>
+                <%= detail_form.text_field :description, :placeholder=>"例如：大腸包小腸十份，豬血糕三份～", :class => "form-control", :required => true %>
             <% end %>
 
             <%= o.label :pickup_addr, "輸入指定購餐地點" %>
@@ -22,11 +22,11 @@
             <%= o.fields_for :detail do |detail_form| %>
 
                 <%= detail_form.label :prepay, "總餐點預算" %>
-                <%= detail_form.select :prepay, options_for_select([['NTD 1~100', '100'],['NTD 101~200', '200'],['NTD 201~300', '300'],['NTD 301~400', '400'],  ['NTD 401~500', '500']],:selected => detail_form.object.prepay), { :prompt => "選擇價格範圍"}, {:class => "form-control"}%>
+                <%= detail_form.select :prepay, options_for_select([['NTD 1~100', '100'],['NTD 101~200', '200'],['NTD 201~300', '300'],['NTD 301~400', '400'],  ['NTD 401~500', '500']],:selected => detail_form.object.prepay), { :prompt => "選擇價格範圍"}, {:class => "form-control", :required => true}%>
             <% end %>
 
             <%= o.label :deliver_addr, "輸入送餐地點" %>
-            <%= o.text_field :deliver_addr, :class => "form-control" %>
+            <%= o.text_field :deliver_addr, :class => "form-control", :required => true %>
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@
 
             <%= o.fields_for :detail do |detail_form| %>
                 <%= detail_form.label :fee, "願付運費" %>
-                <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control" %>
+                <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control", :required => true %>
 
             <% end %>
 
@@ -56,10 +56,10 @@
 
             <%= o.fields_for :detail do |detail_form| %>
                 <%= detail_form.label :addressees_name, "收件人真實姓名" %>
-                <%= detail_form.text_field :addressees_name, :class => "form-control" %>
+                <%= detail_form.text_field :addressees_name, :class => "form-control", :required => true %>
 
                 <%= detail_form.label :addressees_mobile, "收件者電話" %>
-                <%= detail_form.text_field :addressees_mobile, :class => "form-control" %>
+                <%= detail_form.text_field :addressees_mobile, :class => "form-control", :required => true %>
             <% end %>
 
 
