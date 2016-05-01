@@ -17,6 +17,8 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.create(order_params)
+    @order.owner_id=current_user.id
+    @order.status="posted"
 
     if @order.save
       redirect_to order_url(@order)
