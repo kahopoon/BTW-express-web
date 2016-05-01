@@ -38,9 +38,8 @@
           </div>
 
         </section>
-
-        <!--description here by Richard!-->
-
+        <!--description here by Richard! should improve layout later...-->
+        <div id="deatil-description"><h1>here is the detail...</h1></div>
       </div>
     </div>
   </div>
@@ -70,11 +69,28 @@
   </div>
 </div>
 
-
-
 <script>
   $(document).ready(function(){
+    var getdescription=function(){
+      var url='<%=j v1_details_path%>'+'/9';
+      // console.log(url);
+      var x=$('.slick-current > div').data('id');
+      // console.log(x);
+      $.get( url, {o_id:x}, function(data){ 
+         console.log(data);
+         str=data['description'];
+        $('#deatil-description h1').html(str);   
+      }, 'json' );
+    }
+    $('.slick-current').ready(function(){
+      getdescription();
+    }); 
+    $('body').on('click',$('.slick-prev,.slick_next'), function(e){
+      // console.log('prev clicked');
+      getdescription();
+    });
     $('.for-slick').slick({
+
       // centerMode: true,
       // centerPadding: '60px',
       speed: 300,
