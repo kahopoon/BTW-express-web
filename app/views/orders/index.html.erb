@@ -76,15 +76,15 @@
       // console.log(url);
       var x=$('.slick-current > div').data('id');
       // console.log(x);
-      $.get( url, {o_id:x}, function(data){ 
+      $.get( url, {o_id:x}, function(data){
          console.log(data);
          str=data['description'];
-        $('#deatil-description h1').html(str);   
+        $('#deatil-description h1').html(str);
       }, 'json' );
     }
     $('.slick-current').ready(function(){
       getdescription();
-    }); 
+    });
     $('body').on('click',$('.slick-prev,.slick_next'), function(e){
       // console.log('prev clicked');
       getdescription();

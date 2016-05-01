@@ -106,8 +106,7 @@ a {
 
   }
 
-  .hamburger{
-    display: none;
+  .man{
     background:none;
     position:absolute;
     top:50%;
@@ -116,28 +115,44 @@ a {
     padding:0px 15px 0px 15px;
     color:#fff;
     border:0;
-    font-size:2em;
     font-weight:bold;
     cursor:pointer;
     outline:none;
     z-index:10000000000000;
+
+  }
+  .hamburger{
+    display: none;
+    // background:none;
+    // position:absolute;
+    // top:50%;
+    // transform:translateY(-50%);
+    // right:0;
+    // padding:0px 15px 0px 15px;
+    // color:#fff;
+    // border:0;
+    // font-size:2em;
+    // font-weight:bold;
+    // cursor:pointer;
+    // outline:none;
+    // z-index:10000000000000;
   }
 
   .cross{
     display: none;
-    background:none;
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    right:0;
-    padding:0px 15px 0px 15px;
-    color:#fff;
-    border:0;
-    font-size: 4em;
-    font-weight:bold;
-    cursor:pointer;
-    outline:none;
-    z-index:10000000000000;
+    // background:none;
+    // position:absolute;
+    // top:50%;
+    // transform:translateY(-50%);
+    // right:0;
+    // padding:0px 15px 0px 15px;
+    // color:#fff;
+    // border:0;
+    // font-size: 4em;
+    // font-weight:bold;
+    // cursor:pointer;
+    // outline:none;
+    // z-index:10000000000000;
   }
 }
 
@@ -163,6 +178,31 @@ a {
   margin-top:5px;
   margin:0 auto;
 }
+
+/*************************
+        ＦＯＯＴＥＲ
+*************************/
+footer{
+  color: #EEE;
+  width: 212px;
+  margin: 0 auto;
+  text-align: left;
+
+  ul{
+    padding: 0;
+    li{
+      line-height: 29px;
+    }
+
+    a{
+      color: #EEE;
+    }
+
+    a:hover{
+      color: #F6C90E;
+    }
+  }
+}
 /*************************
           ＲＷＤ
 *************************/
@@ -186,6 +226,30 @@ a {
     .hamburger{
       font-size: 3em;
       top: 46%;
+    }
+
+    .man{
+      font-size:1.3em;
+    }
+  }
+
+  footer{
+    width: 560px;
+
+    .contact{
+      float: left;
+      li {
+        width: 180px;
+        padding: 0;
+      }
+    }
+
+    .qa{
+      float: right;
+      li{
+        width: 142px;
+        padding: 0;
+      }
     }
   }
 }
@@ -213,6 +277,14 @@ a {
       font-size: 3em;
       top: 46%;
     }
+
+    .man{
+      font-size:1.3em;
+    }
+  }
+
+   footer{
+    width: 560px;
   }
 }
 
