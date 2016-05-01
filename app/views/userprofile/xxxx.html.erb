@@ -1,16 +1,25 @@
-<div class="container">
+<div class="container userprofile">
   <div class="order_form">
-    <div>
+    <div class="top-banner">
+      <div class="row">
+        <div class="col-md-6">
+      <div class="profile-pic"></div>
+        <h4><%=@user.email %></h4>
+        <div class="TwinkleTwinkleLittleStar">
+          <h3>小星星放這裡哦</h3>
+        </div>
+        <div> 委託數 xxx </div>
+        <div> 代買數 xxx </div>
+        </div>
       <h1>name: <%=@user.fullname%>, email: <%=@user.email%> </br>phone: <%=@user.phone%>, role: <%= @role%></h1>
+      </div>
     </div>
     <% if @role=="courier"%>
-        <%= link_to "as owner", userprofile_path(:role=>"owner"), :class => "btn btn-primary"%>
+        <%= link_to "委託案件", userprofile_path(:role=>"owner"), :class => "btn btn-primary"%>
     <% else %>
-        <%= link_to "as courier", userprofile_path(:role=>"courier"), :class => "btn btn-primary"%>
+        <%= link_to "代買案件", userprofile_path(:role=>"courier"), :class => "btn btn-primary"%>
     <% end %>
-    <div>
-      <h2>here is rating record</h2>
-    </div>
+
     <% if @post_order %>
         <div>
           <h2>post order </h2>

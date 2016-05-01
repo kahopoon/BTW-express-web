@@ -1,35 +1,56 @@
-.userprofile{
-  input{
-    background-color: #3A4750;
-    border:none;
-    width:450px;
-  }
-  h4,label{
-    color: #fff;
-  }
-  .profile-head{
-    text-align: center;
-    width: 600px;
-  }
-  .profile-info{
-    width: 600px;
-    label{
-      float: left;
-    }
-    input{
-      float: right;
-    }
-  }
-}
-.profile-input{
-  margin:40px 0;
-  border-bottom: 1px solid #fff ;
+.userprofile {
+  width: 100%;
+  background-color: #303841;
+  color: #fff;
+  text-align: center;
 }
 
-.profile-pic{
+.userprofile-pic{
   margin: 30px auto;
   width: 120px;
   height: 120px;
   border-radius: 50%;
   background-color: #F6C90E;
+}
+
+.user-info{
+  margin: 40px 0;
+  text-align: left;
+}
+
+.user_orders{
+  background-color: #EEEEEE;
+  width: 100%;
+  height: 500px;
+}
+.user-info-fix{
+  margin: 15px 0;
+  position: relative;
+  i{
+    padding-bottom: 10px;
+    position: absolute;
+    left: 0;
+  }
+  i:nth-child(1){
+    transform: translateY(-10%);
+  }
+
+  p{
+    display: inline;
+    margin: 0 10px;
+    /*float: right;*/
+    font-size: 12px;
+    left: 45px;
+    position: relative;
+
+
+  }
+  h4{
+    display: inline;
+    margin:  0 10px;
+    left: 35px;
+    position: relative;
+
+
+  }
 }
