@@ -1,50 +1,64 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12">
-    <div class= "show">
-      <p><% if @order.photo.exists? %>
-        <%= link_to @order.photo.url, :target => "_blank" do %>
-        <%= image_tag(@order.photo.url(:thumb)) %>
-        <% end %>
-        <% end %>
-      </p>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="show">
+                <p><% if @order.photo.exists? %>
+                    <%= link_to @order.photo.url, :target => "_blank" do %>
+                    <%= image_tag(@order.photo.url(:thumb)) %>
+                    <% end %>
+                    <% end %>
+                </p>
+                <hr>
+                <h3>
+                    1.訂單基本要求
+                </h3>
+                <p>點餐項目及需求數量:
+                    <%= @order.detail.description %></p>
+                <p>指定購餐地點:
+                    <% if @order.pickup_addr!=""%>
+                    <%= @order.pickup_addr %>
+                    <%else%>
+                    <%='無限制'%>
+                    <%end%>
+                </p>
+                <p>總餐點預算:
+                    <%= @order.detail.prepay %></p>
+                <p>送餐地點:
+                    <%= @order.deliver_addr %></p>
+                <hr>
+                <h3>
+                    2.送達時間及運費
+                </h3>
+                <p>期望餐點送達時間:
+                    <%= @order.deliver_time.strftime('%F') %>
+                    <%= @order.deliver_time.strftime('%R') %>
+                </p>
+                <p>願付運費:
+                    <%= @order.detail.fee %></p>
+                <hr>
+                <h3>
+                    3.收件人資料
+                </h3>
 
-      <h3> 1.訂單基本要求 </h3>
-      <p>點餐項目及需求數量: <%= @order.detail.description %></p>
-      <p>指定購餐地點:
-        <% if @order.pickup_addr!=""%> 
-          <%= @order.pickup_addr %>
-        <%else%>
-          <%='無限制'%>
-        <%end%>
-      </p>
-      <p>總餐點預算: <%= @order.detail.prepay %></p>
-      <p>送餐地點: <%= @order.deliver_addr %></p>
-
-      <h3> 2.送達時間及運費 </h3>
-      <p>期望餐點送達時間: 
-        <%= @order.deliver_time.strftime('%F') %>      
-        <%= @order.deliver_time.strftime('%R') %>
-      </p>
-      <p>願付運費: <%= @order.detail.fee %></p>
-
-      <h3> 3.收件人資料 </h3>
-
-      <p>收件人: <%= @order.detail.addressees_name %></p>
-      <p>聯絡電話: <%= @order.detail.addressees_mobile %></p>
-      </div>
-      <%if @order.courier_id==nil%>
-        <%if current_user.id!=@order.owner_id%>
-        <!-- nobody take this order and it is not owned by current_user-->
-          <%= link_to '我要接單', take_order_path(@order),:method=>:post, :class => "btn btn-success" %>
-        <%end%>
-      <%elsif current_user.id==@order.courier_id%>
-          <%= link_to '取消接單', reject_order_path(@order),:method=>:post, :class => "btn btn-danger" %>      
-      <%else%>
-          <%= link_to '訂單處理中', '#', :class => "btn btn-danger" %>      
-      <%end%>
-      <%= link_to '回到訂單主選單', orders_path, :class => "btn btn-primary" %>
-
+                <p>收件人:
+                    <%= @order.detail.addressees_name %></p>
+                <p>聯絡電話:
+                    <%= @order.detail.addressees_mobile %></p>
+            </div>
+            <hr>
+            <div class="buttons">
+                <%if @order.courier_id==nil%>
+                <%if current_user.id!=@order.owner_id%>
+                <!-- nobody take this order and it is not owned by current_user-->
+                <%= link_to '我要接單', take_order_path(@order),:method=>:post, :class => "btn btn-success" %>
+                <%end%>
+                <%elsif current_user.id==@order.courier_id%>
+                <%= link_to '取消接單', reject_order_path(@order),:method=>:post, :class => "btn btn-danger" %>
+                <%else%>
+                <%= link_to '訂單處理中', '#', :class => "btn btn-danger" %>
+                <%end%>
+                <%= link_to '回到訂單主選單', orders_path, :class => "btn btn-primary" %>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
