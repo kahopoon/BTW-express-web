@@ -19,6 +19,10 @@ end
 
 resources :orders do
   resource :detail
+  member do
+    post 'take'
+    post 'reject'
+  end
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
