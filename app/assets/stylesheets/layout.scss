@@ -184,14 +184,24 @@ a {
 *************************/
 footer{
   color: #EEE;
-  width: 212px;
   margin: 0 auto;
   text-align: left;
+  width: 220px;
 
+
+  .w220{
+    width: 220px;
+    padding: 0;
+    h3{
+      margin-top: 20px;
+    }
+  }
   ul{
     padding: 0;
+
     li{
       line-height: 29px;
+      text-align: left;
     }
 
     a{
@@ -201,7 +211,11 @@ footer{
     a:hover{
       color: #F6C90E;
     }
-  }
+    }
+
+}
+.dark .qa .col-sm-6{
+  padding-left: 0px;
 }
 /*************************
           ＲＷＤ
@@ -234,8 +248,7 @@ footer{
   }
 
   footer{
-    width: 560px;
-
+    width: 550px;
     .contact{
       float: left;
       li {
@@ -247,8 +260,6 @@ footer{
     .qa{
       float: right;
       li{
-        width: 142px;
-        padding: 0;
       }
     }
   }
@@ -284,7 +295,13 @@ footer{
   }
 
    footer{
-    width: 560px;
+    width: 600px;
+    margin: 0;
+    .qa{
+      li{
+        padding: 0;
+      }
+    }
   }
 }
 

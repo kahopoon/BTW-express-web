@@ -21,13 +21,11 @@
   </div>
 </div>
 
-
 <div class="container-fluid contain-order dark">
   <div class="container-fluid w1024">
     <div class="row">
       <div class="col-xs-12">
         <section id="order-list">
-
           <h3 class="text-center order-title">順路送貨</h3>
           <div class="for-slick">
             <% @orders.each do |o| %>
@@ -36,10 +34,18 @@
               </div>
             <%end%>
           </div>
-
         </section>
-        <!--description here by Richard! should improve layout later...-->
-        <div id="deatil-description"><h1>here is the detail...</h1></div>
+
+        <div id="deatil-description">
+          <h4>托買清單</h4>
+        <h1>here is the detail...</h1>
+        </div>
+
+        <div class="app">
+          <h3>下載ＡＰＰ即可接單</h3>
+          <div class="store"><%= image_tag("test.jpeg", class: "store") %></div>
+          <%= image_tag("test.jpeg", class: "qrcode") %>
+        </div>
       </div>
     </div>
   </div>
@@ -52,16 +58,16 @@
         <div class="life lifeup">
           <h2 class="h2md">簡單開源 生活更有品質</h2>
           <h2 class="col-md-3 h2lg">簡單開源<br/>生活更有品質</h2>
-          <%= image_tag("test.jpeg", class: "life-img") %>
-          <%= image_tag("test.jpeg", class: "life-img") %>
-          <%= image_tag("test.jpeg", class: "life-img") %>
+          <%= image_tag("1.png", class: "life-img") %>
+          <%= image_tag("2.png", class: "life-img") %>
+          <%= image_tag("3.png", class: "life-img") %>
         </div>
         <div class="life lifedown">
           <h2 class="h2md" >短程傳遞 生活更有溫度</h2>
           <h2 class="col-md-3 h2lg">短程傳遞<br/>生活更有溫度</h2>
-          <%= image_tag("test.jpeg", class: "life-img") %>
-          <%= image_tag("test.jpeg", class: "life-img") %>
-          <%= image_tag("test.jpeg", class: "life-img") %>
+          <%= image_tag("4.png", class: "life-img") %>
+          <%= image_tag("5.png", class: "life-img") %>
+          <%= image_tag("6.png", class: "life-img") %>
         </div>
 
       </div>

@@ -102,34 +102,24 @@ $margin-top: 300px;
 
 #order-list {
 
-  // margin: 0 auto;
   padding: 0 20px;
-  // position: relative;
+  border-style: none;
 
   .order-title{
-    color: #F6C90E;
-  }
-
-  .arrow{
-    color: #F6C90E;
-    position: absolute;
-    top: 70px;
-    display: block;
-  }
-
-  .fa-angle-left{
-
-  }
-
-  .fa-angle-right{
-    right: 0;
+    color: #EEE;
+    margin-bottom: 20px;
   }
 }
 
-.one-order{ /*one order one order one order one order */
+.one-order:focus {
+  outline: 0;
+}
+
+.one-order{ /*ＯＮＥ ＯＲＤＥＲ ＯＮＥ ＯＲＤＥＲ ＯＮＥ ＯＲＤＥＲ */
+
   border-style: none;
   color: #EEE;
-  width: 358px;
+  width: 250px;
   height: 127px;
   float: none;
   margin: 0 auto;
@@ -146,26 +136,18 @@ $margin-top: 300px;
   }
 
   .wrap-time{
-    padding: 0,0,0,20px;
-  }
+    float: left;
 
-  .wrap-detail{
   }
 
   .detail {
+    float: right;
     background-color: #F6C90E;
     border-color: #F6C90E;
     color: #3A4750;
     font-size: 1em;
     font-weight: bold;
     margin-left: 5px;
-  }
-
-  h3{
-    color: #F6C90E;
-    margin: 0;
-    margin-top: 12px;
-    font-size: 1.7em;
   }
 
   p{
@@ -192,10 +174,61 @@ $margin-top: 300px;
   }
 
   .detail:hover{
-
     background-color: #EEE;
     border-color: #EEE;
   }
+}
+/***************************
+ＤＥＴＡＩＬ-ＤＥＳＲＩＰＴＩＯＮ
+***************************/
+#deatil-description{
+  width: 220px;
+  height: 180px;
+  background-color: #EEE;
+  margin: 0 auto;
+  border-radius: 2.5%;
+  overflow: auto;
+
+  h4{
+    background-color: #F6C90E;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    margin: 0;
+    color: #303841;
+    font-weight: bold;
+    text-align: center;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+  }
+
+  p{
+    color: #303841;
+    font-size: 0.5em;
+    word-wrap: break-word;
+  }
+}
+
+.app {
+  width: 220px;
+  margin: 5px auto;
+  h3{
+    color: #EEE;
+  }
+  .store{
+    width: 112px;
+    height: 37px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    border-radius: 5%;
+  }
+  .qrcode{
+    display: block;
+    width: 112px;
+    height: 112px;
+    margin: 0 auto;
+  }
+
 }
 /*************************
           LIFE
@@ -214,13 +247,6 @@ $margin-top: 300px;
 /*************************
           ＲＷＤ
 *************************/
-/*小小小小小小小小小小小小小小小小小*/
-@media (max-width: 480px) {
-  .one-order{
-    border-style: none;
-    // padding: 0 20px 34px 30px;
-  }
-}
 /*中中中中中中中中中中中中中中中中中*/
 @media (max-width: 992px) and (min-width: 768px) {
   #header {
@@ -258,9 +284,9 @@ $margin-top: 300px;
 /*大大大大大大大大大大大大大大大大大*/
 @media (min-width: 992px) {
 
-  // .container {
-  //   max-width: 1024px;
-  // }
+  .container {
+    max-width: 1024px;
+  }
   #header {
     .top {
       margin-left: 0;
