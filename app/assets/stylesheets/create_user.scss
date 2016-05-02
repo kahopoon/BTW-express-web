@@ -1,0 +1,28 @@
+.userprofile{
+  input{
+    background-color: #3A4750;
+    border:none;
+    width:450px;
+  }
+  h4,label{
+    color: #fff;
+  }
+  .profile-head{
+    text-align: center;
+    width: 600px;
+  }
+  .profile-info{
+    width: 600px;
+    label{
+      float: left;
+    }
+    input{
+      float: right;
+    }
+  }
+}
+
+.profile-input{
+  margin:40px 0;
+  border-bottom: 1px solid #fff ;
+}

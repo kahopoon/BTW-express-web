@@ -1,84 +1,105 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>順路送-BTWexpress</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <head>
+        <title>順路送-BTWexpress</title>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-</head>
+    </head>
 
-<div id="head-nav">
-  <div class ="ham-head">
-    <%= link_to root_path, :class=>"brand" do %>
-      <h1>順路送BTWexpress</h1>
-    <%end%>
+    <div id="head-nav">
+        <div class="ham-head">
+            <%= link_to root_path, :class=>"brand" do %>
+            <h1>順路送BTWexpress</h1>
+            <%end%>
 
-    <% if current_user %>
-      <%= link_to('Facebook登出', destroy_user_session_path, :class => "btn btn-primary fb-btn", :method => :delete) %>
-      <%= link_to userprofile_path, :class => "man" do %>
-      <!-- <i class="fa fa-user fa-2x" aria-hidden="true"></i> -->
-    <% end %>
-    <% else %>
-      <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-md fb-btn" do%>
-        <i class="fa fa-facebook" aria-hidden="true">  &nbsp;Facebook登入</i>
-        <% end %>
-    <% end %>
+            <% if current_user %>
+            <%= link_to('Facebook登出', destroy_user_session_path, :class => "btn btn-primary fb-btn", :method => :delete) %>
+            <%= link_to userprofile_path, :class => "man" do %>
+            <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+            <% end %>
+        <% else %>
+            <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-md fb-btn" do%>
+            <i class="fa fa-facebook" aria-hidden="true">
+                &nbsp;Facebook登入</i>
+            <% end %>
+            <% end %>
 
+            <button class="hamburger">&#9776;</button>
+            <button class="cross">&#735;</button>
+        </div>
 
-    <button class="hamburger">&#9776;</button>
-    <button class="cross">&#735;</button>
-  </div>
+        <div class="menu">
+            <ul>
+                <a href="#">
+                    <li>
+                        <i class="fa fa-user" aria-hidden="true">我的帳號</i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li>LINK TWO</li>
+                </a>
+                <a href="#">
+                    <li>LINK THREE</li>
+                </a>
+                <a href="#">
+                    <li>LINK FOUR</li>
+                </a>
+                <a href="#">
+                    <li>LINK FIVE</li>
+                </a>
+            </ul>
+        </div>
 
-  <div class="menu">
-    <ul>
-      <a href="#"><li><i class="fa fa-user" aria-hidden="true">我的帳號</i></li></a>
-      <a href="#"><li>LINK TWO</li></a>
-      <a href="#"><li>LINK THREE</li></a>
-      <a href="#"><li>LINK FOUR</li></a>
-      <a href="#"><li>LINK FIVE</li></a>
-    </ul>
-  </div>
+        <div id="out"></div>
 
-  <div id="out"></div>
-
-</div>
-
-<body>
-  <div class="hugo-so-hot"></div>
-    <%= yield %>
-
-</body>
-
-
-<div class="container-fluid dark">
-  <footer>
-    <div class="row">
-      <div class="col-xs-12">
-      <div class="col-sm-5">
-        <h3 class="page-header">聯絡方式</h3>
-          <ul class="contact">
-            <li><a href="https://www.facebook.com/btwexpress/">Facebook粉絲頁</a></li>
-            <li><a href="">意見回饋與問題回報</a></li>
-          </ul>
-          </div>
-      <div class="col-sm-7">
-        <h3 class="page-header">Ｑ＆Ａ</h3>
-          <ul class="qa">
-             <li class="col-sm-6"><a href="">訂外送規則限制</a></li>
-             <li class="col-sm-6"><a href="">最低運費基準</a></li>
-             <li class="col-sm-6"><a href="">委託單上下架機制</a></li>
-             <li class="col-sm-6"><a href="">服務地區</a></li>
-             <li class="col-sm-6"><a href="">服務規章</a></li>
-           </ul>
-           </div>
-      </div>
     </div>
-  </footer>
-</div>
+
+    <body>
+        <div class="hugo-so-hot"></div>
+        <%= yield %>
+
+    </body>
+
+    <div class="container-fluid dark">
+        <footer>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="col-sm-5">
+                        <h3 class="page-header">聯絡方式</h3>
+                        <ul class="contact">
+                            <li>
+                                <a href="https://www.facebook.com/btwexpress/">Facebook粉絲頁</a>
+                            </li>
+                            <li>
+                                <a href="">意見回饋與問題回報</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-7">
+                        <h3 class="page-header">Ｑ＆Ａ</h3>
+                        <ul class="qa">
+                            <li class="col-sm-6">
+                                <a href="">訂外送規則限制</a>
+                            </li>
+                            <li class="col-sm-6">
+                                <a href="">最低運費基準</a>
+                            </li>
+                            <li class="col-sm-6">
+                                <a href="">委託單上下架機制</a>
+                            </li>
+                            <li class="col-sm-6">
+                                <a href="">服務地區</a>
+                            </li>
+                            <li class="col-sm-6">
+                                <a href="">服務規章</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </html>
-
-
-
-

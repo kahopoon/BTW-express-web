@@ -1,168 +1,183 @@
 <div class="container userprofile">
-  <div class="row">
-    <div class="col-md-4 col-md-offset-1 col-xs-12">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-1 col-xs-12">
 
-      <div class="col-md-12">
-        <div class="userprofile-pic"></div>
-      </div>
-      <div class="col-md-12">
-        <h4> Jack Mandarine <%=@user.fullname%></h4>
-      </div>
-      <div class="col-md-12">
-        <h5>小星星放這裡哦</h5>
-      </div>
-      <div class="col-md-6">
-        <div> 委託數 <p>xxx</p> </div>
-      </div>
-      <div class="col-md-6">
-        <div> 代買數 <p>xxx</p> </div>
-      </div>
-    </div>
+            <div class="col-md-12">
+                <div class="userprofile-pic"></div>
+            </div>
+            <div class="col-md-12">
+                <h4>
+                    <%=@user.fullname%>
+                </h4>
+            </div>
+            <div class="col-md-12">
+                <h5>小星星放這裡哦</h5>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    委託數
+                    <p>xxx</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    代買數
+                    <p>xxx</p>
+                </div>
+            </div>
+        </div>
 
-    <div class="col-md-5 col-md-push-1 col-xs-12 user-info">
-      <div class="col-md-12 user-info-fix">
-        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-        <h4>真實姓名</h4><p>たくよしかわ</p>
-      </div>
-      <div class="col-md-12 user-info-fix">
-        <i class="fa fa-mobile fa-3x" aria-hidden="true"></i>
-        <h4>電話號碼</h4><p>0919 - 675 - 342</p>
-      </div>
-      <div class="col-md-12 user-info-fix">
-        <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
-        <h4>電子信箱</h4><p>YouAreMySunshine@iwasjustkidding.com</p>
-      </div>
-      <div class="col-md-12 user-info-fix">
-        <i class="fa fa-file-text fa-2x" aria-hidden="true"></i>
-        <h4>自我介紹</h4><p>じゃぎめますで〜私わ佐倉紗織でしょ〜二歩怖</p>
-      </div>
+        <div class="col-md-5 col-md-push-1 col-xs-12 user-info">
+            <div class="col-md-12 user-info-fix">
+                <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                <h4>真實姓名</h4>
+                <p><%=@user.fullname%></p>
+            </div>
+            <div class="col-md-12 user-info-fix">
+                <i class="fa fa-mobile fa-3x" aria-hidden="true"></i>
+                <h4>電話號碼</h4>
+                <p><%=@user.phone%></p>
+            </div>
+            <div class="col-md-12 user-info-fix">
+                <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                <h4>電子信箱</h4>
+                <p><%=@user.email%></p>
+            </div>
+            <div class="col-md-12 user-info-fix">
+                <i class="fa fa-file-text fa-2x" aria-hidden="true"></i>
+                <h4>自我介紹</h4>
+                <p>じゃぎめますで〜私わ佐倉紗織でしょ〜二歩怖</p>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <div class="container user_orders">
-  <div class="row">
-    <ul class="tab clearfix">
-      <li class="active">委託案件</li>
-      <li>代買案件</li>
-    </ul>
+    <div class="row">
+        <ul class="tab clearfix">
+            <li class="active">委託案件</li>
+            <li>代買案件</li>
+        </ul>
 
-    <div id="contents">
-      <div class="content active">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-5 col-md-offset-2 col-xs-12">
-              <h2>未結單</h2>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>ಠ_ಠ</p>
-              <p>ಠ_ಠ</p>
-              <p>ಠ_ಠ</p>
-              <p>ಠ_ಠ</p>
-              <p>ಠ_ಠ</p>
-              <p>ಠ_ಠ</p>
-              <p>ಠ_ಠ</p>
-              <p>ಠ_ಠ</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
+        <div id="contents">
+            <div class="content active">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-md-offset-2 col-xs-12">
+    <!-- Dear Richard, 以下是「委託案件」（owner)的 未結單插入地 -->
+                            <h2>未結單</h2>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>ಠ_ಠ</p>
+                            <p>ಠ_ಠ</p>
+                            <p>ಠ_ಠ</p>
+                            <p>ಠ_ಠ</p>
+                            <p>ಠ_ಠ</p>
+                            <p>ಠ_ಠ</p>
+                            <p>ಠ_ಠ</p>
+                            <p>ಠ_ಠ</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
 
+                        </div>
+                        <div class="col-md-5 col-xs-12 done-order">
+    <!-- Dear Richard, 以下是「委託案件」（owner)的 已結單插入地 -->
+
+                            <h2>已結單</h2>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>ಠ_ಠ</p>
+                            <p>ಠ_ಠ</p>
+                            <p>ಠ_ಠ</p>
+                            <p>ಠ_ಠ</p>
+                            <p>ಠ_ಠ</p>
+                            <p>ಠ_ಠ</p>
+                            <p>ಠ_ಠ</p>
+                            <p>ಠ_ಠ</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                            <p>要做假資料哦kerker</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-5 col-xs-12 done-order">
-              <h2>已結單</h2>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>ಠ_ಠ</p>
-              <p>ಠ_ಠ</p>
-              <p>ಠ_ಠ</p>
-              <p>ಠ_ಠ</p>
-              <p>ಠ_ಠ</p>
-              <p>ಠ_ಠ</p>
-              <p>ಠ_ಠ</p>
-              <p>ಠ_ಠ</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
-              <p>要做假資料哦kerker</p>
+        </div>
+
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-2 col-xs-12">
+    <!-- Dear Richard, 以下是「代買案件」（courier)的 未結單插入地 -->
+                        <h2>未結單</h2>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>要做假資料哦kerker</p>
+                        <p>要做假資料哦kerker</p>
+                        <p>要做假資料哦kerker</p>
+                        <p>要做假資料哦kerker</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                    </div>
+                    <div class="col-md-5 col-xs-12 done-order">
+    <!-- Dear Richard, 以下是「代買案件」（courier)的 已結單插入地 -->
+                        <h2>已結單</h2>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>要做假資料哦kerker</p>
+                        <p>要做假資料哦kerker</p>
+                        <p>要做假資料哦kerker</p>
+                        <p>要做假資料哦kerker</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                        <p>ಠ_ಠ</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="content">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5 col-md-offset-2 col-xs-12">
-            <h2>未結單</h2>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>要做假資料哦kerker</p>
-            <p>要做假資料哦kerker</p>
-            <p>要做假資料哦kerker</p>
-            <p>要做假資料哦kerker</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-          </div>
-          <div class="col-md-5 col-xs-12 done-order">
-            <h2>已結單</h2>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>要做假資料哦kerker</p>
-            <p>要做假資料哦kerker</p>
-            <p>要做假資料哦kerker</p>
-            <p>要做假資料哦kerker</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-            <p>ಠ_ಠ</p>
-          </div>
-        </div>
-      </div>
     </div>
-
-  </div>
 </div>
 
-
-
 <script>
-  $(document).ready(function(){
+    $(document).ready(function () {
 
-    $('.tab li').click(function(e){
+        $('.tab li').click(function (e) {
 
-      var index = $(e.currentTarget).index();
-      $('.tab li').removeClass('active').eq(index).addClass('active');
-      $('.content').removeClass('active').eq(index).addClass('active');
+            var index = $(e.currentTarget).index();
+            $('.tab li').removeClass('active').eq(index).addClass('active');
+            $('.content').removeClass('active').eq(index).addClass('active');
+
+        });
 
     });
-
-  });
 </script>
