@@ -37,12 +37,12 @@
             <h3> 2.時間及運費設定 </h3>
 
             <%= o.label :deliver_time, "期望餐點送達時間" %>
-
+            </br>
             日期 <%= o.date_select :deliver_time, :class => "form-control" %>
 
             時間 <%= o.time_select :deliver_time, :class => "form-control" %>
 
-
+            </br>
             <%= o.fields_for :detail do |detail_form| %>
                 <%= detail_form.label :fee, "願付運費" %>
                 <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control", :required => true %>

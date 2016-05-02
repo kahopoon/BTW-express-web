@@ -1,13 +1,12 @@
 class OrdersController < ApplicationController
 
   before_action :authenticate_user!, :except => [:index,:show]
-
+  before_action :find_order, :only => [:show,:take,:reject,:destroy]
   def index
       # @orders = Order.page(params[:page]).per(3)
       @orders = Order.all
   end
   def show
-      @order= Order.find(params[:id])
   end
 
   def new
@@ -26,6 +25,24 @@ class OrdersController < ApplicationController
       render 'new'
     end
   end
+  def take
+    # puts 'enter take'
+    @order.courier_id=current_user.id
+    if @order.save    
+      render 'show'
+    end
+  end
+  def reject
+    # puts 'enter reject' 
+    @order.courier_id=nil
+    if @order.save    
+      render 'show'
+    end 
+  end
+  def destroy
+    # check if this order is tooken by someone, then notice him
+    # destroy this order & detail
+  end
 
   # def update
   #   if params[:destory_photo]
@@ -40,7 +57,9 @@ class OrdersController < ApplicationController
   # end
 
 private
-
+  def find_order
+      @order= Order.find(params[:id])    
+  end
   def order_params
     params.require(:order).permit( :pickup_time, :deliver_time, :pickup_addr,
       :deliver_addr, :category, :owner_id, :courier_id, :status, :photo,
