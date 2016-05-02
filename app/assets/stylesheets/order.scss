@@ -147,7 +147,7 @@ $margin-top: 300px;
     color: #3A4750;
     font-size: 1em;
     font-weight: bold;
-    margin-left: 5px;
+    margin-right: 15px;
   }
 
   p{
@@ -228,8 +228,11 @@ $margin-top: 300px;
     height: 112px;
     margin: 0 auto;
   }
-
 }
+.rob{
+    display: none;
+    color: #000;
+  }
 /*************************
           LIFE
 *************************/
@@ -260,6 +263,27 @@ $margin-top: 300px;
 
   .one-order{
     border-style: none;
+    width: 300px;
+    height: 140px;
+
+    .addr-from, .addr-to{
+      font-size: 1.1em;
+    }
+
+    .fa-ellipsis-v{
+      font-size: 1.5em;
+      padding-left: 1px;
+    }
+
+    .wrap-time{
+      font-size: 1.1em;
+    }
+
+    .detail{
+      font-size: 1.1em;
+      margin-right: 43px;
+    }
+
   }
 
   .contain-life{
@@ -280,6 +304,40 @@ $margin-top: 300px;
       display: none;
     }
   }
+  #deatil-description{
+    width: 270px;
+    height: 250px;
+    float: left;
+  }
+
+  .wrap-desapp{
+    width: 530px;
+    margin: 0 auto;
+
+    h3{
+      display: none;
+    }
+  }
+  .app{
+    float: right;
+    margin: 0;
+    .store{
+      width: 187px;
+      height: 61px;
+    }
+    .qrcode{
+      display: block;
+      width: 187px;
+      height: 187px;
+    }
+  }
+
+  .rob{
+    display: block;
+    color: #EEE;
+    width: 530px;
+    margin: 30px auto;
+  }
 }
 /*大大大大大大大大大大大大大大大大大*/
 @media (min-width: 992px) {
@@ -297,6 +355,28 @@ $margin-top: 300px;
 
   .one-order{
     margin: 0 auto;
+    padding-right: 40px;
+    width: 330px;
+    height: 140px;
+
+    .addr-from, .addr-to{
+      font-size: 1.3em;
+      margin-bottom: 3px;
+    }
+
+    .fa-ellipsis-v{
+      font-size: 1.6em;
+      padding-left: 1.9px;
+    }
+
+    .wrap-time{
+      font-size: 1.2em;
+    }
+
+    .detail{
+      font-size: 1.2em;
+      margin-right: 8px;
+    }
   }
 
   .contain-life{
@@ -335,5 +415,40 @@ $margin-top: 300px;
 
   .lifedown{
     margin-top: 34px;
+  }
+
+  #deatil-description{
+    width: 270px;
+    height: 250px;
+    float: left;
+  }
+
+  .wrap-desapp{
+    width: 530px;
+    margin: 0 auto;
+
+    h3{
+      display: none;
+    }
+  }
+  .app{
+    float: right;
+    margin: 0;
+    .store{
+      width: 187px;
+      height: 61px;
+    }
+    .qrcode{
+      display: block;
+      width: 187px;
+      height: 187px;
+    }
+  }
+
+  .rob{
+    display: block;
+    color: #EEE;
+    width: 530px;
+    margin: 30px auto;
   }
 }
