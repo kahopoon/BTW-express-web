@@ -3,9 +3,9 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, :except => [:index,:show]
   before_action :find_order, :only => [:show,:take,:reject,:destroy]
   def index
-      # @orders = Order.page(params[:page]).per(3)
-      @orders = Order.all
+      @orders = Order.all.order('created_at DESC')
   end
+
   def show
   end
 
