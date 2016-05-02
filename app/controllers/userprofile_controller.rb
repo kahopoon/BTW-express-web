@@ -8,11 +8,12 @@ class UserprofileController < ApplicationController
 		end
 		@role=params[:role]
 		#owner -> show tooken with new / old
-		@post_order=Order.listorder(@user.id,params[:role],"posted")
-		@old_order=Order.listorder(@user.id,params[:role],"done")
-		@go_order=Order.listorder(@user.id,params[:role],"go")				
+		@owner_post=Order.listorder(@user.id,'owner',"posted")
+		@owner_old=Order.listorder(@user.id,'owner',"done")
+		@owner_go=Order.listorder(@user.id,'owner',"go")				
 			# @own_list=Order.where(:owner_id=>@user.id)
-
+		@courier_old=Order.listorder(@user.id,'courier',"done")
+		@courier_go=Order.listorder(@user.id,'courier',"go")				
 			# @send_list=Order.where(:courier_id=>@user.id)
 
 	end

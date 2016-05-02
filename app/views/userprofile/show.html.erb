@@ -66,52 +66,27 @@
                         <div class="col-md-5 col-md-offset-2 col-xs-12">
     <!-- Dear Richard, 以下是「委託案件」（owner)的 未結單插入地 -->
                             <h2>未結單</h2>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>ಠ_ಠ</p>
-                            <p>ಠ_ಠ</p>
-                            <p>ಠ_ಠ</p>
-                            <p>ಠ_ಠ</p>
-                            <p>ಠ_ಠ</p>
-                            <p>ಠ_ಠ</p>
-                            <p>ಠ_ಠ</p>
-                            <p>ಠ_ಠ</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-
+                            <h2>sending</h2>
+                            <ul>
+                                <% @owner_go.each do |o|%>
+                                    <li>send by<%= User.find(o.courier_id).fullname%></li> 
+                                <%end%>
+                            </ul>
+                            <h2>posted</h2>                            
+                            <ul>
+                                <% @owner_post.each do |o|%>
+                                    <li>post addr:<%= o.deliver_addr%></li>
+                                <%end%>
+                            </ul>                            
                         </div>
                         <div class="col-md-5 col-xs-12 done-order">
     <!-- Dear Richard, 以下是「委託案件」（owner)的 已結單插入地 -->
-
                             <h2>已結單</h2>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>ಠ_ಠ</p>
-                            <p>ಠ_ಠ</p>
-                            <p>ಠ_ಠ</p>
-                            <p>ಠ_ಠ</p>
-                            <p>ಠ_ಠ</p>
-                            <p>ಠ_ಠ</p>
-                            <p>ಠ_ಠ</p>
-                            <p>ಠ_ಠ</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
-                            <p>要做假資料哦kerker</p>
+                            <ul>
+                                <% @owner_old.each do |o|%>
+                                    <li>sent by<%= User.find(o.courier_id).fullname%></li>
+                                <%end%>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -124,42 +99,22 @@
                     <div class="col-md-5 col-md-offset-2 col-xs-12">
     <!-- Dear Richard, 以下是「代買案件」（courier)的 未結單插入地 -->
                         <h2>未結單</h2>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>要做假資料哦kerker</p>
-                        <p>要做假資料哦kerker</p>
-                        <p>要做假資料哦kerker</p>
-                        <p>要做假資料哦kerker</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
+                          <h2>sending</h2>
+                            <ul>
+                                <% @courier_go.each do |o|%>
+                                    <li>owned by<%= User.find(o.owner_id).fullname%></li>
+                                <%end%>
+                            </ul>                        
                     </div>
                     <div class="col-md-5 col-xs-12 done-order">
     <!-- Dear Richard, 以下是「代買案件」（courier)的 已結單插入地 -->
                         <h2>已結單</h2>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>要做假資料哦kerker</p>
-                        <p>要做假資料哦kerker</p>
-                        <p>要做假資料哦kerker</p>
-                        <p>要做假資料哦kerker</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
-                        <p>ಠ_ಠ</p>
+                          <h2>done</h2>
+                            <ul>
+                                <% @courier_old.each do |o|%>
+                                    <li>owned by<%= User.find(o.owner_id).fullname%></li>
+                                <%end%>
+                            </ul>                        
                     </div>
                 </div>
             </div>
