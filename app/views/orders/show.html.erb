@@ -1,53 +1,52 @@
 <script src="http://maps.googleapis.com/maps/api/js"></script>
-<div class="container-fluid">
-    <div class="row">    
-        <div class="col-xs-12">
-            <div class="show">
-                <p><% if @order.photo.exists? %>
-                    <%= link_to @order.photo.url, :target => "_blank" do %>
-                    <%= image_tag(@order.photo.url(:thumb)) %>
-                    <% end %>
-                    <% end %>
-                </p>
-                <hr>
-                <h3>
-                    1.訂單基本要求
-                </h3>
-                <p>點餐項目及需求數量:</p>
-                    <%= simple_format(@order.detail.description) %>
-                <p>指定購餐地點:
-                    <% if @order.pickup_addr!=""%>
-                    <%= @order.pickup_addr %>
-                    <%else%>
-                    <%='無限制'%>
-                    <%end%>
-                </p>
-                <p>總餐點預算:
-                    <%= @order.detail.prepay %></p>
-                <p>送餐地點:
-                    <%= @order.deliver_addr %></p>
-                <hr>
-                <h3>
-                    2.送達時間及運費
-                </h3>
-                <p>期望餐點送達時間:
-                    <%= @order.deliver_time.strftime('%F') %>
-                    <%= @order.deliver_time.strftime('%R') %>
-                </p>
-                <p>願付運費:
-                    <%= @order.detail.fee %></p>
-                <hr>
-                <h3>
-                    3.收件人資料
-                </h3>
+<div class="container-fluid EEE">
+    <div class="row">
+        <div class="col-xs-12 ">
+            <div class="show col-sm-5">
+                <h3>1.訂單基本要求</h3>
 
-                <p>收件人:
-                    <%= @order.detail.addressees_name %></p>
-                <p>聯絡電話:
-                    <%= @order.detail.addressees_mobile %></p>
+                <div class="yellow-area">
+                    <p class="subtitle"><i class="fa fa-spin fa-pulse fa-spin fa-cutlery fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>點餐項目及需求數量:</p>
+
+                    <span> <%= simple_format(@order.detail.description) %></span>
+                    <p class="subtitle"><i class="fa fa-spin fa-map-marker fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>指定購餐地點:
+                        <% if @order.pickup_addr!=""%>
+                        <span><%= @order.pickup_addr %></span>
+                        <%else%>
+                        <span><%='無限制'%></span>
+                        <%end%>
+                    </p>
+
+                    <p class="subtitle"><i class="fa fa-spin fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>總餐點預算:
+                        <span><%= @order.detail.prepay %>$</p></span>
+                    <p class="subtitle"><i class="fa fa-spin fa-thumb-tack fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>送餐地點:
+                        <span><%= @order.deliver_addr %></p></span>
+                </div>
+                <hr>
+                <h3>2.送達時間及運費</h3>
+
+                <div class="yellow-area">
+                    <p class="subtitle"><i class="fa fa-spin fa-calendar fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>期望餐點送達時間:
+                        <span><%= @order.deliver_time.strftime('%F') %></span>
+                        <span><%= @order.deliver_time.strftime('%R') %></span>
+                    </p>
+                    <p class="subtitle"><i class="fa fa-spin fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>願付運費:
+                        <span><%= @order.detail.fee %>$</p></span>
+                </div>
+                <hr>
+                <h3>3.收件人資料</h3>
+
+                <div class="yellow-area">
+
+                    <p class="subtitle"><i class="fa fa-spin fa-at fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>收件人:
+                        <span><%= @order.detail.addressees_name %></p></span>
+                    <p class="subtitle"><i class="fa fa-spin fa-phone fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>聯絡電話:
+                        <span><%= @order.detail.addressees_mobile %></p></span>
+                </div>
             </div>
 
-            <hr>
+            <div id="googleMap" class="col-sm-7"></div>
+
             <div class="buttons">
                 <%if @order.courier_id==nil%>
                 <%if current_user.id!=@order.owner_id%>
@@ -61,18 +60,12 @@
                 <%end%>
                 <%= link_to '回到訂單主選單', orders_path, :class => "btn btn-primary" %>
             </div>
+
         </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <div clss="show">
-          <div id="googleMap"></div>
-        </div>
-      </div>
     </div>
 </div>
 
-            
+
 
 <script>
 

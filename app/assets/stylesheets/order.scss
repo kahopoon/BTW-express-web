@@ -90,7 +90,7 @@ $margin-top: 200px;
       color:  rgba(0,0,0,0.5);
       display: inline-block;
       vertical-align: middle;
-      margin-right: 20px;
+      margin-right:0;
       background-clip: padding-box;
       font-size: 1.3em;
       border-color: #F6C90E;
@@ -169,7 +169,7 @@ $margin-top: 200px;
     color: #3A4750;
     font-size: 1em;
     font-weight: bold;
-    margin-right: 15px;
+    margin-right: 10px;
   }
 
   p{
@@ -314,7 +314,7 @@ $margin-top: 200px;
 
     .detail{
       font-size: 1.1em;
-      margin-right: 43px;
+      margin-right: 40px;
     }
 
   }
@@ -390,7 +390,7 @@ $margin-top: 200px;
     margin: 0 auto;
     padding-right: 40px;
     width: 330px;
-    height: 140px;
+    height: 150px;
 
     .addr-from, .addr-to{
       font-size: 1.3em;
