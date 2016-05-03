@@ -47,7 +47,7 @@
 
             <div id="googleMap" class="col-sm-7"></div>
 
-            <div class="buttons">
+            <div class="buttons col-sm-12">
                 <%if @order.courier_id==nil%>
                 <%if current_user.id!=@order.owner_id%>
                 <!-- nobody take this order and it is not owned by current_user-->
