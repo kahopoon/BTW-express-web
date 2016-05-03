@@ -12,8 +12,8 @@
                 <h3>
                     1.訂單基本要求
                 </h3>
-                <p>點餐項目及需求數量:
-                    <%= @order.detail.description %></p>
+                <p>點餐項目及需求數量:</p>
+                    <%= simple_format(@order.detail.description) %>
                 <p>指定購餐地點:
                     <% if @order.pickup_addr!=""%>
                     <%= @order.pickup_addr %>

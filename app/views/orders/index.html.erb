@@ -11,7 +11,7 @@
             <div class="wrap">
               <%= form_tag( new_order_path, :method => :get , :class => "wrap-write") do %>
                 <%= text_field_tag :description,"" ,class: "insert form-control",:placeholder => "想吃什麼？例：一份雞排，一杯可樂", :description => :value %>
-                <%= submit_tag("快找代言人" ,:class => "find btn") %>
+                <%= submit_tag("立即下單" ,:class => "find btn") %>
               <% end %>
             </div>
           </div>
@@ -103,8 +103,8 @@
     });
     $('.for-slick').on('beforeChange',function(){
       // console.log('fire before slick change');
-      old_data_id=$('.slick-current > div').data('id');      
-    });    
+      old_data_id=$('.slick-current > div').data('id');
+    });
     $('.for-slick').on('afterChange',function(){
       // console.log('fire after slick change');
       getdescription();
