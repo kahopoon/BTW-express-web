@@ -1,5 +1,6 @@
+<script src="http://maps.googleapis.com/maps/api/js"></script>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row">    
         <div class="col-xs-12">
             <div class="show">
                 <p><% if @order.photo.exists? %>
@@ -45,6 +46,7 @@
                 <p>聯絡電話:
                     <%= @order.detail.addressees_mobile %></p>
             </div>
+
             <hr>
             <div class="buttons">
                 <%if @order.courier_id==nil%>
@@ -61,4 +63,49 @@
             </div>
         </div>
     </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div clss="show">
+          <div id="googleMap"></div>
+        </div>
+      </div>
+    </div>
 </div>
+
+            
+
+<script>
+
+function initialize() {
+  var g2 = new google.maps.Geocoder;
+  g2.geocode({'address':'<%=j @order.deliver_addr%>'},function(results,status){
+    console.log(status);
+    if(status=="OK"){
+    // console.log(results);
+    // console.log(results[0].geometry['location'].lat()+","+results[0].geometry['location'].lng());
+    var mapinfo = {
+      center:results[0].geometry['location'],
+      zoom:16,
+      mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapinfo);
+    var marker=new google.maps.Marker({
+      position:results[0].geometry['location'],
+    });
+
+    marker.setMap(map);
+    var addr='<%=j @order.deliver_addr%>'
+    var infowindow = new google.maps.InfoWindow({
+      content:addr
+    });
+    infowindow.open(map,marker);
+  }
+  });
+
+}
+
+$(document).ready(function(){
+  initialize();
+});
+
+</script>
