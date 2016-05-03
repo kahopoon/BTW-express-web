@@ -45,8 +45,8 @@
 
           <div class="app clearfix">
             <h3>下載ＡＰＰ即可接單</h3>
-            <div class="store"><%= image_tag("test.jpeg", class: "store") %></div>
-            <%= image_tag("test.jpeg", class: "qrcode") %>
+            <div class="store"><%= image_tag("test.jpg", class: "store") %></div>
+            <%= image_tag("test.jpg", class: "qrcode") %>
           </div>
         </div>
         <h2 class="rob">即刻下載ＡＰＰ搶單！寶寶不載<br/>免手續費，實賺實拿！寶寶不賺</h2>
@@ -81,22 +81,32 @@
 
 <script>
   $(document).ready(function(){
+    var old_data_id="";
     var getdescription=function(){
       var url='<%=j v1_details_path%>'+'/9';
       // console.log(url);
       var x=$('.slick-current > div').data('id');
-      // console.log(x);
-      $.get( url, {o_id:x}, function(data){
-         console.log(data);
-         str=data['description'];
-        $('#deatil-description h1').html(str);
-      }, 'json' );
-    }
+      // console.log(x+'&'+old_data_id);
+      if(x==old_data_id){
+        console.log('not change');
+      }else{
+            $.get( url, {o_id:x}, function(data){
+              console.log(data);
+              str=data['description'];
+              $('#deatil-description h1').html(str);
+            }, 'json' );
+      };
+      old_data_id="";
+    };
     $('.slick-current').ready(function(){
       getdescription();
     });
-    $('body').on('click',$('.slick-prev,.slick_next'), function(e){
-      // console.log('prev clicked');
+    $('.for-slick').on('beforeChange',function(){
+      // console.log('fire before slick change');
+      old_data_id=$('.slick-current > div').data('id');      
+    });    
+    $('.for-slick').on('afterChange',function(){
+      // console.log('fire after slick change');
       getdescription();
     });
     $('.for-slick').slick({
@@ -135,5 +145,8 @@
         }
       ]
     });
+
+
+
   });
 </script>

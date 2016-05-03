@@ -3,7 +3,7 @@
         <div class="col-md-4 col-md-offset-1 col-xs-12">
 
             <div class="col-md-12">
-                <div class="userprofile-pic"></div>
+                <div class="userprofile-pic">#pic</div>
             </div>
             <div class="col-md-12">
                 <h4>
@@ -46,7 +46,7 @@
             <div class="col-md-12 user-info-fix">
                 <i class="fa fa-file-text fa-2x" aria-hidden="true"></i>
                 <h4>自我介紹</h4>
-                <p>じゃぎめますで〜私わ佐倉紗織でしょ〜二歩怖</p>
+                <p>じゃぎめますで〜私わ佐倉紗織でしょ〜二歩</p>
             </div>
         </div>
     </div>
@@ -69,9 +69,11 @@
                             <h2>sending</h2>
                             <ul>
                                 <% @owner_go.each do |o|%>
+
                                     <div>
                 <%= render :partial => "orders/order", :locals => {:o => o} %>
               </div>
+
                                 <%end%>
                             </ul>
                             <h2>posted</h2>
