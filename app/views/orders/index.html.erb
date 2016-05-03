@@ -81,24 +81,43 @@
 
 <script>
   $(document).ready(function(){
+    var old_data_id="";
     var getdescription=function(){
       var url='<%=j v1_details_path%>'+'/9';
       // console.log(url);
       var x=$('.slick-current > div').data('id');
-      // console.log(x);
-      $.get( url, {o_id:x}, function(data){
-         console.log(data);
-         str=data['description'];
-        $('#deatil-description h1').html(str);
-      }, 'json' );
-    }
+      // console.log(x+'&'+old_data_id);
+      if(x==old_data_id){
+        console.log('not change');
+      }else{
+            $.get( url, {o_id:x}, function(data){
+              console.log(data);
+              str=data['description'];
+              $('#deatil-description h1').html(str);
+            }, 'json' );
+      };
+      old_data_id="";
+    };
     $('.slick-current').ready(function(){
       getdescription();
     });
-    $('body').on('click',$('.slick-prev,.slick_next'), function(e){
+    $('body').on('mousedown','div.slick-list.draggable', function(e){      
+      // console.log('mousedown');
+      old_data_id=$('.slick-current > div').data('id');
+    });
+    $('body').on('mouseup','div.slick-list.draggable', function(e){      
+      // console.log('mouseup');
+      getdescription();
+    });
+    $('body').on('click','.slick-prev', function(e){
       // console.log('prev clicked');
       getdescription();
     });
+    $('body').on('click','.slick-next', function(e){
+      // console.log('next clicked');
+      getdescription();
+    });
+
     $('.for-slick').slick({
 
       // centerMode: true,
@@ -135,5 +154,8 @@
         }
       ]
     });
+
+
+
   });
 </script>
