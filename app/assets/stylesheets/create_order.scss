@@ -1,9 +1,93 @@
+/*************************
+       ＧＥＮＥＲＡＬ
+*************************/
+.EEE{
+  background-color: #EEE;
+}
+.order_form{
+  h1, h3{
+    color: #3A4750;
+  }
+}
+
+.yellow-area{
+  background-color: #ECE0BB;
+}
+
+.step-div{
+  height: 400px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hideclass{
+  display: none;
+}
+/*************************
+      ＳＴＥＰ ＢＡＲ
+*************************/
+.step-bar{
+  margin-bottom: 50px;
+
+  ul{
+    padding: 0;
+    height: 30px;
+    width: 280px;
+    margin: 0 auto;
+
+    li{
+      float: left;
+      line-height: 30px;
+      height: 30px;
+      font-weight: bold;
+      position: relative;
+      small{
+        position: absolute;
+        float: left;
+        color: #A9A9A9;
+        width: 100px;
+        margin: 0 auto;
+        text-align: center;
+        left:50%;
+        transform:translateX(-50%);
+        font-size: 1em;
+      }
+      .dark-word{
+        color: #3A4750;
+      }
+    }
+    .bar{
+      height: 4px;
+      width: 90px;
+      background-color: #3A4750;
+      position: relative;
+      top:50%;
+      transform:translateY(-50%);
+    }
+    .bar-active{
+      background-color: #F6C90E;color: #3A4750;
+    }
+    p{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      text-align: center;
+      background-color: #3A4750;
+      color: #EEE;
+      margin: 0;
+    }
+  }
+}
+/*************************
+    ＦＩＲＳＴ ＳＴＥＰ
+*************************/
+
 .submit-button {
   color: #3A4750;
 }
 
 .form-group {
-  color: #EEEEEE;
+  color: #3A4750;
 }
 
 .submit-button {
@@ -15,5 +99,49 @@
   width: 100px;
   height: 40px;
   border:none;
-
+}
+/*************************
+          ＲＷＤ
+*************************/
+/*中中中中中中中中中中中中中中中中中*/
+@media (max-width: 992px) and (min-width: 768px) {
+  .step-bar{
+    margin-bottom: 70px;
+    ul{
+      width: 330px;
+      .bar{
+        width: 120px;
+      }
+      li{
+        small{
+          width: 130px;
+          font-size: 1.3em;
+        }
+      }
+      p{
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+/*大大大大大大大大大大大大大大大大大*/
+@media (min-width: 992px) {
+  .step-bar{
+    margin-bottom: 70px;
+    ul{
+      width: 330px;
+      .bar{
+        width: 120px;
+      }
+      li{
+        small{
+          width: 130px;
+          font-size: 1.3em;
+        }
+      }
+      p{
+        font-size: 1.2em;
+      }
+    }
+  }
 }

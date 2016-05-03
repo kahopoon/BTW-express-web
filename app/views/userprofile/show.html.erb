@@ -69,22 +69,26 @@
                             <h2>sending</h2>
                             <ul>
                                 <% @owner_go.each do |o|%>
-                                    <li>send by<%= User.find(o.courier_id).fullname%></li> 
+                                    <div>
+                <%= render :partial => "orders/order", :locals => {:o => o} %>
+              </div>
                                 <%end%>
                             </ul>
-                            <h2>posted</h2>                            
+                            <h2>posted</h2>
                             <ul>
                                 <% @owner_post.each do |o|%>
                                     <li>post addr:<%= o.deliver_addr%></li>
                                 <%end%>
-                            </ul>                            
+                            </ul>
                         </div>
                         <div class="col-md-5 col-xs-12 done-order">
     <!-- Dear Richard, 以下是「委託案件」（owner)的 已結單插入地 -->
                             <h2>已結單</h2>
                             <ul>
                                 <% @owner_old.each do |o|%>
-                                    <li>sent by<%= User.find(o.courier_id).fullname%></li>
+                                   <div>
+                <%= render :partial => "orders/order", :locals => {:o => o} %>
+              </div>
                                 <%end%>
                             </ul>
                         </div>
@@ -102,9 +106,11 @@
                           <h2>sending</h2>
                             <ul>
                                 <% @courier_go.each do |o|%>
-                                    <li>owned by<%= User.find(o.owner_id).fullname%></li>
+                                    <div>
+                <%= render :partial => "orders/order", :locals => {:o => o} %>
+              </div>
                                 <%end%>
-                            </ul>                        
+                            </ul>
                     </div>
                     <div class="col-md-5 col-xs-12 done-order">
     <!-- Dear Richard, 以下是「代買案件」（courier)的 已結單插入地 -->
@@ -112,9 +118,11 @@
                           <h2>done</h2>
                             <ul>
                                 <% @courier_old.each do |o|%>
-                                    <li>owned by<%= User.find(o.owner_id).fullname%></li>
+                                    <div>
+                <%= render :partial => "orders/order", :locals => {:o => o} %>
+              </div>
                                 <%end%>
-                            </ul>                        
+                            </ul>
                     </div>
                 </div>
             </div>

@@ -1,84 +1,139 @@
+<div class="container-fluid EEE">
+  <div class="row">
+    <div class="col-xs-12 order_form">
 
-<div class = "order_form" >
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-
-        <h1>我要訂外賣</h1>
-
-        <div class="form-group">
-          <%= form_for @order do |o| %>
-
-            <h3> 1.訂單基本要求 </h3>
-
-            <%= o.fields_for :detail do |detail_form| %>
-                <%= detail_form.label :description, "請詳列出點餐項目及需求數量" %>
-                <%= detail_form.text_field :description, :placeholder=>"例如：大腸包小腸十份，豬血糕三份～", :class => "form-control", :required => true %>
-            <% end %>
-
-            <%= o.label :pickup_addr, "輸入指定購餐地點" %>
-            <%= o.text_field :pickup_addr, :placeholder=>"若要讓代買者自行決定要在哪裡買，留空白即可", :class => "form-control" %>
-
-            <%= o.fields_for :detail do |detail_form| %>
-
-                <%= detail_form.label :prepay, "總餐點預算" %>
-                <%= detail_form.select :prepay, options_for_select([['NTD 1~100', '100'],['NTD 101~200', '200'],['NTD 201~300', '300'],['NTD 301~400', '400'],  ['NTD 401~500', '500']],:selected => detail_form.object.prepay), { :prompt => "選擇價格範圍"}, {:class => "form-control", :required => true}%>
-            <% end %>
-
-            <%= o.label :deliver_addr, "輸入送餐地點" %>
-            <%= o.text_field :deliver_addr, :class => "form-control", :required => true %>
-          </div>
-        </div>
+      <h1 style="margin-bottom: 40px;">我要訂外賣</h1>
+      <div class="step-bar">
+        <ul class="clearfix">
+          <li><p style="background-color: #F6C90E;color: #3A4750;">1</p><small style="color: #3A4750;">送達地點與預算</small></li>
+          <li><div class="bar b1"></div></li>
+          <li><p class="o2">2</p><small>時間/運費設定</small></li>
+          <li><div class="bar b2"></div></li>
+          <li><p class="o3">3</p><small>聯絡資料填寫</small></li>
+        </ul>
       </div>
+      <div class="form-group">
+        <%= form_for @order do |o| %>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5">
-            <h3> 2.時間及運費設定 </h3>
+          <div class="step1 clearfix step-div ">
+            <div class="yellow-area">
+              <%= o.fields_for :detail do |detail_form| %>
+                <i class="fa fa-cutlery fa-2x" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :description, "請詳列出點餐項目及需求數量" %>
+                <%= detail_form.text_field :description, :placeholder=>"例如：大腸包小腸十份，豬血糕三份～", :class => "form-control step1-form", :required => true %>
+              <% end %>
+              <i class="fa fa-map-marker fa-2x" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :pickup_addr, "輸入指定購餐地點" %>
+              <%= o.text_field :pickup_addr, :placeholder=>"若要讓代買者自行決定要在哪裡買，留空白即可", :class => "form-control" %>
+            </div>
+            <%= o.fields_for :detail do |detail_form| %>
+              <i class="fa fa-usd fa-2x" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :prepay, "總餐點預算" %>
+              <%= detail_form.select :prepay, options_for_select([['NTD 1~100', '100'],['NTD 101~200', '200'],['NTD 201~300', '300'],['NTD 301~400', '400'],  ['NTD 401~500', '500']],:selected => detail_form.object.prepay), { :prompt => "選擇價格範圍"}, {:class => "form-control step1-form", :required => true}%>
+            <% end %>
+            <i class="fa fa-thumb-tack fa-2x" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :deliver_addr, "輸入送餐地點" %>
+            <%= o.text_field :deliver_addr, :class => "form-control step1-form", :required => true %>
 
-            <%= o.label :deliver_time, "期望餐點送達時間" %>
-            </br>
-            日期 <%= o.date_select :deliver_time, :class => "form-control" %>
+            <a href="#" class=" to2 pull-right btn btn-default disabled" role="button" >下一步 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
-            時間 <%= o.time_select :deliver_time, :class => "form-control" %>
+          </div>
 
-            </br>
+          <div class="step2 clearfix step-div hideclass">
+            <div class="yellow-area">
+              <%= o.label :deliver_time, "期望餐點送達時間" %>
+              </br>
+              日期 <%= o.date_select :deliver_time, :class => "form-control" %>
+              時間 <%= o.time_select :deliver_time, :class => "form-control" %>
+              </br>
+            </div>
             <%= o.fields_for :detail do |detail_form| %>
                 <%= detail_form.label :fee, "願付運費" %>
-                <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control", :required => true %>
-
+                <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control step2-form", :required => true %>
             <% end %>
 
+            <a href="#" class=" backto1 btn btn-default" role="button"><i class="fa fa-chevron-left" aria-hidden="true"></i> 上一步</a>
+
+            <a href="#" class=" to3 pull-right btn btn-default disabled" role="button" >下一步 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
           </div>
 
-          <div class="col-md-7">
-            <h3> 3.收件人資料填寫 </h3>
-
+          <div class="step3 clearfix step-div hideclass">
             <%= o.fields_for :detail do |detail_form| %>
+              <div class="yellow-area">
                 <%= detail_form.label :addressees_name, "收件人真實姓名" %>
                 <%= detail_form.text_field :addressees_name, :class => "form-control", :required => true %>
+              </div>
 
-                <%= detail_form.label :addressees_mobile, "收件者電話" %>
-                <%= detail_form.text_field :addressees_mobile, :class => "form-control", :required => true %>
+              <%= detail_form.label :addressees_mobile, "收件者電話" %>
+              <%= detail_form.text_field :addressees_mobile, :class => "form-control", :required => true %>
             <% end %>
-
-
-            <%= o.label :photo, "代買物品範例照片" %> (非必要)
-            <%= o.file_field :photo, :class => "form-control" %>
-
-            <% if @order.photo.exists? %>
-                <%= check_box_tag "destory_photo", "1" %> 刪除照片
-            <% end %>
-
 
             <div class="form-group">
-              <%= o.submit "送出訂單", :class => " submit-button"%>
-            </div>
-    <% end %>
 
-      </div>
-      </div>
+              <a href="#" class=" backto2 btn btn-default" role="button"><i class="fa fa-chevron-left" aria-hidden="true"></i> 上一步</a>
+
+              <%= o.submit "送出訂單", :class => "submit-button pull-right"%>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+    $(".step1-form").change(function(){
+      var formValid = true;
+      $(".step1-form").each(function(){
+        if ($(this).val() == "") {
+          formValid = false;
+        }
+      })
+      if (formValid == true){
+        $('.to2').removeClass('disabled');
+      }
+    });
+
+    $('.to2').click(function(e){
+      $('.step1').hide(1000);
+      $('.step2').slideUp().show(1000);
+      $('.b1').addClass('bar-active');
+      $('.o2').addClass('bar-active');
+      $('.o2').siblings('small').addClass('dark-word');
+    });
+
+    $('.backto1').click(function(e){
+      $('.step2').hide(1000);
+      $('.step1').slideDown().show(1000);
+      $('.b1').removeClass('bar-active');
+      $('.o2').removeClass('bar-active');
+      $('.o2').siblings('small').removeClass('dark-word');
+    });
+
+    $(".step2-form").change(function(){
+      var formValid = true;
+      $(".step2-form").each(function(){
+        if ($(this).val() == "") {
+          formValid = false;
+        }
+      })
+      if (formValid == true){
+        $('.to3').removeClass('disabled');
+      }
+    });
+
+    $('.to3').click(function(e){
+      $('.step2').hide(1000);
+      $('.step3').slideUp().show(1000);
+      $('.b2').addClass('bar-active');
+      $('.o3').addClass('bar-active');
+      $('.o3').siblings('small').addClass('dark-word');
+    });
+
+    $('.backto2').click(function(e){
+      $('.step3').hide(1000);
+      $('.step2').slideDown().show(1000);
+      $('.b2').removeClass('bar-active');
+      $('.o3').removeClass('bar-active');
+      $('.o3').siblings('small').removeClass('dark-word');
+    });
+
+  });
+</script>
