@@ -101,23 +101,14 @@
     $('.slick-current').ready(function(){
       getdescription();
     });
-    $('body').on('mousedown','div.slick-list.draggable', function(e){      
-      // console.log('mousedown');
-      old_data_id=$('.slick-current > div').data('id');
-    });
-    $('body').on('mouseup','div.slick-list.draggable', function(e){      
-      // console.log('mouseup');
+    $('.for-slick').on('beforeChange',function(){
+      // console.log('fire before slick change');
+      old_data_id=$('.slick-current > div').data('id');      
+    });    
+    $('.for-slick').on('afterChange',function(){
+      // console.log('fire after slick change');
       getdescription();
     });
-    $('body').on('click','.slick-prev', function(e){
-      // console.log('prev clicked');
-      getdescription();
-    });
-    $('body').on('click','.slick-next', function(e){
-      // console.log('next clicked');
-      getdescription();
-    });
-
     $('.for-slick').slick({
 
       // centerMode: true,
