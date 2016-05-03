@@ -1,7 +1,7 @@
 /******************
 ＧＥＮＥＲＡＬ
 ******************/
-$margin-top: 300px;
+$margin-top: 200px;
 
 .h768{
   height: 768px;
@@ -56,7 +56,7 @@ $margin-top: 300px;
     }
     .wrap{
       height:100%;
-      margin-top: 30px;
+      margin-top: 230px;
     }
 
     .wrap-write::before{
@@ -76,6 +76,10 @@ $margin-top: 300px;
       vertical-align: middle;
       padding: 0;
       background-clip: padding-box;
+      border-radius: 0;
+      // outline-style: solid;
+      // outline-width: 4px;
+      // outline-color: rgba(0,0,0,0.6);
     }
 
     .find{
@@ -86,9 +90,24 @@ $margin-top: 300px;
       color:  rgba(0,0,0,0.5);
       display: inline-block;
       vertical-align: middle;
-      margin-right: 5px;
+      margin-right: 20px;
       background-clip: padding-box;
+      font-size: 1.3em;
+      border-color: #F6C90E;
+      // outline-style: solid;
+      // outline-width: 4px;
+      // outline-color: rgba(0,0,0,0.6);
     }
+    .find:hover{
+    background-color: rgba(0,0,0,0.5);
+    font-weight: normal;
+    border-color: #111;
+    color: #EEE;
+    -webkit-animation-name: color;
+    -webkit-animation-duration:0.2s;
+    animation-name: color;
+    animation-duration:0.2s;
+  }
   }
 
   h4 {
@@ -177,8 +196,17 @@ $margin-top: 300px;
   }
 
   .detail:hover{
-    background-color: #EEE;
-    border-color: #EEE;
+    background-color: rgba(0,0,0,0.5);
+    font-weight: normal;
+    border-color: #111;
+    color: #EEE;
+    -webkit-animation-name: color;
+    -webkit-animation-duration:0.2s;
+    animation-name: color;
+    animation-duration:0.2s;
+    -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
   }
 }
 /***************************
@@ -209,6 +237,7 @@ $margin-top: 300px;
     color: #303841;
     font-size: 0.5em;
     word-wrap: break-word;
+    padding: 0 4px;
   }
 }
 
@@ -233,9 +262,10 @@ $margin-top: 300px;
   }
 }
 .rob{
-    display: none;
-    color: #000;
-  }
+  display: none;
+  color: #000;
+}
+
 /*************************
           LIFE
 *************************/

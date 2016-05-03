@@ -19,7 +19,7 @@
             <div class="yellow-area">
               <%= o.fields_for :detail do |detail_form| %>
                 <i class="fa fa-cutlery fa-2x" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :description, "請詳列出點餐項目及需求數量" %>
-                <%= detail_form.text_field :description, :placeholder=>"例如：大腸包小腸十份，豬血糕三份～", :class => "form-control step1-form", :required => true %>
+                <%= detail_form.text_area :description, :placeholder=>"例如：大腸包小腸十份，豬血糕三份～", :class => "form-control step1-form", :required => true %>
               <% end %>
               <i class="fa fa-map-marker fa-2x" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :pickup_addr, "輸入指定購餐地點" %>
               <%= o.text_field :pickup_addr, :placeholder=>"若要讓代買者自行決定要在哪裡買，留空白即可", :class => "form-control" %>
