@@ -69,7 +69,11 @@
                             <h2>sending</h2>
                             <ul>
                                 <% @owner_go.each do |o|%>
-                                    <li>send by<%= User.find(o.courier_id).fullname%></li>
+
+                                    <div>
+                <%= render :partial => "orders/order", :locals => {:o => o} %>
+              </div>
+
                                 <%end%>
                             </ul>
                             <h2>posted</h2>
@@ -84,7 +88,9 @@
                             <h2>已結單</h2>
                             <ul>
                                 <% @owner_old.each do |o|%>
-                                    <li>sent by<%= User.find(o.courier_id).fullname%></li>
+                                   <div>
+                <%= render :partial => "orders/order", :locals => {:o => o} %>
+              </div>
                                 <%end%>
                             </ul>
                         </div>
@@ -102,7 +108,9 @@
                           <h2>sending</h2>
                             <ul>
                                 <% @courier_go.each do |o|%>
-                                    <li>owned by<%= User.find(o.owner_id).fullname%></li>
+                                    <div>
+                <%= render :partial => "orders/order", :locals => {:o => o} %>
+              </div>
                                 <%end%>
                             </ul>
                     </div>
@@ -112,7 +120,9 @@
                           <h2>done</h2>
                             <ul>
                                 <% @courier_old.each do |o|%>
-                                    <li>owned by<%= User.find(o.owner_id).fullname%></li>
+                                    <div>
+                <%= render :partial => "orders/order", :locals => {:o => o} %>
+              </div>
                                 <%end%>
                             </ul>
                     </div>
