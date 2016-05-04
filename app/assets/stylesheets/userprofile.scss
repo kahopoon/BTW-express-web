@@ -3,6 +3,9 @@
   background-color: #303841;
   color: #fff;
   text-align: center;
+  padding-top:60px;
+  padding-bottom: 50px;
+
 }
 
 .userprofile-pic{
@@ -13,9 +16,27 @@
   background-color: #F6C90E;
 }
 
+.owner_count{
+  margin-top:20px;
+  margin-left: 80px;
+  float: left;
+}
+
+.courier_count{
+  margin-top:20px;
+  margin-right: 80px;
+  float: right;
+
+}
+
 .user-info{
-  margin: 40px 0;
+  margin: 30px 0;
+  padding-left: 40px;
   text-align: left;
+}
+
+.user-info-fix p{
+  color: #ccc;
 }
 
 .user_orders{
@@ -30,8 +51,19 @@
     position: absolute;
     left: 0;
   }
-  i:nth-child(1){
-    transform: translateY(-10%);
+
+  .fa-user {
+    top: 0px;
+    transform: translateX(20%);
+  }
+
+  .fa-mobile {
+    transform: translateY(-14%);
+    left: 5px;
+  }
+
+  .fa-file-text{
+    left: 1px;
   }
 
   p{
@@ -52,25 +84,29 @@
   }
 }
 
+.intro{
+  padding-top: 10px;
+  padding-right: 40px;
+}
 /*********user_orders**************/
 
 .tab {
   margin: 20px 0;
-  padding-left: 100px;
+  padding-left: 40px;
   list-style-type: none;
 }
 
 .tab li {
+  transform: translateY(-142%);
   border-radius: 10%;
   float: left;
   padding: 10px 30px 10px 30px;
-  margin-right: 10px;
   background-color: #ccc;
   cursor: pointer;
 }
 
 .tab li.active, .tab li:hover {
-  background-color: #fff;
+  background-color: #EEEEEE;
   color: black;
 }
 .content {
@@ -81,4 +117,26 @@
   display: block;
 }
 
+.orders_list{
+  border-radius: 5%;
+}
 
+/*************************
+          ＲＷＤ
+*************************/
+@media (max-width: 992px) and (min-width: 768px) {
+  .user_orders{
+    background-color: #EEEEEE;
+    width: 100%;
+  }
+
+
+}
+
+
+@media (min-width: 992px) {
+  .user_orders{
+    background-color: #EEEEEE;
+    width: 100%;
+  }
+}
