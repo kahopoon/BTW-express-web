@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
 devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-get "/userprofile" => "userprofile#show"
-get "/new_userprofile" => "userprofile#new"
+# get "/userprofil" => "userprofile#show"
+# get "/edit_userprofile" => "userprofile#edit"
+resources :users
 # orders, details api updated by hugo
 scope :path => '/api/v1', :module => 'api_v1', :as => 'v1', :defaults => {:format => :json} do
 
