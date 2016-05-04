@@ -1,28 +1,33 @@
-<div class="container userprofile">
+<div class="container-fluid userprofile">
     <div class="row">
         <div class="col-md-4 col-md-offset-1 col-xs-12">
 
             <div class="col-md-12">
-                <div class="userprofile-pic">#pic</div>
+                <div class="userprofile-pic"></div>
             </div>
             <div class="col-md-12">
                 <h4>
                     <%=@user.fullname%>
                 </h4>
             </div>
-            <div class="col-md-12">
-                <h5>小星星放這裡哦</h5>
+            <div class="col-md-12" style="color: #F6C90E">
+                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o fa-2x" aria-hidden="true"></i>
+
             </div>
             <div class="col-md-6">
-                <div>
+                <div class="owner_count">
                     委託數
-                    <p>xxx</p>
+                    <p>22</p>
                 </div>
             </div>
             <div class="col-md-6">
-                <div>
+                <div class="courier_count">
                     代買數
-                    <p>xxx</p>
+                    <p>18</p>
                 </div>
             </div>
         </div>
@@ -46,13 +51,16 @@
             <div class="col-md-12 user-info-fix">
                 <i class="fa fa-file-text fa-2x" aria-hidden="true"></i>
                 <h4>自我介紹</h4>
-                <p>じゃぎめますで〜私わ佐倉紗織でしょ〜二歩</p>
+                <div class="intro">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus rerum cum voluptatum molestias itaque, hic illum labore nostrum, recusandae ipsam eos. Illum recusandae molestiae nihil, natus ab adipisci culpa, cupiditate consectetur quod aut
+                        alias facilis ipsa, enim maiores hic modi?</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container user_orders">
+<div class="container-fluid user_orders">
     <div class="row">
         <ul class="tab clearfix">
             <li class="active">委託案件</li>
@@ -64,67 +72,78 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-5 col-md-offset-2 col-xs-12">
-    <!-- Dear Richard, 以下是「委託案件」（owner)的 未結單插入地 -->
+                            <!-- Dear Richard, 以下是「委託案件」（owner)的 未結單插入地 -->
                             <h2>未結單</h2>
-                            <h2>sending</h2>
+                            <h2>送餐中</h2>
                             <ul>
                                 <% @owner_go.each do |o|%>
+                                <li>代買者：<%= User.find(o.courier_id).fullname%></li>
 
-                                    <div>
-                <%= render :partial => "orders/order", :locals => {:o => o} %>
-              </div>
+                                <div>
+                                    <br></br><%= render :partial => "orders/order", :locals => {:o => o} %>
+                                    <br></br>
+                                </div>
 
                                 <%end%>
                             </ul>
-                            <h2>posted</h2>
+                            <h2>尚未被接單</h2>
                             <ul>
                                 <% @owner_post.each do |o|%>
-                                    <li>post addr:<%= o.deliver_addr%></li>
+                                <br>
+                                <div class="orders_list" style="background-color:#3A4750">
+                                    <br><<%= render :partial => "orders/order", :locals => {:o => o} %>
+                                    </br>
+                                </div>
                                 <%end%>
                             </ul>
                         </div>
                         <div class="col-md-5 col-xs-12 done-order">
-    <!-- Dear Richard, 以下是「委託案件」（owner)的 已結單插入地 -->
+                            <!-- Dear Richard, 以下是「委託案件」（owner)的 已結單插入地 -->
                             <h2>已結單</h2>
                             <ul>
                                 <% @owner_old.each do |o|%>
-                                   <div>
-                <%= render :partial => "orders/order", :locals => {:o => o} %>
-              </div>
+                                <li>代買者：<%= User.find(o.courier_id).fullname%></li>
+
+                                <div>
+                                    <br></br><%= render :partial => "orders/order", :locals => {:o => o} %>
+                                    <br></br>
+                                </div>
                                 <%end%>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5 col-md-offset-2 col-xs-12">
-    <!-- Dear Richard, 以下是「代買案件」（courier)的 未結單插入地 -->
-                        <h2>未結單</h2>
-                          <h2>sending</h2>
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-md-offset-2 col-xs-12">
+                            <!-- Dear Richard, 以下是「代買案件」（courier)的 未結單插入地 -->
+                            <h2>未結單</h2>
+                            <h2>代買中</h2>
                             <ul>
                                 <% @courier_go.each do |o|%>
-                                    <div>
-                <%= render :partial => "orders/order", :locals => {:o => o} %>
-              </div>
+                                <div>
+                                    <br></br><%= render :partial => "orders/order", :locals => {:o => o} %>
+                                    <br></br>
+                                </div>
                                 <%end%>
                             </ul>
-                    </div>
-                    <div class="col-md-5 col-xs-12 done-order">
-    <!-- Dear Richard, 以下是「代買案件」（courier)的 已結單插入地 -->
-                        <h2>已結單</h2>
-                          <h2>done</h2>
+                        </div>
+                        <div class="col-md-5 col-xs-12 done-order">
+                            <!-- Dear Richard, 以下是「代買案件」（courier)的 已結單插入地 -->
+                            <h2>已結單</h2>
+                            <h2>完成送餐</h2>
                             <ul>
                                 <% @courier_old.each do |o|%>
-                                    <div>
-                <%= render :partial => "orders/order", :locals => {:o => o} %>
-              </div>
+                                <div>
+                                    <br></br><%= render :partial => "orders/order", :locals => {:o => o} %>
+                                    <br></br>
+                                </div>
                                 <%end%>
                             </ul>
+                        </div>
                     </div>
                 </div>
             </div>
