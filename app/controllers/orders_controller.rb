@@ -40,8 +40,14 @@ class OrdersController < ApplicationController
     end 
   end
   def destroy
-    # check if this order is tooken by someone, then notice him
+    puts "enter delete"
+    if @order.courier_id!=nil
+      # if this order is tooken by someone, notice him
+    end
+    @order.destroy
+    puts @order.destroyed?
     # destroy this order & detail
+    redirect_to orders_path
   end
 
   # def update

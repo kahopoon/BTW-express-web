@@ -48,17 +48,27 @@
             <div id="googleMap" class="col-sm-7"></div>
 
             <div class="buttons col-sm-12">
+              <%if current_user.id==@order.owner_id%>
+              <!-- owner -->
+                <%= link_to '取消訂單', order_path(@order),:method =>:delete, :class => "btn btn-danger" %>
+                <%if @order.courier_id!=nil%>
+                  <button class="btn btn-primary" disabled="disabled">訂單處理中</button>
+                <%end%>
+              <%else%>
+              <!-- not owner -->
                 <%if @order.courier_id==nil%>
-                <%if current_user.id!=@order.owner_id%>
-                <!-- nobody take this order and it is not owned by current_user-->
-                <%= link_to '我要接單', take_order_path(@order),:method=>:post, :class => "btn btn-success" %>
-                <%end%>
-                <%elsif current_user.id==@order.courier_id%>
-                <%= link_to '取消接單', reject_order_path(@order),:method=>:post, :class => "btn btn-danger" %>
+                <!-- nobody take this order-->
+                  <%= link_to '我要接單', take_order_path(@order),:method=>:post, :class => "btn btn-success" %>                
                 <%else%>
-                <%= link_to '訂單處理中', '#', :class => "btn btn-danger" %>
+                  <%if current_user.id==@order.courier_id%>
+                    <%= link_to '取消接單', reject_order_path(@order),:method=>:post, :class => "btn btn-danger" %>
+                  <%else%>
+                    <button class="btn btn-danger" disabled="disabled">訂單處理中</button>
+                  <%end%>                  
                 <%end%>
-                <%= link_to '回到訂單主選單', orders_path, :class => "btn btn-primary" %>
+              <%end%>
+            
+              <%= link_to '回到訂單主選單', orders_path, :class => "btn btn-primary" %>
             </div>
 
         </div>
