@@ -1,0 +1,44 @@
+.new_userprofile{
+  input{
+    background-color: #3A4750;
+    border:none;
+  }
+}
+  .profile-pic{
+    margin: 30px auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #F6C90E;
+  }
+
+  h3{
+    color: #EEEEEE;
+  }
+  .profile-head{
+    text-align: center;
+  }
+  .profile-addition{
+    text-align: center;
+
+    textarea{
+      resize: none;
+      background-color: #3A4750;
+      border: none;
+      color: #F6C90E;
+      text-align: center;
+    }
+}
+
+.profile-input{
+  margin:40px 0;
+  border-bottom: 1px solid #fff ;
+}
+
+.submit{
+  text-align: center;
+  padding: 10px 0;
+  border: 3px solid #F6C90E ;
+
+
+}
