@@ -6,10 +6,10 @@
                 <h3>1.訂單基本要求</h3>
 
                 <div class="yellow-area">
-                    <p class="subtitle"><i class="fa fa-spin fa-pulse fa-spin fa-cutlery fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>點餐項目及需求數量:</p>
+                    <p class="subtitle"><i class="fa fa-pulse fa-cutlery fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>點餐項目及需求數量:</p>
 
                     <span> <%= simple_format(@order.detail.description) %></span>
-                    <p class="subtitle"><i class="fa fa-spin fa-map-marker fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>指定購餐地點:
+                    <p class="subtitle"><i class="fa fa-map-marker fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>指定購餐地點:
                         <% if @order.pickup_addr!=""%>
                         <span><%= @order.pickup_addr %></span>
                         <%else%>
@@ -17,20 +17,20 @@
                         <%end%>
                     </p>
 
-                    <p class="subtitle"><i class="fa fa-spin fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>總餐點預算:
+                    <p class="subtitle"><i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>總餐點預算:
                         <span><%= @order.detail.prepay %>$</p></span>
-                    <p class="subtitle"><i class="fa fa-spin fa-thumb-tack fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>送餐地點:
+                    <p class="subtitle"><i class="fa fa-thumb-tack fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>送餐地點:
                         <span><%= @order.deliver_addr %></p></span>
                 </div>
                 <hr>
                 <h3>2.送達時間及運費</h3>
 
                 <div class="yellow-area">
-                    <p class="subtitle"><i class="fa fa-spin fa-calendar fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>期望餐點送達時間:
+                    <p class="subtitle"><i class="fa fa-calendar fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>期望餐點送達時間:
                         <span><%= @order.deliver_time.strftime('%F') %></span>
                         <span><%= @order.deliver_time.strftime('%R') %></span>
                     </p>
-                    <p class="subtitle"><i class="fa fa-spin fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>願付運費:
+                    <p class="subtitle"><i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>願付運費:
                         <span><%= @order.detail.fee %>$</p></span>
                 </div>
                 <hr>
@@ -38,9 +38,9 @@
 
                 <div class="yellow-area">
 
-                    <p class="subtitle"><i class="fa fa-spin fa-at fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>收件人:
+                    <p class="subtitle"><i class="fa fa-at fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>收件人:
                         <span><%= @order.detail.addressees_name %></p></span>
-                    <p class="subtitle"><i class="fa fa-spin fa-phone fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>聯絡電話:
+                    <p class="subtitle"><i class="fa fa-phone fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>聯絡電話:
                         <span><%= @order.detail.addressees_mobile %></p></span>
                 </div>
             </div>

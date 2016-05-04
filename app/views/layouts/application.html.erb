@@ -18,11 +18,11 @@
     <% if current_user %>
       <%= link_to('Facebook登出', destroy_user_session_path, :class => "btn btn-primary fb-btn", :method => :delete) %>
       <%= link_to userprofile_path, :class => "man" do %>
-      <i class="fa fa-spin fa-user fa-2x" aria-hidden="true"></i>
+      <i class="fa fa-user fa-2x" aria-hidden="true"></i>
     <% end %>
     <% else %>
       <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-md fb-btn" do%>
-        <i class="fa fa-spin fa-facebook" aria-hidden="true">  &nbsp;Facebook登入</i>
+        <i class="fa fa-facebook" aria-hidden="true">  &nbsp;Facebook登入</i>
         <% end %>
     <% end %>
 
