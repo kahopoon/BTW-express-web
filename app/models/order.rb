@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  has_one :detail
+  has_one :detail, :dependent => :destroy
   belongs_to :user
   accepts_nested_attributes_for :detail
 

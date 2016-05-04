@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 userprofile">
+            <div class="profile-head">
+                <div class="profile-pic"></div>
+
+                <hr>
+            </div>
+
+            <%= form_for @user do |f| %>
+
+            <div class="profile-info">
+                <div class="profile-input clearfix">
+                    <%= f.label :fullname, "真實姓名" %>
+                    <%= f.text_area :fullname, :class => "form-control", :placeholder=>"請輸入您的真實姓名" %>
+                </div>
+
+                <div class="profile-input clearfix">
+                   <%= f.label :phone, "電話號碼" %>
+                   <%= f.text_area :phone, :class => "form-control", :placeholder=>"請輸入您的聯絡電話" %>
+                </div>
+                <div class="profile-input clearfix">
+                   <%= f.label :email, "電子信箱" %>
+                   <%= f.text_area :email, :class => "form-control", :placeholder=>"請輸入您的聯絡信箱" %>
+                </div>
+                <div class="profile-input clearfix">
+                   <%= f.label :introduction, "自我介紹" %>
+                   <%= f.text_area :introduction, :class => "form-control", :placeholder=>"運用簡短自介拉近與他人的距離吧！" %>
+                </div>
+            </div>
+            <div class="form-group">
+   <%= f.submit %>
+ </div>
+ <% end %>
+        </div>
+    </div>
+</div>

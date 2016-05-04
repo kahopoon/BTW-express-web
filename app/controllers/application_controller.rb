@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
 
-   if current_user.fullname == nil  #之後換成簡介
-     new_userprofile_path #之後把要填資料的path放這
+   if current_user.introduction == nil  #之後換成簡介
+     edit_user_path(current_user) #之後把要填資料的path放這
    else
      request.env['omniauth.origin'] || stored_location_for(resource) || root_path
    end
