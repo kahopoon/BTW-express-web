@@ -1,18 +1,21 @@
 /*************************
        ＧＥＮＥＲＡＬ
 *************************/
-.show{
+.wrap-showmap{
   width: 370px;
   margin: 0 auto;
-}
-
-h3 {
-  color: #F6C90E;
+  h3 {
+    color: #3A4750;
+  }
 }
 /*************************
         ＳＨＯＷ
 *************************/
 .show{
+  width: 360px;
+  margin: 0 auto;
+  padding: 0;
+
   span{
     color: #3A4750;
     font-size: 1.2em;
@@ -31,30 +34,39 @@ h3 {
      ＧＯＯＧＬＥＭＡＰ
 *************************/
 #googleMap {
-   width:370px;
-   height:300px;
+   width:360px;
    margin: 0 auto;
+   height: 300px;
    border-style: solid;
    border-width: 2px;
    border-color: #F6C90E;
 }
 
 .buttons{
+  width: 220px;
   text-align: center;
-  margin: 0 auto;
-  padding-bottom: 30px;
+  margin: 20px auto;
+  padding: 0;
 }
 /*************************
           ＲＷＤ
 *************************/
 /*中中中中中中中中中中中中中中中中中*/
 @media (max-width: 992px) and (min-width: 768px) {
+  .wrap-showmap{
+    width: 768px;
+    margin: 0 auto;
+  }
   #googleMap{
     margin-top: 56px;
   }
 }
 /*大大大大大大大大大大大大大大大大大*/
 @media (min-width: 992px) {
+  .wrap-showmap{
+    width: 1024px;
+    margin: 0 auto;
+  }
   #googleMap{
     margin-top: 56px;
   }
