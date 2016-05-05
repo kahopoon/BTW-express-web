@@ -20,7 +20,7 @@
                         </p>
 
                         <p class="subtitle"><i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>總餐點預算:
-                            <span><%= @order.detail.prepay %>$</p></span>
+                            <span>$ <%= @order.detail.prepay %></p></span>
                         <p class="subtitle"><i class="fa fa-thumb-tack fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>送達地點:
                             <span><%= @order.deliver_addr %></p></span>
                     </div>
@@ -33,7 +33,7 @@
                             <span><%= @order.deliver_time.strftime('%R') %></span>
                         </p>
                         <p class="subtitle"><i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i>願付運費:
-                            <span><%= @order.detail.fee %>$</p></span>
+                            <span>$ <%= @order.detail.fee %></p></span>
                     </div>
                     <hr>
                     <h3>3.收件人資料</h3>
