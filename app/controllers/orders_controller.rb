@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, :except => [:index,:show]
   before_action :find_order, :only => [:show,:take,:reject,:destroy]
   def index
-      @orders = Order.all.order('created_at DESC')
+      @orders = Order.includes(:detail).all.order('created_at DESC')
   end
 
   def show
@@ -45,8 +45,7 @@ class OrdersController < ApplicationController
       # if this order is tooken by someone, notice him
     end
     @order.destroy
-    puts @order.destroyed?
-    # destroy this order & detail
+    # puts @order.destroyed?
     redirect_to orders_path
   end
 
