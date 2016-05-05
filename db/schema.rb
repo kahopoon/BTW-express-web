@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504025647) do
+ActiveRecord::Schema.define(version: 20160505084701) do
 
   create_table "details", force: :cascade do |t|
     t.integer  "order_id"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20160504025647) do
     t.string   "phone"
     t.string   "fullname"
     t.text     "introduction"
+    t.string   "fb_pic"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true

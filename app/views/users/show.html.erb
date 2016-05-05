@@ -21,13 +21,13 @@
             <div class="col-md-6">
                 <div class="owner_count">
                     委託數
-                    <p>22</p>
+                    <p><%=@owner_go.count + @owner_old.count + @owner_post.count%></p>
                 </div>
             </div>
             <div class="col-md-6 clearfix">
                 <div class="courier_count">
                     代買數
-                    <p>18</p>
+                    <p><%=@courier_old.count + @courier_go.count%></p>
                 </div>
             </div>
             <%= link_to "修改個人資料", edit_user_path(current_user), :class => "btn btn-info"%>
@@ -88,8 +88,8 @@
                             <ul>
                                 <% @owner_post.each do |o|%>
                                 <br>
-                                <div class="orders_list" style="background-color:#3A4750">
-                                    <br><<%= render :partial => "orders/order", :locals => {:o => o} %>
+                                <div class="orders_list">
+                                    <br><%= render :partial => "orders/order", :locals => {:o => o} %>
                                     </br>
                                 </div>
                                 <%end%>
@@ -102,7 +102,7 @@
                                 <% @owner_old.each do |o|%>
                                 <li>代買者：<%= User.find(o.courier_id).fullname%></li>
 
-                                <div>
+                                <div class="orders_list">
                                     <br></br><%= render :partial => "orders/order", :locals => {:o => o} %>
                                     <br></br>
                                 </div>
@@ -122,7 +122,7 @@
                             <h2>代買中</h2>
                             <ul>
                                 <% @courier_go.each do |o|%>
-                                <div>
+                                <div class="orders_list">
                                     <br></br><%= render :partial => "orders/order", :locals => {:o => o} %>
                                     <br></br>
                                 </div>
@@ -135,7 +135,7 @@
                             <h2>完成送餐</h2>
                             <ul>
                                 <% @courier_old.each do |o|%>
-                                <div>
+                                <div class="orders_list">
                                     <br></br><%= render :partial => "orders/order", :locals => {:o => o} %>
                                     <br></br>
                                 </div>

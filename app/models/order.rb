@@ -9,7 +9,7 @@ class Order < ActiveRecord::Base
   	if role=="owner"
     	Order.where(:owner_id=>idx,:status=>st)
 	else
-    	Order.where(:courier_id=>idx,:status=>st) unless st=="posted"	
+    	Order.where(:courier_id=>idx,:status=>st)	
 	end
   end
 

@@ -64,6 +64,7 @@ class ApiV1::AuthController < ApiController
     render :json => { :message => "ok" }
   end
 
+<<<<<<< HEAD
   def write_profile 
     user=current_user
     puts user.id
@@ -78,9 +79,14 @@ class ApiV1::AuthController < ApiController
     else
       render :json => { :save=>false }
     end
+=======
+  def write_profile
+    puts params
+    render :json => { :message => "ok" }
+>>>>>>> 3067abf71fb6be51db82fa00b615c68b7caf4ef4
   end
   def read_profile
-    render :json => { :message => "ok" }    
+    render :json => { :message => "ok" }
   end
 
 end
