@@ -4,3 +4,21 @@
   75%   {background-color: #303841;}
   100%  {background-color: rgba(223,221,225,0.3);}
  }
+
+@keyframes imgFade {
+ 0% {
+   opacity:1;
+ }
+ 17% {
+   opacity:1;
+ }
+ 25% {
+   opacity:0;
+ }
+ 92% {
+   opacity:0;
+ }
+ 100% {
+   opacity:1;
+ }
+}

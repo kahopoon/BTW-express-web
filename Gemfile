@@ -33,6 +33,7 @@ gem 'faker'
 
 gem 'font-awesome-sass'
 gem 'fontello-rails', '~> 0.2.0'
+gem 'fancybox2-rails', '~> 0.2.8'
 gem "paperclip", "~> 4.3"
 
 gem "ransack"
