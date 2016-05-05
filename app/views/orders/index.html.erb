@@ -8,12 +8,15 @@
             <h1>寶寶想吃東西</h1><br/>
             <h2>可是寶寶不說可是寶寶不說可是寶寶不說</h2>
 
-            <div class="wrap">
               <%= form_tag( new_order_path, :method => :get , :class => "wrap-write") do %>
-                <%= text_field_tag :description,"" ,class: "insert form-control",:placeholder => "想吃什麼？例：一份雞排，一杯可樂", :description => :value %>
-                <%= submit_tag("立即下單" ,:class => "find btn") %>
+                <div class="wrap-input">
+                  <%= text_field_tag :description,"" ,class: "insert form-control",:placeholder => "想吃什麼？例：一份雞排，一杯可樂", :description => :value %>
+                </div>
+                <div class="wrap-find">
+                  <%= submit_tag("立即下單" ,:class => "find btn") %>
+                </div>
               <% end %>
-            </div>
+
           </div>
         </div>
       </div>
@@ -115,13 +118,17 @@
       // centerPadding: '60px',
       speed: 300,
       slidesToShow: 3,
+      centerMode: true,
+      centerPadding: '0px',
+      cssEase: 'ease',
+
       responsive: [
         {
           breakpoint: 992,
           settings: {
             arrows: true,
-            // centerMode: true,
-            // centerPadding: '40px',
+            centerMode: true,
+            centerPadding: '40px',
             slidesToShow: 2
           }
         },
