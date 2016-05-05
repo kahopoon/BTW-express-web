@@ -31,7 +31,7 @@
             <i class="fa fa-thumb-tack fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :deliver_addr, "輸入送餐地點" %>
             <%= o.text_field :deliver_addr, :class => "form-control step1-form", :required => true %>
 
-            <a href="#" class=" to2 pull-right btn btn-default disabled" role="button" >下一步 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            <a href="#" class=" to2 pull-right btn btn-default" role="button" >下一步 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
           </div>
 
@@ -50,7 +50,7 @@
 
             <a href="#" class=" backto1 btn btn-default" role="button"><i class="fa fa-chevron-left" aria-hidden="true"></i> 上一步</a>
 
-            <a href="#" class=" to3 pull-right btn btn-default disabled" role="button" >下一步 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            <a href="#" class=" to3 pull-right btn btn-default" role="button" >下一步 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
           </div>
 
           <div class="step3 clearfix step-div hideclass">
@@ -81,14 +81,11 @@
   $(document).ready(function(){
     $(".step1-form").change(function(){
       var formValid = true;
-      $(".step1-form").each(function(){
-        if ($(this).val() == "") {
-          formValid = false;
+      $(".step1").validate({
+        submitHandler: function(form) {
+
         }
-      })
-      if (formValid == true){
-        $('.to2').removeClass('disabled');
-      }
+       });
     });
 
     $('.to2').click(function(e){
