@@ -25,7 +25,7 @@ $margin-top: 200px;
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0)
     ),
-    image-url("bike.png");
+    image-url("test.jpeg");
 
   height: 768px;
   background-position: center;
@@ -34,7 +34,7 @@ $margin-top: 200px;
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
-  width: 100vw;
+  // width: 100vw;
 
   .top {
     width: 100%;
@@ -55,59 +55,64 @@ $margin-top: 200px;
       color: #fff;
     }
     .wrap{
-      height:100%;
+      height:100;
       margin-top: 230px;
+      height: 46px;
     }
 
-    .wrap-write::before{
-       content:'';
-       width:0;
-       height:100%;
-       display:inline-block;
-       position:relative;
-       vertical-align:middle;
-       background:#f00;
-     }
+    .wrap-write{
+      display: table;
+      max-width: 800px;
+      margin-top: 250px;
+      background-color: rgba(0,0,0,0.6);
+      height: 46px;
+    }
+
+    .wrap-input{
+      border-style: none;
+      display: table-cell;
+      width: 100%;
+      height: 46px;
+      padding: 6px;
+    }
+
+    .wrap-find{
+      position: relative;
+      top:50%;
+      transform: translateY(-46%);
+      border-style: none;
+      display: table-cell;
+      width: 106px;
+      padding: 5px;
+      height: 50px;
+      padding-left: 1px;
+    }
 
     .insert{
-      display: inline-block;
+      border-style: none;
       height: 40px;
-      width: 66%;
-      vertical-align: middle;
-      padding: 0;
-      background-clip: padding-box;
-      border-radius: 0;
-      // outline-style: solid;
-      // outline-width: 4px;
-      // outline-color: rgba(0,0,0,0.6);
     }
 
     .find{
+      border-style: none;
       background-color: #F6C90E;
       height: 40px;
       width: 100px;
       font-weight: bold;
-      color:  rgba(0,0,0,0.5);
-      display: inline-block;
-      vertical-align: middle;
-      margin-right:0;
-      background-clip: padding-box;
+      color: rgba(0,0,0,0.5);
       font-size: 1.3em;
       border-color: #F6C90E;
-      // outline-style: solid;
-      // outline-width: 4px;
-      // outline-color: rgba(0,0,0,0.6);
     }
     .find:hover{
-    background-color: rgba(0,0,0,0.5);
-    font-weight: normal;
-    border-color: #111;
-    color: #EEE;
-    -webkit-animation-name: color;
-    -webkit-animation-duration:0.2s;
-    animation-name: color;
-    animation-duration:0.2s;
-  }
+      background-color: rgba(0,0,0,0.5);
+      font-weight: normal;
+      border-color: #111;
+      color: #EEE;
+      -webkit-animation-name: color;
+      -webkit-animation-duration:0.2s;
+      animation-name: color;
+      animation-duration:0.2s;
+    }
   }
 
   h4 {
@@ -139,10 +144,12 @@ $margin-top: 200px;
 
 .one-order{ /*ＯＮＥ ＯＲＤＥＲ ＯＮＥ ＯＲＤＥＲ ＯＮＥ ＯＲＤＥＲ */
 
-  border-style: none;
+  border-style: solid;
+  border-color: #F6C90E;
+  border-width: 2px;
   color: #EEE;
   width: 250px;
-  height: 127px;
+  height: 140px;
   float: none;
   margin: 0 auto;
 
@@ -154,12 +161,10 @@ $margin-top: 200px;
     color: #F6C90E;
     font-size: 1.77em;
     text-align: left;
-    line-height: 1;
   }
 
   .wrap-time{
     float: left;
-
   }
 
   .detail {
@@ -169,7 +174,7 @@ $margin-top: 200px;
     color: #3A4750;
     font-size: 1em;
     font-weight: bold;
-    margin-right: 10px;
+    margin-right: 0px;
   }
 
   p{
@@ -295,9 +300,8 @@ $margin-top: 200px;
   }
 
   .one-order{
-    border-style: none;
-    width: 300px;
-    height: 140px;
+    width: 280px;
+    height: 150px;
 
     .addr-from, .addr-to{
       font-size: 1.1em;
@@ -314,7 +318,7 @@ $margin-top: 200px;
 
     .detail{
       font-size: 1.1em;
-      margin-right: 40px;
+      margin-right: 0px;
     }
 
   }
@@ -389,8 +393,8 @@ $margin-top: 200px;
   .one-order{
     margin: 0 auto;
     padding-right: 40px;
-    width: 330px;
-    height: 150px;
+    width: 310px;
+    height: 160px;
 
     .addr-from, .addr-to{
       font-size: 1.3em;
