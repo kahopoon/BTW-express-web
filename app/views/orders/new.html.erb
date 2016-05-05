@@ -13,25 +13,35 @@
         </ul>
       </div>
       <div class="form-group">
-        <%= form_for @order do |o| %>
+        <%= form_for @order, :data => { :toggle => "validator" } do |o| %>
 
           <div class="step1 clearfix step-div ">
             <div class="yellow-area">
               <%= o.fields_for :detail do |detail_form| %>
-                <i class="fa fa-cutlery fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :description, "請詳列出點餐項目及需求數量" %>
-                <%= detail_form.text_area :description, :placeholder=>"例如：大腸包小腸十份，豬血糕三份～", :class => "form-control step1-form", :required => true %>
+
+                <i class="fa fa-cutlery fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :description, "請詳列出點餐項目及需求數量"%>
+              <div>
+                <%= detail_form.text_area :description, :placeholder=>"例如：大腸包小腸十份，豬血糕三份～", :class => "form-control step1-form", :required => true%>
+              </div>
               <% end %>
-              <i class="fa fa-map-marker fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :pickup_addr, "輸入指定購餐地點" %>
-              <%= o.text_field :pickup_addr, :placeholder=>"若要讓代買者自行決定要在哪裡買，留空白即可", :class => "form-control" %>
+              <div>
+                <i class="fa fa-map-marker fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :pickup_addr, "輸入指定購餐地點" %>
+                <%= o.text_field :pickup_addr, :placeholder=>"若要讓代買者自行決定要在哪裡買，留空白即可", :class => "form-control" %>
+              </div>
             </div>
             <%= o.fields_for :detail do |detail_form| %>
-              <i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :prepay, "總餐點預算" %>
-              <%= detail_form.select :prepay, options_for_select([['NTD 1~100', '100'],['NTD 101~200', '200'],['NTD 201~300', '300'],['NTD 301~400', '400'],  ['NTD 401~500', '500']],:selected => detail_form.object.prepay), { :prompt => "選擇價格範圍"}, {:class => "form-control step1-form", :required => true}%>
-            <% end %>
-            <i class="fa fa-thumb-tack fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :deliver_addr, "輸入送餐地點" %>
-            <%= o.text_field :deliver_addr, :class => "form-control step1-form", :required => true %>
 
-            <a href="#" class=" to2 pull-right btn btn-default" role="button" >下一步 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+              <i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :prepay, "總餐點預算" %>
+            <div>
+              <%= detail_form.select :prepay, options_for_select([['NTD 1~100', '100'],['NTD 101~200', '200'],['NTD 201~300', '300'],['NTD 301~400', '400'],  ['NTD 401~500', '500']],:selected => detail_form.object.prepay), { :prompt => "選擇價格範圍"}, {:class => "form-control step1-form", :required => true}%>
+              </div>
+            <% end %>
+
+              <i class="fa fa-thumb-tack fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :deliver_addr, "輸入送餐地點" %>
+            <div>
+              <%= o.text_field :deliver_addr, :class => "form-control step1-form", :required => true%>
+            </div>
+            <a href="#" class=" to2 pull-right btn btn-default next-step" role="button" >下一步 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
           </div>
 
@@ -39,29 +49,36 @@
             <div class="yellow-area">
               <i class="fa fa-calendar fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :deliver_time, "期望餐點送達時間" %>
               </br>
+
               日期 <%= o.date_select :deliver_time, :class => "form-control" %>
               時間 <%= o.time_select :deliver_time, :class => "form-control" %>
               </br>
             </div>
             <%= o.fields_for :detail do |detail_form| %>
                 <i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :fee, "願付運費" %>
-                <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control step2-form", :required => true %>
+                <div>
+                  <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control step2-form", :required => true %>
+                </div>
             <% end %>
 
             <a href="#" class=" backto1 btn btn-default" role="button"><i class="fa fa-chevron-left" aria-hidden="true"></i> 上一步</a>
 
-            <a href="#" class=" to3 pull-right btn btn-default" role="button" >下一步 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            <a href="#" class=" to3 pull-right btn btn-default next-step" role="button" >下一步 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
           </div>
 
           <div class="step3 clearfix step-div hideclass">
             <%= o.fields_for :detail do |detail_form| %>
               <div class="yellow-area">
                 <i class="fa fa-at fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :addressees_name, "收件人真實姓名" %>
-                <%= detail_form.text_field :addressees_name, :class => "form-control", :required => true %>
+                <div>
+                  <%= detail_form.text_field :addressees_name, :class => "form-control", :required => true %>
+                </div>
               </div>
 
               <i class="fa fa-phone fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :addressees_mobile, "收件者電話" %>
-              <%= detail_form.text_field :addressees_mobile, :class => "form-control", :required => true %>
+              <div>
+                <%= detail_form.text_field :addressees_mobile, :class => "form-control", :required => true %>
+              </div>
             <% end %>
 
             <div class="form-group">
@@ -79,21 +96,33 @@
 
 <script>
   $(document).ready(function(){
-    $(".step1-form").change(function(){
-      var formValid = true;
-      $(".step1").validate({
-        submitHandler: function(form) {
-
-        }
-       });
-    });
 
     $('.to2').click(function(e){
-      $('.step1').hide(1000);
-      $('.step2').slideUp().show(1000);
-      $('.b1').addClass('bar-active');
-      $('.o2').addClass('bar-active');
-      $('.o2').siblings('small').addClass('dark-word');
+      var formValid = true;
+      $(".step1-form").each(function(){
+      if ($(this).val() == "") {
+          formValid = false;
+        }
+      })
+      if (formValid == true) {
+        $(".step1-form").each(function(){
+          $(this).parent().removeClass("has-error")
+        })
+        $('.step1').hide(1000);
+        $('.step2').slideUp().show(1000);
+        $('.b1').addClass('bar-active');
+        $('.o2').addClass('bar-active');
+        $('.o2').siblings('small').addClass('dark-word');
+      } else {
+        e.isDefaultPrevented()
+        $(".step1-form").each(function(){
+          if ($(this).val() == "") {
+            $(this).parent().addClass("has-error")
+          } else {
+            $(this).parent().removeClass("has-error")
+          }
+        })
+      }
     });
 
     $('.backto1').click(function(e){
@@ -104,24 +133,32 @@
       $('.o2').siblings('small').removeClass('dark-word');
     });
 
-    $(".step2-form").change(function(){
+    $('.to3').click(function(e){
       var formValid = true;
       $(".step2-form").each(function(){
-        if ($(this).val() == "") {
+      if ($(this).val() == "") {
           formValid = false;
         }
       })
-      if (formValid == true){
-        $('.to3').removeClass('disabled');
+      if (formValid == true) {
+        $(".step2-form").each(function(){
+          $(this).parent().removeClass("has-error")
+        })
+        $('.step2').hide(1000);
+        $('.step3').slideUp().show(1000);
+        $('.b2').addClass('bar-active');
+        $('.o3').addClass('bar-active');
+        $('.o3').siblings('small').addClass('dark-word');
+      } else {
+        e.isDefaultPrevented()
+        $(".step2-form").each(function(){
+          if ($(this).val() == "") {
+            $(this).parent().addClass("has-error")
+          } else {
+            $(this).parent().removeClass("has-error")
+          }
+        })
       }
-    });
-
-    $('.to3').click(function(e){
-      $('.step2').hide(1000);
-      $('.step3').slideUp().show(1000);
-      $('.b2').addClass('bar-active');
-      $('.o3').addClass('bar-active');
-      $('.o3').siblings('small').addClass('dark-word');
     });
 
     $('.backto2').click(function(e){
