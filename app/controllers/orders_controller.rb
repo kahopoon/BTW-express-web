@@ -28,16 +28,17 @@ class OrdersController < ApplicationController
   def take
     # puts 'enter take'
     @order.courier_id=current_user.id
-    if @order.save    
+    @order.status="go"
+    if @order.save
       render 'show'
     end
   end
   def reject
-    # puts 'enter reject' 
+    # puts 'enter reject'
     @order.courier_id=nil
-    if @order.save    
+    if @order.save
       render 'show'
-    end 
+    end
   end
   def destroy
     puts "enter delete"
@@ -64,7 +65,7 @@ class OrdersController < ApplicationController
 
 private
   def find_order
-      @order= Order.find(params[:id])    
+      @order= Order.find(params[:id])
   end
   def order_params
     params.require(:order).permit( :pickup_time, :deliver_time, :pickup_addr,
@@ -74,4 +75,3 @@ private
 
 
 end
-
