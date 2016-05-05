@@ -16,13 +16,15 @@ class ApiV1::AuthController < ApiController
         auth_hash = OmniAuth::AuthHash.new({
           uid: fb_data["id"],
           info: {
-            email: fb_data["email"]
+            email: fb_data["email"],
+            name: fb_data["name"],
+            picture: fb_data["picture"]
           },
           credentials: {
             token: params[:access_token]
           }
         })
-        user = User.from_omniauth(auth_hash)
+        user = User.from_omniauth_api(auth_hash)
       end
       success = fb_data && user.persisted?
     end
@@ -45,12 +47,12 @@ class ApiV1::AuthController < ApiController
     render :json => { :message => "ok" }
   end
 
-  def write_profile 
+  def write_profile
     puts params
     render :json => { :message => "ok" }
   end
   def read_profile
-    render :json => { :message => "ok" }    
+    render :json => { :message => "ok" }
   end
 
 end
