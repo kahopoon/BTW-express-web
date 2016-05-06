@@ -36,35 +36,48 @@
 <div class="container-fluid contain-order dark">
   <div class="container-fluid w1024">
     <div class="row">
+      <h1 class="text-center order-title" style="color: #EEE">順路送貨</h1>
       <div class="col-xs-12">
-        <section id="order-list">
-          <h1 class="text-center order-title">順路送貨</h1>
-          <div class="for-slick">
-            <% @orders.each do |o| %>
-              <div>
-                <%= render :partial => "order", :locals => {:o => o} %>
-              </div>
-            <%end%>
-          </div>
-        </section>
+        <div class="col-md-6">
+          <section id="order-list">
+            <div class="for-slick">
 
-        <div class="wrap-desapp clearfix">
+              <% @orders.each do |o| %>
+                <div>
+                  <%= render :partial => "order", :locals => {:o => o} %>
+                </div>
+              <%end%>
+
+            </div>
+          </section>
+        </div>
+
+        <div class="wrap-desapp clearfix col-md-6" style="padding: 0;">
 
           <div id="deatil-description" class="clearfix">
             <h4>托買清單</h4>
           <h1>here is the detail...</h1>
+            <div class="desyellow" style="background-color: #F6C90E;"></div>
           </div>
 
           <div class="app clearfix">
             <h3>下載ＡＰＰ即可接單</h3>
             <div class="store"><%= image_tag("app.png", class: "store") %></div>
-            <%= image_tag("qr4.jpg", class: "qrcode") %>
+            <%= image_tag("qr5.png", class: "qrcode") %>
           </div>
         </div>
-        <h2 class="rob">即刻下載ＡＰＰ搶單 ! 寶寶快載<br/>免手續費，實賺實拿 ！ 寶寶快賺</h2>
       </div>
     </div>
   </div>
+
+  <div class="container-fluid w1024">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="rob">下載ＡＰＰ ! 寶寶快載<br/>免手續費，實賺實拿 ！ 寶寶快賺</h2>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div class="container-fluid contain-life">
@@ -91,6 +104,7 @@
   </div>
 </div>
 
+<!-- /***********************ＪＡＶＡＳＣＲＩＰＴ************************/ -->
 <script>
   $(document).ready(function(){
     var old_data_id="";
@@ -129,13 +143,15 @@
       // centerPadding: '60px',
       speed: 200,
       slidesToShow: 3,
+      slidesToScroll:1,
       autoplay:false,
       autoplaySpeed:6000,
-      // mobilFirst:true,
       pauseOnHover:true,
-      // centerMode: true,
+      vertical:true,
+      arrow:true,
+      verticalSwiping:true,
+
       // variableWidth:true,
-      // centerPadding: '40px',
       cssEase: 'ease',
       // slidesToScroll:3,
 
@@ -144,40 +160,37 @@
           breakpoint: 992,
           settings: {
             arrows: true,
+            vertical:false,
             // centerMode: true,
             // centerPadding: '0px',
             slidesToShow: 2,
-            // slidesToScroll:2
+            slidesToScroll:1
           }
         },
         {
           breakpoint: 768,
           settings: {
             arrows: true,
-            // centerMode: true,
-            // centerPadding: '40px',
-            slidesToShow: 1,
-            slidesToScroll:2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            arrows: true,
-            fade:true,
+            vertical:false,
             // centerMode: true,
             // centerPadding: '40px',
             slidesToShow: 1,
             slidesToScroll:1
           }
-        }
+        },
+        // {
+        //   breakpoint: 480,
+        //   settings: {
+        //     arrows: true,
+        //     fade:true,
+        //     // centerMode: true,
+        //     // centerPadding: '40px',
+        //     slidesToShow: 1,
+        //     slidesToScroll:1
+        //   }
+        // }
       ]
     });
-
-    $('.for-slick').on('edge', function(event, slick, direction){
-      console.log('edge was hit')
-    });
-
 /************************************/
     $('#bgtest').slick({
       infinite: false,
