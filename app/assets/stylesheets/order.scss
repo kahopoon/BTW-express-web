@@ -38,11 +38,26 @@ $margin-top: 200px;
     padding: 0;
     width: 100vw;
   }
-  #pic_01 {background:image-url("test.jpg");}
-  #pic_02 {background:image-url("bike.png");}
-  #pic_03 {background:image-url("bike.jpeg");}
-  #pic_04 {background:image-url("banana.jpeg");}
-  #pic_05 {background:image-url("kaho.jpeg");}
+  #pic_01 {background:linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),image-url("test.jpg");}
+  #pic_02 {background:linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),image-url("bike.png");}
+  #pic_03 {background:linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),image-url("bike.jpeg");}
+  #pic_04 {background:linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),image-url("banana.jpeg");}
+  #pic_05 {background:linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),image-url("kaho.jpeg");}
 
   .header-container{
     position: absolute;
@@ -448,10 +463,18 @@ $margin-top: 200px;
     height: 768px;
   }
 
+  #order-list{
+    height: 520px;
+  }
+
   .one-order{
     margin: 0 auto;
     height: 160px;
-    width: 310px;
+    width: 100%;
+    border-style: none;
+    border-bottom-style: solid;
+    letter-spacing: 1.4px;
+    margin-top: 10px;
 
     .addr-from, .addr-to{
       font-size: 1.3em;
@@ -512,30 +535,50 @@ $margin-top: 200px;
   }
 
   #deatil-description{
-    width: 270px;
-    height: 250px;
+    width: 310px;
+    height: 400px;
     float: left;
+    position: relative;
+    h4{
+      height: 60px;
+      line-height: 60px;
+      font-size: 1.7em;
+    }
+
+    p{
+      font-size: 0.6em;
+    }
+
+    .desyellow{
+      position: absolute;
+      width: 100%;
+      height: 60px;
+      bottom:0;
+    }
   }
 
   .wrap-desapp{
-    width: 530px;
+    width: 497px;
     margin: 0 auto;
+    margin-top: 11px;
 
     h3{
       display: none;
     }
   }
   .app{
+    width: 167px;
     float: right;
     margin: 0;
     .store{
-      width: 187px;
-      height: 61px;
+      width: 167px;
+      height: 56px;
     }
     .qrcode{
       display: block;
-      width: 187px;
-      height: 187px;
+      width: 167px;
+      height: 167px;
+      margin: 0;
     }
   }
 
