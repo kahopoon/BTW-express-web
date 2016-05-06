@@ -179,14 +179,19 @@ footer{
   text-align: left;
   width: 220px;
 
-
-  .w220{
-    width: 220px;
+  .col-sm-5, .col-sm-6{
     padding: 0;
-    h3{
-      margin-top: 20px;
-    }
   }
+
+  .contact-header{
+    margin-top: 10px;
+  }
+
+
+  .qa-header{
+    margin-top: 20px;
+  }
+
   ul{
     padding: 0;
 
@@ -241,6 +246,11 @@ footer{
 
   footer{
     width: 550px;
+
+    .contact-header, .qa-header{
+      margin-top: 20px;
+    }
+
     .contact{
       float: left;
       li {
@@ -253,6 +263,10 @@ footer{
       float: right;
       li{
       }
+    }
+
+    .ml20{
+      margin-left: 20px;
     }
   }
 }
@@ -287,13 +301,22 @@ footer{
     }
   }
 
-   footer{
+  footer{
     width: 600px;
     margin: 0;
+
+    .contact-header, .qa-header{
+      margin-top: 20px;
+    }
+
     .qa{
       li{
         padding: 0;
       }
+    }
+
+    .ml20{
+      margin-left: 20px;
     }
   }
 }
