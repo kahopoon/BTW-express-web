@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20160505084701) do
     t.string   "addressees_mobile"
     t.string   "addressees_name"
     t.text     "description"
-    t.integer  "prepay_id"
   end
 
   add_index "details", ["order_id"], name: "index_details_on_order_id"
@@ -52,12 +51,6 @@ ActiveRecord::Schema.define(version: 20160505084701) do
 
   add_index "orders", ["courier_id"], name: "index_orders_on_courier_id"
   add_index "orders", ["owner_id"], name: "index_orders_on_owner_id"
-
-  create_table "prepays", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

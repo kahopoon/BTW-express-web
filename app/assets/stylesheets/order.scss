@@ -13,38 +13,66 @@ $margin-top: 200px;
 }
 
 .contain-order{
-  height: 613px;
+  height: 668px;
 }
 
 /*************************
 ＨＯＭＥ ＰＡＧＥ ＨＥＡＤＥＲ
 *************************/
 #header {
-  background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0)
-    ),
-    image-url("test.jpeg");
+  position: relative;
 
-  height: 768px;
-  background-position: center;
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
-  // width: 100vw;
+  #bgtest {
+    width: 100%;
+    margin: auto;
+    display: run-in;
+  }
+  #pic_01, #pic_02, #pic_03, #pic_04, #pic_05 {
+    display: run-in;
+    height: 768px;
+    background-position: center ;
+    -webkit-background-size: cover !important;
+    background-size: cover !important;
+    background-repeat: no-repeat ;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+  }
+  #pic_01 {background:image-url("test.jpg");}
+  #pic_02 {background:image-url("bike.png");}
+  #pic_03 {background:image-url("bike.jpeg");}
+  #pic_04 {background:image-url("banana.jpeg");}
+  #pic_05 {background:image-url("kaho.jpeg");}
+
+  .header-container{
+    position: absolute;
+    width: 100vw;
+    top:0;
+  }
+  // .Title {
+  //     text-align: center;
+  //     padding: 0px 0px;
+  //     margin: 16px;
+  //     display: block;
+  //     float: left;
+  //     width: 160px;
+  //     margin-top: 158px;
+  //     background: rgba(94, 101, 105, 0.36);
+  //     width: 195px;
+  //     margin-left: 0px;
+  //     color: #FFF;
+  // }
 
   .top {
     width: 100%;
-    margin-left: 0;
-    margin-top: $margin-top;
+    margin: $margin-top auto 0 auto;
     padding: 0;
 
     h1{
       color: #fff;
       display: inline-block;
+      font-size: 4em;
+      font-weight: bold;
     }
     h2{
       border-top-style: double;
@@ -56,14 +84,14 @@ $margin-top: 200px;
     }
     .wrap{
       height:100;
-      margin-top: 230px;
+      margin-top: 130px;
       height: 46px;
     }
 
     .wrap-write{
       display: table;
       max-width: 800px;
-      margin-top: 250px;
+      margin-top: 150px;
       background-color: rgba(0,0,0,0.6);
       height: 46px;
     }
@@ -119,6 +147,12 @@ $margin-top: 200px;
     color: #FEFEFE;
   }
 }
+/*************************
+        ＳＬＩＣＫ
+*************************/
+.slick-slide{
+  width: 300px;
+}
 
 /**************************************************
     ＯＲＤＥＲ ＬＩＳＴ
@@ -131,7 +165,7 @@ $margin-top: 200px;
 
   .order-title{
     color: #EEE;
-    margin-bottom: 20px;
+    margin: 20px auto;
   }
 }
 .slick-slide{
@@ -156,6 +190,7 @@ $margin-top: 200px;
   height: 140px;
   float: none;
   margin: 0 auto;
+  background-color: #3A4750;
 
   .order-id{
     width: 100px;
@@ -214,13 +249,20 @@ $margin-top: 200px;
     animation-name: color;
     animation-duration:1s;
     -webkit-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-        transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
   }
 }
 /***************************
 ＤＥＴＡＩＬ-ＤＥＳＲＩＰＴＩＯＮ
 ***************************/
+.wrap-desapp{
+    width: 330px;
+    margin: 20px auto;
+    h3{
+      margin: 20px auto;
+    }
+  }
 #deatil-description{
   width: 220px;
   height: 180px;
@@ -303,6 +345,10 @@ $margin-top: 200px;
     }
   }
 
+  .contain-order{
+    height: 768px;
+  }
+
   .one-order{
     width: 280px;
     height: 150px;
@@ -353,7 +399,7 @@ $margin-top: 200px;
 
   .wrap-desapp{
     width: 530px;
-    margin: 0 auto;
+    margin: 50px auto;
 
     h3{
       display: none;
@@ -394,8 +440,16 @@ $margin-top: 200px;
     }
   }
 
+  .slick-slide{
+    width: 320px;
+  }
+
+  .contain-order{
+    height: 768px;
+  }
+
   .one-order{
-    margin: 0 ;
+    margin: 0 auto;
     height: 160px;
     width: 310px;
 

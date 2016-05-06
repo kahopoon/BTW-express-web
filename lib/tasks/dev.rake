@@ -20,7 +20,7 @@ namespace :dev do
     img_url="https://img.buzzfeed.com/buzzfeed-static/static/2015-03/28/19/enhanced/webdr07/anigif_enhanced-buzz-14210-1427585395-12.gif"
     img_2="http://pic.pimg.tw/kalaok/1411718869-1924547221.gif"
     status=["posted","go","done"]
-    100.times do |i|
+    50.times do |i|
       user=user_idarr.sample(2)
       p = Order.create( :owner_id => user[0], :status => status.sample(1)[0], :pickup_time => Time.now,
                         :deliver_time => Faker::Time.forward(5),

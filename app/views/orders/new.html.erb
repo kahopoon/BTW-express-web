@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 order_form">
 
-      <h1 style="margin-bottom: 40px;">我要訂外賣</h1>
+      <h1>我要訂外賣</h1>
       <div class="step-bar">
         <ul class="clearfix">
           <li><p style="background-color: #F6C90E;color: #3A4750;">1</p><small style="color: #3A4750;">送達地點與預算</small></li>
@@ -21,7 +21,7 @@
 
                 <i class="fa fa-cutlery fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :description, "請詳列出點餐項目及需求數量"%>
               <div>
-                <%= detail_form.text_area :description, :placeholder=>"例如：大腸包小腸十份，豬血糕三份～", :class => "form-control step1-form", :required => true%>
+                <%= detail_form.text_area :description, :placeholder=>"例如：大腸包小腸十份，豬血糕三份～", :class => "form-control step1-form", :required => true, :value => "寶寶想大便"%>
               </div>
               <% end %>
               <div>
@@ -33,13 +33,13 @@
 
               <i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :prepay, "總餐點預算" %>
             <div>
-              <%= detail_form.select :prepay, options_for_select([['NTD 1~100', '100'],['NTD 101~200', '200'],['NTD 201~300', '300'],['NTD 301~400', '400'],  ['NTD 401~500', '500']],:selected => detail_form.object.prepay), { :prompt => "選擇價格範圍"}, {:class => "form-control step1-form", :required => true}%>
+              <%= detail_form.select :prepay, options_for_select([['NTD 1~100', '100'],['NTD 101~200', '200'],['NTD 201~300', '300'],['NTD 301~400', '400'],  ['NTD 401~500', '500']],:selected => detail_form.object.prepay), { :prompt => "選擇價格範圍"}, {:class => "form-control step1-form", :required => true } %>
               </div>
             <% end %>
 
               <i class="fa fa-thumb-tack fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :deliver_addr, "輸入送餐地點" %>
             <div>
-              <%= o.text_field :deliver_addr, :class => "form-control step1-form", :required => true%>
+              <%= o.text_field :deliver_addr, :class => "form-control step1-form", :required => true, :value => "AC"%>
             </div>
             <a href="#" class=" to2 pull-right btn btn-default next-step" role="button" >下一步 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
@@ -57,7 +57,7 @@
             <%= o.fields_for :detail do |detail_form| %>
                 <i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :fee, "願付運費" %>
                 <div>
-                  <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control step2-form", :required => true %>
+                  <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control step2-form", :required => true, :value => "50" %>
                 </div>
             <% end %>
 
@@ -71,13 +71,13 @@
               <div class="yellow-area">
                 <i class="fa fa-at fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :addressees_name, "收件人真實姓名" %>
                 <div>
-                  <%= detail_form.text_field :addressees_name, :class => "form-control", :required => true %>
+                  <%= detail_form.text_field :addressees_name, :class => "form-control", :required => true, :value => "hugo好帥唷" %>
                 </div>
               </div>
 
               <i class="fa fa-phone fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :addressees_mobile, "收件者電話" %>
               <div>
-                <%= detail_form.text_field :addressees_mobile, :class => "form-control", :required => true %>
+                <%= detail_form.text_field :addressees_mobile, :class => "form-control", :required => true, :value => "0800061000" %>
               </div>
             <% end %>
 
