@@ -12,7 +12,11 @@ scope :path => '/api/v1', :module => 'api_v1', :as => 'v1', :defaults => {:forma
   post "/logout" => "auth#logout"
   post "/writeprofile" => "auth#write_profile"
   get "/readprofile" => "auth#read_profile"
-  resources :orders, :except => [:new, :edit]
+  resources :orders, :except => [:new, :edit] do
+    collection do
+      get 'updatestatus'
+    end
+  end
   resources :details, :except => [:new, :edit]
 end
 

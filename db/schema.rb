@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505084701) do
+ActiveRecord::Schema.define(version: 20160506145317) do
 
   create_table "details", force: :cascade do |t|
     t.integer  "order_id"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20160505084701) do
   end
 
   add_index "details", ["order_id"], name: "index_details_on_order_id"
+
+  create_table "msgqueues", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "owner_id"
+    t.integer  "courier_id"
+    t.string   "goal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.integer  "owner_id"
@@ -47,6 +56,7 @@ ActiveRecord::Schema.define(version: 20160505084701) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "notified"
   end
 
   add_index "orders", ["courier_id"], name: "index_orders_on_courier_id"
