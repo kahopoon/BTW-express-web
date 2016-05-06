@@ -3,142 +3,121 @@
   background-color: #303841;
   color: #fff;
   text-align: center;
-  padding-top:60px;
+  padding-top: 60px;
   padding-bottom: 50px;
-
 }
-
-.userprofile-pic{
-  margin: 30px auto;
-  width: 120px;
-  height: 120px;
+.userprofile-pic {
+  position: relative;
+  left: 44%;
+  margin: 64px 0;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  background-color: #F6C90E;
+  img {
+    border: 7px solid #F6C90E;
+    border-radius: 50%;
+  }
 }
-
-.owner_count{
-  margin-top:20px;
+.owner_count {
+  margin-top: 20px;
   margin-left: 80px;
   float: left;
 }
-
-.courier_count{
-  margin-top:20px;
+.courier_count {
+  margin-top: 20px;
   margin-right: 80px;
   float: right;
-
 }
-
-.user-info{
-  margin: 30px 0;
+.user-info {
+  margin: 40px 0;
   padding-left: 40px;
   text-align: left;
 }
-
-.user-info-fix p{
-  color: #ccc;
+.user-info-fix p {
+  color: #F6C90E;
 }
-
-.user-info-fix{
-  margin: 15px 0;
+.user-info-fix {
+  margin: 42px 0;
   position: relative;
-  i{
+  i {
     padding-bottom: 10px;
     position: absolute;
     left: 0;
   }
-
   .fa-user {
-    top: 0px;
+    top: 0;
     transform: translateX(20%);
   }
-
   .fa-mobile {
     transform: translateY(-14%);
     left: 5px;
   }
-
-  .fa-file-text{
+  .fa-file-text {
     left: 1px;
   }
-
-  p{
+  p {
     display: inline;
     margin: 0 10px;
     /*float: right;*/
-    font-size: 12px;
+    font-size: 16px;
     left: 45px;
     position: relative;
-
-
   }
-  h4{
+  h4 {
     display: inline;
-    margin:  0 10px;
+    margin: 0 10px;
     left: 35px;
     position: relative;
   }
 }
-
-.intro{
+.intro {
   padding-top: 10px;
   padding-right: 40px;
 }
 /*********user_orders**************/
-
-.user_orders{
+.user_orders {
   background-color: #EEEEEE;
-  width: 95%;
+  width: 76%;
   border-radius: 1%;
 }
-
 .tab {
   margin: 20px 0;
   padding-left: 40px;
   list-style-type: none;
 }
-
 .tab li {
   transform: translateY(-142%);
   border-radius: 10%;
   float: left;
-  padding: 10px 30px 10px 30px;
+  padding: 10px 30px;
   background-color: #ccc;
   cursor: pointer;
 }
-
-.tab li.active, .tab li:hover {
+.tab li.active,
+.tab li:hover {
   background-color: #EEEEEE;
   color: black;
 }
 .content {
   display: none;
 }
-
 .content.active {
   display: block;
 }
-
-.orders_list{
-  padding: 2px 2px;
+.orders_list {
+  padding: 2px;
   border-radius: 1%;
-
-  .one-order{
+  .one-order {
     background-color: #3A4750;
   }
-
 }
 
+.edit_buttom{
+  position: absolute;
+}
 /*************************
           ＲＷＤ
 *************************/
-@media (max-width: 992px) and (min-width: 768px) {
-
-
-
-}
-
-
-@media (min-width: 992px) {
-
-}
+@media (max-width: 992px) and (min-width: 768px) {}
+@media (min-width: 992px) {}

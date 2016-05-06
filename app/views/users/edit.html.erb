@@ -2,7 +2,9 @@
     <div class="row">
         <div class="col-xs-12 new_userprofile">
             <div class="profile-head">
-                <div class="profile-pic"></div>
+                <div class="profile-pic">
+                    <%=image_tag (@user.fb_pic)%>
+                </div>
 
                 <hr>
             </div>
@@ -12,20 +14,20 @@
             <div class="profile-addition">
                 <div class="profile-input clearfix">
                     <h3><%= f.label :fullname, "真實姓名" %></h3>
-                    <%= f.text_area :fullname, :class => "form-control", :placeholder=>"請輸入您的真實姓名", :required => true %>
+                    <%= f.text_field :fullname, :class => "form-control", :placeholder=>"請輸入您的真實姓名", :required => true %>
                 </div>
 
                 <div class="profile-input clearfix">
                     <h3><%= f.label :phone, "電話號碼" %></h3>
-                    <%= f.text_area :phone, :class => "form-control", :placeholder=>"請輸入您的聯絡電話", :required => true %>
+                    <%= f.text_field :phone, :class => "form-control", :placeholder=>"請輸入您的聯絡電話", :required => true %>
                 </div>
                 <div class="profile-input clearfix">
                     <h3><%= f.label :email, "電子信箱" %></h3>
-                    <%= f.text_area :email, :class => "form-control", :placeholder=>"請輸入您的聯絡信箱", :required => true %>
+                    <%= f.text_field :email, :class => "form-control", :placeholder=>"請輸入您的聯絡信箱", :required => true %>
                 </div>
                 <div class="profile-input clearfix">
                     <h3><%= f.label :introduction, "自我介紹" %></h3>
-                    <%= f.text_area :introduction, :class => "form-control", :placeholder=>"運用簡短自介拉近與他人的距離吧！", :required => true %>
+                    <%= f.text_field :introduction, :class => "form-control", :placeholder=>"運用簡短自介拉近與他人的距離吧！", :required => true %>
                 </div>
             </div>
             <div class="form-group submit">

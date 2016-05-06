@@ -7,13 +7,24 @@ $(document).ready(function(){
             console.log(data['msg']);
             if(data['msg']==""){
 
-            }else{
+            }else{              
             	$('#msgtoshow').html(data['msg']);
-			    $('#hidemsg').stop().fadeIn(100).animate({'top':'100px'},400);            	
+              $('#jump2order').attr("href",data['url']);              
+              open_modal();                  
             }
         }, 'json' );
+
 	}
-	setInterval(order_status_checker,15000);
+  var open_modal=function(){
+    $("#msgModal").modal();
+    // console.log($("#msgModal").css('marginTop'))
+    $("#msgModal").animate({
+      'marginTop' : "100px" //moves down
+    });
+  }
+  // setInterval(open_modal,2000);  
+  // should ensure user is login!!
+	setInterval(order_status_checker,2000);
 	$('#msgclose').click(function(e){
 
 		$('#hidemsg').stop().animate({'top':'-300px'},400).fadeOut(100);

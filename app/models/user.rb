@@ -47,6 +47,7 @@ class User < ActiveRecord::Base
 
       # Case 3: Create new password
       user = User.new
+      user.fb_pic = auth.info.image
       user.fb_uid = auth.uid
       user.fb_token = auth.credentials.token
       user.email = auth.info.email
@@ -78,7 +79,6 @@ class User < ActiveRecord::Base
 
         # Case 3: Create new password
         user = User.new
-        byebug
         user.fb_uid = auth.uid
         user.fb_pic = auth.info.picture.data.url
         user.fb_token = auth.credentials.token
