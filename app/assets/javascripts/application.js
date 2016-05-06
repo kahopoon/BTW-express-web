@@ -18,6 +18,7 @@
 //= require fancybox
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require automsg
 //= require_tree .
 
 

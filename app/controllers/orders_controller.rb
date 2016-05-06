@@ -64,7 +64,7 @@ class OrdersController < ApplicationController
 
 private
   def find_order
-      @order= Order.find(params[:id])
+      @order= Order.includes(:detail).find(params[:id])
   end
   def order_params
     params.require(:order).permit( :pickup_time, :deliver_time, :pickup_addr,

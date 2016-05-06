@@ -11,6 +11,8 @@ namespace :dev do
     Detail.delete_all
 
     puts "Creating fake Data!"
+    User.create!(:email => "afu@gmail.com", :password => "11111111",
+      :phone => Faker::PhoneNumber.phone_number, :fullname=>"lala")
     10.times do |i|
       user = User.create!( :email => Faker::Internet.free_email, :password => "11111111",
                            :phone => Faker::PhoneNumber.phone_number, :fullname=>Faker::StarWars.character

@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
+<script src="http://maps.googleapis.com/maps/api/js"></script>
 </head>
 
 <div id="head-nav">
@@ -46,7 +46,22 @@
 </div>
 
 <body>
-  <div class="hugo-so-hot"></div>
+
+<div id="msgModal" class="modal fade" role="dialog">
+  <div id="msgsquare" class="modal-dialog modal-sm">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <h2 id="msgtoshow">Some text in the modal.</h2>
+        <%= link_to "觀看訂單", "#",:id=>"jump2order", :type=>"button", :class=>"btn btn-default"%>
+        <!-- <button type="button" class="btn btn-default" href="/orders">觀看訂單</button> -->
+        <%#= button_to "我知道了", "#",form_class:"btn btn-default", form:{"id"="msgclose","type"=>"button", "data-dismiss"=>"modal"}%>        
+        <button id="msgclose" type="button" class="btn btn-default" data-dismiss="modal">我知道了</button> 
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hugo-so-hot"></div>
     <%= yield %>
 </body>
 
