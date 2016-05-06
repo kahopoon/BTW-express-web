@@ -2,17 +2,16 @@
     <div class="row">
         <div class="col-md-4 col-md-offset-1 col-xs-12">
 
-            <div class="col-md-12">
-                <div class="userprofile-pic">
-                    <%=@user.fb_pic%>
-                </div>
+            <div class="col-md-12 userprofile-pic clearfix">
+
+                    <%=image_tag (@user.fb_pic)%>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 clearfix">
                 <h4>
                     <%=@user.fullname%>
                 </h4>
             </div>
-            <div class="col-md-12" style="color: #F6C90E">
+            <div class="col-md-12 clearfix" style="color: #F6C90E">
                 <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                 <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                 <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -32,8 +31,12 @@
                     <p><%=@courier_old.count + @courier_go.count%></p>
                 </div>
             </div>
-            <%= link_to "修改個人資料", edit_user_path(current_user), :class => "btn btn-info"%>
+            <div class="edit_buttom clearfix">
+
+            <%= link_to "修改個人資料", edit_user_path(current_user), :class => "btn btn-primary"%>
+            </div>
         </div>
+
 
         <div class="col-md-5 col-md-push-1 col-xs-12 user-info">
             <div class="col-md-12 user-info-fix">
