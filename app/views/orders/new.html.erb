@@ -29,17 +29,19 @@
                 <%= o.text_field :pickup_addr, :placeholder=>"若要讓代買者自行決定要在哪裡買，留空白即可", :class => "form-control", :value => "忠孝東路四段182號" %>
               </div>
             </div>
-            <%= o.fields_for :detail do |detail_form| %>
+            <div class="input-area">
+              <%= o.fields_for :detail do |detail_form| %>
 
-              <i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :prepay, "總餐點預算" %>
-            <div>
-              <%= detail_form.select :prepay, options_for_select([['NTD 1~100', '100'],['NTD 101~200', '200'],['NTD 201~300', '300'],['NTD 301~400', '400'],  ['NTD 401~500', '500']],:selected => detail_form.object.prepay), { :prompt => "選擇價格範圍"}, {:class => "form-control step1-form", :required => true } %>
+                <i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :prepay, "總餐點預算" %>
+              <div>
+                <%= detail_form.select :prepay, options_for_select([['NTD 1~100', '100'],['NTD 101~200', '200'],['NTD 201~300', '300'],['NTD 301~400', '400'],  ['NTD 401~500', '500']],:selected => detail_form.object.prepay), { :prompt => "選擇價格範圍"}, {:class => "form-control step1-form", :required => true } %>
+                </div>
+              <% end %>
+
+                <i class="fa fa-thumb-tack fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :deliver_addr, "輸入送餐地點" %>
+              <div>
+                <%= o.text_field :deliver_addr, :class => "form-control step1-form", :required => true, :value => "台北市中正區市民大道三段2號"%>
               </div>
-            <% end %>
-
-              <i class="fa fa-thumb-tack fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :deliver_addr, "輸入送餐地點" %>
-            <div>
-              <%= o.text_field :deliver_addr, :class => "form-control step1-form", :required => true, :value => "台北市中正區市民大道三段2號"%>
             </div>
             <a href="#" class=" to2 pull-right btn btn-default next-step" role="button" >下一步 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
@@ -54,12 +56,14 @@
               時間 <%= o.time_select :deliver_time, :class => "form-control" %>
               </br>
             </div>
-            <%= o.fields_for :detail do |detail_form| %>
-                <i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :fee, "願付運費" %>
-                <div>
-                  <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control step2-form", :required => true, :value => "200" %>
-                </div>
-            <% end %>
+            <div class="input-area">
+              <%= o.fields_for :detail do |detail_form| %>
+                  <i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :fee, "願付運費" %>
+                  <div>
+                    <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control step2-form", :required => true, :value => "200" %>
+                  </div>
+              <% end %>
+            </div>
 
             <a href="#" class=" backto1 btn btn-default" role="button"><i class="fa fa-chevron-left" aria-hidden="true"></i> 上一步</a>
 
@@ -75,11 +79,14 @@
                 </div>
               </div>
 
-              <i class="fa fa-phone fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :addressees_mobile, "收件者電話" %>
-              <div>
-                <%= detail_form.text_field :addressees_mobile, :class => "form-control", :required => true, :value => "0800061000" %>
+              <div class="input-area">
+                <i class="fa fa-phone fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :addressees_mobile, "收件者電話" %>
+                <div>
+                  <%= detail_form.text_field :addressees_mobile, :class => "form-control", :required => true, :value => "0800061000" %>
+                </div>
               </div>
             <% end %>
+
 
             <div class="form-group">
 
