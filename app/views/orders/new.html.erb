@@ -21,7 +21,7 @@
 
                 <i class="fa fa-cutlery fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :description, "請詳列出點餐項目及需求數量"%>
               <div>
-                <%= detail_form.text_area :description, :placeholder=>"例如：大腸包小腸十份，豬血糕三份～", :class => "form-control step1-form", :required => true, :value => "寶寶想大便"%>
+                <%= detail_form.text_area :description, :placeholder=>"例如：大腸包小腸十份，豬血糕三份～", :class => "form-control step1-form", :required => true, :value => "麥當勞一號餐，榴蓮一顆，鵝肝醬，茶湯會觀音拿鐵加珍珠半糖少冰"%>
               </div>
               <% end %>
               <div>
@@ -39,7 +39,7 @@
 
               <i class="fa fa-thumb-tack fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :deliver_addr, "輸入送餐地點" %>
             <div>
-              <%= o.text_field :deliver_addr, :class => "form-control step1-form", :required => true, :value => "AC"%>
+              <%= o.text_field :deliver_addr, :class => "form-control step1-form", :required => true, :value => "台北市中正區市民大道三段2號"%>
             </div>
             <a href="#" class=" to2 pull-right btn btn-default next-step" role="button" >下一步 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
@@ -57,7 +57,7 @@
             <%= o.fields_for :detail do |detail_form| %>
                 <i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :fee, "願付運費" %>
                 <div>
-                  <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control step2-form", :required => true, :value => "50" %>
+                  <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control step2-form", :required => true, :value => "200" %>
                 </div>
             <% end %>
 
