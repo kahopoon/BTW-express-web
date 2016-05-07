@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
+
+   has_attached_file :user_photo, styles: { medium: "300x300#", thumb: "200x200#" }, default_url: "/images/:style/missing.png"
+   do_not_validate_attachment_file_type :user_photo, content_type: /\Aimage\/.*\Z/
+
   has_many :orders
 
   before_create :generate_authentication_token
