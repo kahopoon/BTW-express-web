@@ -527,6 +527,8 @@ $margin-top: 200px;
     .h2lg{
       width: 215px;
       text-align: center;
+      padding: 0;
+      padding-right: 30px;
     }
 
     .life-img{
@@ -543,6 +545,7 @@ $margin-top: 200px;
 
   .lifeup{
     margin-top: 43px;
+
   }
 
   .lifedown{
@@ -602,7 +605,7 @@ $margin-top: 200px;
     display: block;
     color: #EEE;
     width: 900px;
-    margin: 30px 0 30px 34px;
+    margin: 30px 0 30px 4px;
     font-size: 3em;
   }
 }

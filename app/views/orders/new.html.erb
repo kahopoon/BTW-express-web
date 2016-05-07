@@ -26,7 +26,7 @@
               <% end %>
               <div>
                 <i class="fa fa-map-marker fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :pickup_addr, "輸入指定購餐地點" %>
-                <%= o.text_field :pickup_addr, :placeholder=>"若要讓代買者自行決定要在哪裡買，留空白即可", :class => "form-control" %>
+                <%= o.text_field :pickup_addr, :placeholder=>"若要讓代買者自行決定要在哪裡買，留空白即可", :class => "form-control", :value => "忠孝東路四段182號" %>
               </div>
             </div>
             <%= o.fields_for :detail do |detail_form| %>
