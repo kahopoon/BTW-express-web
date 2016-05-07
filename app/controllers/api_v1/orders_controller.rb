@@ -3,7 +3,7 @@ class ApiV1::OrdersController < ApiController
   # before_action :user_approve!(:id => params[:id], :token => params[:id])
   skip_before_action :authenticate_user_from_token => [:updatestatus]
   def index
-    @orders = Order.page(params[:page]).per(10)
+    @orders = Order.page(params[:page]).order('created_at DESC').per(10)
   end
 
   def show
@@ -15,15 +15,15 @@ class ApiV1::OrdersController < ApiController
     msg=Msgqueue.find_by_owner_id(current_user.id)
     if msg
       o=Order.find(msg.order_id)
-      if msg.goal=="token" 
+      if msg.goal=="token"
         str="有人接了你的訂單"
       elsif msg.goal=="giveup"
         str="有人放弃你的訂單"
       end
       msg.destroy
-      render :json => {:msg => str, :url => order_path(o)}      
+      render :json => {:msg => str, :url => order_path(o)}
     else
-      render :json => {:msg => ""}      
+      render :json => {:msg => ""}
     end
   end
   def update  #PATCH    /api/v1/orders/:id
@@ -39,7 +39,7 @@ class ApiV1::OrdersController < ApiController
       else
         m=Msgqueue.create!(:order_id=>o.id,:courier_id=>o.courier_id,:owner_id=>o.owner_id,:goal=>"giveup")
       end
-      render :json => {:msg => "ok"}      
+      render :json => {:msg => "ok"}
     else
       puts "user "+current_user.id.to_s+" want to take order "+o.id.to_s
       if o.courier_id==nil
@@ -58,7 +58,7 @@ class ApiV1::OrdersController < ApiController
   	puts "----------------------------------------------------------------"
   	puts params
   	order = Order.new(:owner_id=>params[:owner_id],:photo=>params[:photo],
-  						:deliver_time=>params[:arrival_time], :pickup_addr=>params[:shop_addr], 
+  						:deliver_time=>params[:arrival_time], :pickup_addr=>params[:shop_addr],
   						:deliver_addr=>params[:destination], :category=>params[:category]
 				  		)
   	order.build_detail(:prepay=>params[:prepay],:fee=>params[:fee],:description=>params[:description])
@@ -69,7 +69,7 @@ class ApiV1::OrdersController < ApiController
   	if order.save
   		render :json => { :message => "ok" }
   	else
-		render :json => { :message => "fail" }  		
+		render :json => { :message => "fail" }
   	end
   end
 
