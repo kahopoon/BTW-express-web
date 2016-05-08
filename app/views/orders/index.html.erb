@@ -14,8 +14,8 @@
         <div class="col-xs-12">
           <div class="top center-block text-align-left">
 
-            <h1>寶寶想吃東西</h1><br/>
-            <h2>想吃東西要說想吃東西要說想吃東西要說</h2>
+            <h1>突然好想吃宵夜</h1><br/>
+            <h2>快速填寫餐點，請附近ＢＴＷ快遞人幫忙買</h2>
 
               <%= form_tag( new_order_path, :method => :get , :class => "wrap-write") do %>
                 <div class="wrap-input">
@@ -35,10 +35,10 @@
 
 <div class="container-fluid contain-order dark" style="padding: 0;">
   <div class="container-fluid w1024" style="padding: 0;">
-    <div class="row" style="padding: 0;">
+    <div class="row-fluid" style="padding: 0;">
       <h1 class="text-center order-title" style="color: #EEE">順路送貨</h1>
       <div class="col-xs-12" style="padding: 0;">
-        <div class="col-md-6">
+        <div class="col-md-6 col-xs-12">
           <section id="order-list">
             <div class="for-slick">
 
@@ -52,18 +52,20 @@
           </section>
         </div>
 
-        <div class="wrap-desapp clearfix col-md-6" style="padding: 0;">
+        <div class="col-md-6 col-xs-12">
+          <div class="wrap-desapp clearfix" style="padding: 0;">
 
-          <div id="deatil-description" class="clearfix">
-            <h4>托買清單</h4>
-          <h1>here is the detail...</h1>
-            <div class="desyellow" style="background-color: #F6C90E;"></div>
-          </div>
+            <div id="detail-description" class="clearfix">
+              <h4>托買清單</h4>
+            <h1>here is the detail...</h1>
+              <div class="desyellow" style="background-color: #F6C90E;"></div>
+            </div>
 
-          <div class="app clearfix">
-            <h3>下載ＡＰＰ即可接單</h3>
-            <div class="store"><%= image_tag("app.png", class: "store") %></div>
-            <%= image_tag("qr5.png", class: "qrcode") %>
+            <div class="app clearfix">
+              <h3>下載ＡＰＰ即可接單</h3>
+              <div class="store"><%= image_tag("app.png", class: "store") %></div>
+              <%= image_tag("qr5.png", class: "qrcode") %>
+            </div>
           </div>
         </div>
       </div>
@@ -119,7 +121,7 @@
             $.get( url, {o_id:x}, function(data){
               console.log(data);
               str=data['description'];
-              $('#deatil-description h1').html(str);
+              $('#detail-description h1').html(str);
             }, 'json' );
       };
       old_data_id="";

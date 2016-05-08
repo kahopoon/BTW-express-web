@@ -21,7 +21,7 @@
       <i class="fa fa-user fa-2x" aria-hidden="true"></i>
     <% end %>
     <% else %>
-      <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-md fb-btn" do%>
+      <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-md fb-btn fb-in" do%>
         <i class="fa fa-facebook" aria-hidden="true">  &nbsp;Facebook登入</i>
         <% end %>
     <% end %>
@@ -55,8 +55,8 @@
         <h2 id="msgtoshow">Some text in the modal.</h2>
         <%= link_to "觀看訂單", "#",:id=>"jump2order", :type=>"button", :class=>"btn btn-default"%>
         <!-- <button type="button" class="btn btn-default" href="/orders">觀看訂單</button> -->
-        <%#= button_to "我知道了", "#",form_class:"btn btn-default", form:{"id"="msgclose","type"=>"button", "data-dismiss"=>"modal"}%>        
-        <button id="msgclose" type="button" class="btn btn-default" data-dismiss="modal">我知道了</button> 
+        <%#= button_to "我知道了", "#",form_class:"btn btn-default", form:{"id"="msgclose","type"=>"button", "data-dismiss"=>"modal"}%>
+        <button id="msgclose" type="button" class="btn btn-default" data-dismiss="modal">我知道了</button>
       </div>
     </div>
   </div>

@@ -52,7 +52,7 @@ $margin-top: 200px;
   #pic_01 {background:linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
-    ),image-url("look.png");}
+    ),image-url("test.jpg");}
   #pic_02 {background:linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
@@ -284,12 +284,12 @@ $margin-top: 200px;
 ***************************/
 .wrap-desapp{
     width: 330px;
-    margin: 20px auto;
+    margin: 0 auto;
     h3{
       margin: 20px auto;
     }
   }
-#deatil-description{
+#detail-description{
   width: 220px;
   height: 180px;
   background-color: #EEE;
@@ -417,20 +417,23 @@ $margin-top: 200px;
       display: none;
     }
   }
-  #deatil-description{
-    width: 270px;
-    height: 250px;
-    float: left;
-  }
 
   .wrap-desapp{
     width: 530px;
-    margin: 50px auto;
+    margin: 0 auto;
+    height: 251px;
 
     h3{
       display: none;
     }
   }
+
+  #detail-description{
+    width: 270px;
+    height: 250px;
+    float: left;
+  }
+
   .app{
     float: right;
     margin: 0;
@@ -552,7 +555,7 @@ $margin-top: 200px;
     margin-top: 34px;
   }
 
-  #deatil-description{
+  #detail-description{
     width: 310px;
     height: 400px;
     float: left;
