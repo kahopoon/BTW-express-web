@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506145317) do
+ActiveRecord::Schema.define(version: 20160507044406) do
 
   create_table "details", force: :cascade do |t|
     t.integer  "order_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160506145317) do
     t.string   "addressees_mobile"
     t.string   "addressees_name"
     t.text     "description"
+    t.integer  "prepay_id"
   end
 
   add_index "details", ["order_id"], name: "index_details_on_order_id"
@@ -62,19 +63,25 @@ ActiveRecord::Schema.define(version: 20160506145317) do
   add_index "orders", ["courier_id"], name: "index_orders_on_courier_id"
   add_index "orders", ["owner_id"], name: "index_orders_on_owner_id"
 
+  create_table "prepays", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                   default: "", null: false
+    t.string   "encrypted_password",      default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",           default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.string   "fb_uid"
     t.string   "fb_token"
     t.string   "authentication_token"
@@ -82,6 +89,10 @@ ActiveRecord::Schema.define(version: 20160506145317) do
     t.string   "fullname"
     t.text     "introduction"
     t.string   "fb_pic"
+    t.string   "user_photo_file_name"
+    t.string   "user_photo_content_type"
+    t.integer  "user_photo_file_size"
+    t.datetime "user_photo_updated_at"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true
