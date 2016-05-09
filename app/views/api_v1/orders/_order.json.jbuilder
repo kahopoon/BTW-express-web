@@ -4,6 +4,7 @@ json.photo order.photo
 
 json.fee order.detail.fee
 json.prepay order.detail.prepay
+json.description order.detail.description
 
 json.pickup_addr order.pickup_addr
 json.pickup_latlng order.pickup_latlng

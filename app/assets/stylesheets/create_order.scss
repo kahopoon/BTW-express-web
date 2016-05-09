@@ -9,7 +9,7 @@
     color: #3A4750;
   }
   h1{
-    width: 500px;
+    width: 300px;
     margin: 40px auto;
     text-align: center;
   }
@@ -86,8 +86,15 @@
   }
 }
 /*************************
-    ＦＩＲＳＴ ＳＴＥＰ
+        ＳＴＥＰ
 *************************/
+.input-area{
+  margin-bottom: 10px;
+}
+
+.step1, .step2, .step3{
+  font-size: 1.3em;
+}
 
 .submit-button {
   color: #3A4750;
@@ -153,8 +160,5 @@
   }
   .step1, .step2, .step3{
     font-size: 1.5em;
-  }
-  .input-area{
-    padding: 10px;
   }
 }

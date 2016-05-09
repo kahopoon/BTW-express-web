@@ -20,26 +20,25 @@
               <%= o.fields_for :detail do |detail_form| %>
 
                 <i class="fa fa-cutlery fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :description, "請詳列出點餐項目及需求數量"%>
-              <div>
+              <div class="input-area">
                 <%= detail_form.text_area :description, :placeholder=>"例如：大腸包小腸十份，豬血糕三份～", :class => "form-control step1-form", :required => true, :value => "麥當勞一號餐，榴蓮一顆，鵝肝醬，茶湯會觀音拿鐵加珍珠半糖少冰"%>
               </div>
               <% end %>
-              <div>
+              <div class="input-area">
                 <i class="fa fa-map-marker fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :pickup_addr, "輸入指定購餐地點" %>
                 <%= o.text_field :pickup_addr, :placeholder=>"若要讓代買者自行決定要在哪裡買，留空白即可", :class => "form-control", :value => "忠孝東路四段182號" %>
               </div>
-            </div>
-            <div class="input-area">
+
               <%= o.fields_for :detail do |detail_form| %>
 
                 <i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :prepay, "總餐點預算" %>
-              <div>
-                <%= detail_form.select :prepay, options_for_select([['NTD 1~100', '100'],['NTD 101~200', '200'],['NTD 201~300', '300'],['NTD 301~400', '400'],  ['NTD 401~500', '500']],:selected => detail_form.object.prepay), { :prompt => "選擇價格範圍"}, {:class => "form-control step1-form", :required => true } %>
+                <div class="input-area">
+                  <%= detail_form.select :prepay, options_for_select([['NTD 1~100', '100'],['NTD 101~200', '200'],['NTD 201~300', '300'],['NTD 301~400', '400'],  ['NTD 401~500', '500']],:selected => detail_form.object.prepay), { :prompt => "選擇價格範圍"}, {:class => "form-control step1-form", :required => true } %>
                 </div>
-              <% end %>
+                <% end %>
 
                 <i class="fa fa-thumb-tack fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :deliver_addr, "輸入送餐地點" %>
-              <div>
+              <div class="input-area">
                 <%= o.text_field :deliver_addr, :class => "form-control step1-form", :required => true, :value => "台北市中正區市民大道三段2號"%>
               </div>
             </div>
@@ -51,15 +50,14 @@
             <div class="yellow-area">
               <i class="fa fa-calendar fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= o.label :deliver_time, "期望餐點送達時間" %>
               </br>
-
-              日期 <%= o.date_select :deliver_time, :class => "form-control" %>
-              時間 <%= o.time_select :deliver_time, :class => "form-control" %>
-              </br>
-            </div>
-            <div class="input-area">
+              <div class="input-area">
+                日期 <%= o.date_select :deliver_time, :class => "form-control" %>
+                時間 <%= o.time_select :deliver_time, :class => "form-control" %>
+                </br>
+              </div>
               <%= o.fields_for :detail do |detail_form| %>
                   <i class="fa fa-usd fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :fee, "願付運費" %>
-                  <div>
+                  <div class="input-area">
                     <%= detail_form.text_field :fee, :placeholder=>"例如： NTD 50 ~ 500", :class => "form-control step2-form", :required => true, :value => "200" %>
                   </div>
               <% end %>
@@ -74,14 +72,12 @@
             <%= o.fields_for :detail do |detail_form| %>
               <div class="yellow-area">
                 <i class="fa fa-at fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :addressees_name, "收件人真實姓名" %>
-                <div>
+                <div class="input-area">
                   <%= detail_form.text_field :addressees_name, :class => "form-control", :required => true, :value => "hugo好帥唷" %>
                 </div>
-              </div>
 
-              <div class="input-area">
                 <i class="fa fa-phone fa-lg" aria-hidden="true" style="margin-right: 10px;"></i><%= detail_form.label :addressees_mobile, "收件者電話" %>
-                <div>
+                <div class="input-area">
                   <%= detail_form.text_field :addressees_mobile, :class => "form-control", :required => true, :value => "0800061000" %>
                 </div>
               </div>
